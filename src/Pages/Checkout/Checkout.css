@@ -1,0 +1,153 @@
+/* Checkout.css */
+
+.checkout-page-wrapper {
+  background: #f5f7fb;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 100px;
+}
+
+/* Header */
+.checkout-header {
+  background: #fff; padding: 15px 24px; display: flex; align-items: center; gap: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 100;
+}
+.checkout-header h2 { font-size: 18px; margin: 0; color: #222; }
+.back-btn { background: none; border: none; font-size: 20px; cursor: pointer; color: #555; }
+
+/* GRID SYSTEM */
+.checkout-content {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Split Layout */
+  gap: 30px;
+  align-items: start;
+}
+
+/* Left Sections */
+.checkout-section {
+  background: #fff; border-radius: 16px; padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-bottom: 20px;
+}
+.section-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.checkout-section h3 { margin: 0; font-size: 16px; color: #333; }
+
+.autofill-btn {
+  background: #f0f7ff; color: #0066ff; border: none; padding: 5px 12px;
+  border-radius: 20px; font-size: 11px; font-weight: 600; cursor: pointer;
+}
+
+/* Form Styles */
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: #666; margin-bottom: 6px; }
+.form-group input {
+  width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 10px; font-size: 14px; outline: none;
+}
+.form-group input:focus { 
+  border-color: #0066ff; 
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+/* Payment Cards */
+.payment-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+
+.payment-card {
+  display: flex; align-items: center; gap: 15px;
+  border: 1px solid #eee; border-radius: 12px; padding: 15px;
+  cursor: pointer; transition: all 0.2s;
+}
+.payment-card:hover { background: #f9f9f9; }
+
+.payment-card.selected {
+  border-color: #0066ff; 
+  background: #f0f7ff;
+}
+
+.radio-circle {
+  width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 50%;
+  position: relative;
+}
+.payment-card.selected .radio-circle { border-color: #0066ff; }
+.payment-card.selected .radio-circle::after {
+  content: ''; position: absolute; top: 3px; left: 3px; width: 8px; height: 8px;
+  background: #0066ff; border-radius: 50%;
+}
+
+.pay-info { display: flex; flex-direction: column; }
+.pay-info span { font-weight: 600; font-size: 14px; color: #222; }
+.pay-info small { font-size: 11px; color: #888; }
+
+/* Right Summary Box */
+.order-summary-box {
+  background: #fff; border-radius: 16px; padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  position: sticky; top: 90px; /* Sticks on desktop scroll */
+}
+
+.summary-items-list {
+    margin-top: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 15px;
+}
+.summary-item {
+    display: flex; justify-content: space-between; margin-bottom: 8px;
+}
+
+.divider { border: 0; height: 1px; background: #eee; margin: 15px 0; }
+.divider.dashed { border-top: 1px dashed #ccc; background: none; }
+
+.bill-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; color: #666; }
+.bill-row.total { font-size: 18px; font-weight: 700; color: #222; margin-top: 5px; }
+
+/* Desktop Button */
+.place-order-btn {
+  width: 100%; padding: 14px; 
+  background: #0066ff; color: white; /* Electric Blue */
+  border: none; border-radius: 12px; font-weight: 700; font-size: 16px;
+  margin-top: 20px; cursor: pointer; transition: background 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+.place-order-btn:hover { background: #0052cc; }
+
+.trust-badge-row {
+  text-align: center; margin-top: 15px; font-size: 11px; color: #888; background: #f0fdf4; padding: 8px; border-radius: 8px; color: #166534;
+}
+
+/* Empty State */
+.checkout-empty {
+    text-align: center; padding: 50px;
+}
+.checkout-empty button {
+    margin-top: 20px; padding: 10px 20px; background: #0066ff; color: #fff; border: none; border-radius: 8px; cursor: pointer;
+}
+
+/* Mobile Sticky Footer */
+.mobile-sticky-footer { display: none; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .checkout-content { grid-template-columns: 1fr; padding: 0 15px; }
+  
+  .desktop-only-btn { display: none; } /* Hide desktop button */
+  
+  .mobile-sticky-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #fff; padding: 15px 20px;
+    border-top: 1px solid #eee; z-index: 200;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+  }
+  .footer-total { display: flex; flex-direction: column; }
+  .footer-total small { font-size: 10px; color: #888; text-transform: uppercase; }
+  .footer-total span { font-size: 18px; font-weight: 700; color: #222; }
+  
+  .footer-pay-btn {
+    background: #0066ff; color: #fff; border: none; padding: 12px 30px;
+    border-radius: 10px; font-weight: 700; cursor: pointer;
+  }
+}

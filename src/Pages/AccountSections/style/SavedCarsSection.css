@@ -1,0 +1,30 @@
+/* SavedCarsSection.css */
+
+.cars-grid-v2 { display: grid; gap: 15px; }
+
+.car-card-v2 {
+  background: #fff; border-radius: 12px; padding: 12px;
+  display: flex; align-items: center; gap: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  border: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.car-card-v2:hover {
+  transform: translateY(-2px);
+  border-color: #0066ff;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+}
+
+.car-card-v2 img { width: 60px; height: 40px; object-fit: contain; }
+.car-details h4 { margin: 0; font-size: 14px; color: #0a1929; font-weight: 700; }
+.car-details p { margin: 0; font-size: 11px; color: #666; }
+
+.del-btn-round {
+  margin-left: auto; background: #fff0f0; border: none; width: 30px; height: 30px;
+  border-radius: 50%; color: #ff4d4f; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.del-btn-round:hover {
+  background: #ffdbdb;
+}

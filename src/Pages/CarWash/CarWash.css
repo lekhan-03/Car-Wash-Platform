@@ -1,0 +1,233 @@
+/* src/components/CarWash/CarWash.css */
+
+/* ---- CarWash Page ---- */
+.carwash-page {
+  padding: 20px;
+}
+
+.carwash-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.carwash-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ---- CarWash Center Card ---- */
+.carwash-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.carwash-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  padding: 15px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.carwash-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.carwash-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.carwash-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.carwash-card p {
+  margin: 4px 0;
+  color: #555;
+}
+
+.carwash-price {
+  font-weight: bold;
+  color: #1a73e8;
+  margin-top: 6px;
+}
+
+/* ---- CarWash Details ---- */
+.carwash-details {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.carwash-details-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.carwash-details h2 {
+  margin-bottom: 8px;
+}
+
+.carwash-details p {
+  margin: 5px 0;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.time-slot {
+  padding: 8px 16px;
+  border: 1px solid #1a73e8;
+  border-radius: 20px;
+  background: #fff;
+  color: #1a73e8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.time-slot.selected,
+.time-slot:hover {
+  background: #1a73e8;
+  color: #fff;
+}
+
+.add-to-cart-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: #e68900;
+}
+
+/* ---- Car Selector in Navbar ---- */
+.car-selector {
+  position: relative;
+}
+
+.car-selector-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #f5f5f5;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.car-selector-btn:hover {
+  background: #e9e9e9;
+}
+
+.car-selector-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+}
+
+.car-selector-dropdown h4 {
+  margin: 10px 0 6px;
+  font-size: 1rem;
+}
+
+.brand-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.vehicle-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.vehicle-card {
+  flex: 0 0 45%;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-card img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.vehicle-card p {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* Selected Car Tag in Navbar */
+.selected-car-badge {
+  font-size: 0.85rem;
+  background: #1a73e8;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .carwash-list {
+    grid-template-columns: 1fr;
+  }
+
+  .car-selector-dropdown {
+    width: 90vw;
+    right: auto;
+    left: 5%;
+  }
+}

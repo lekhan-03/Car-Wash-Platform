@@ -1,0 +1,187 @@
+/* src/Components/Hero/Hero.css */
+
+* {
+    box-sizing: border-box;
+}
+
+.hero-container {
+  width: 100%;
+  height: 350px; /* Taller for banner look */
+  position: relative;
+  overflow: hidden;
+  /* Deep Dark Navy/Black Background matching the image */
+  background: radial-gradient(circle at 70% 50%, #0d1b2a 0%, #000000 100%);
+  border-bottom: 4px solid #0066ff; /* Bottom accent line */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%; /* 5% padding on sides */
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* --- Content Styling --- */
+.hero-content {
+  flex: 1;
+  z-index: 3;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-content h1 .highlight-text {
+  color: #ffffff; /* Keep white for "CLEAN CAR" */
+}
+
+.hero-content p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #3b82f6; /* Blueish text for subtitle "Premium Car Wash..." */
+  margin: 0 0 25px 0;
+  text-transform: capitalize;
+}
+
+/* --- Rectangular Button (Matching Image) --- */
+.hero-btn-rect {
+  background: #0066ff; /* Solid Electric Blue */
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 20px; /* Small radius for rectangular look */
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.hero-btn-rect:hover {
+  background: #0052cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.6);
+}
+
+/* --- Image Side --- */
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.slide-img {
+  width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+  z-index: 2;
+  /* Slight blue shadow behind car */
+  filter: drop-shadow(0 0 20px rgba(0, 102, 255, 0.2)); 
+}
+
+/* --- Bubble Effects (Subtle background details) --- */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  animation: float 6s infinite ease-in-out;
+}
+.b1 { width: 40px; height: 40px; top: 20%; right: 20%; animation-delay: 0s; }
+.b2 { width: 20px; height: 20px; top: 60%; right: 40%; animation-delay: 2s; }
+.b3 { width: 60px; height: 60px; top: 10%; right: 10%; animation-delay: 1s; }
+
+@keyframes float {
+  0% { transform: translateY(0px); opacity: 0.5; }
+  50% { transform: translateY(-20px); opacity: 0.8; }
+  100% { transform: translateY(0px); opacity: 0.5; }
+}
+
+/* --- Dots Indicator --- */
+.hero-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.h-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.h-dot.active {
+  background: #0066ff;
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+  .hero-container {
+    height: 450px; /* Taller on mobile to stack */
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .hero-slide {
+    flex-direction: column-reverse; /* Text on bottom, Image on top */
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-content {
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .slide-img {
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,31 @@
+/* CarWashCenterCard.css */
+
+.carwash-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.1);
+}
+
+.carwash-price {
+  font-weight: bold;
+  color: #0066ff; /* Electric Blue */
+  margin-top: 6px;
+}
+
+.slot-btn.selected {
+  background: #0066ff;
+  color: #fff;
+  border-color: #0066ff;
+}
+
+.book-btn {
+  margin-top: 12px;
+  padding: 10px;
+  background: #0a1929; /* Midnight Blue */
+  color: #fff;
+  border: none;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.book-btn:hover { background: #0066ff; }

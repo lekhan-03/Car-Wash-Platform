@@ -1,0 +1,234 @@
+/* ServiceList.css */
+
+.service-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between each Service Unit (Card + Banner) */
+  margin-bottom: 40px;
+  padding: 10px 5px;
+}
+
+/* Wrapper to group Card and Banner together */
+.service-unit-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Small gap between the Card and its Banner */
+}
+
+/* --- THE GLASS CARD --- */
+.glass-card {
+  /* 1. Glass Background */
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  
+  /* 2. Border & Shape */
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  
+  /* 3. Layout */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+  
+  /* 4. Shadow & Transition */
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.07), 
+    0 2px 4px 0 rgba(255, 255, 255, 0.5) inset;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 15px 40px 0 rgba(31, 38, 135, 0.12),
+    0 0 0 1px #0066ff;
+  z-index: 10;
+}
+
+/* --- LEFT SIDE: CONTENT --- */
+.card-left {
+  flex: 1;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+/* Rating */
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.star-badge {
+  background: #fff8e1;
+  color: #f59e0b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.review-count {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Features List */
+.glass-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.glass-features li {
+  font-size: 12px;
+  color: #475569;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.glass-features li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #0066ff;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 5px rgba(0, 102, 255, 0.4);
+}
+
+/* Price Section */
+.card-price-row {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-main {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0066ff;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.price-main small { font-size: 12px; font-weight: 600; color: #0066ff; }
+
+.view-details-btn {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 4px;
+  text-decoration: underline;
+  text-decoration-color: rgba(100, 116, 139, 0.3);
+  width: fit-content;
+}
+
+/* --- RIGHT SIDE: MEDIA --- */
+.card-right {
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.img-wrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover .img-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Floating Add Button */
+.add-btn-glass {
+  position: absolute;
+  bottom: -10px;
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+  color: #fff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.add-btn-glass:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 102, 255, 0.5);
+}
+
+.add-btn-glass:active {
+  transform: scale(0.95);
+}
+
+/* --- PROMO BANNER --- */
+.promo-banner-strip {
+  background: linear-gradient(90deg, #e3f2fd 0%, #f0f7ff 100%);
+  border: 1px dashed #0066ff;
+  color: #0066ff;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 11px;
+  margin-top: 0; /* Tight to the card */
+}
+
+.promo-content { display: flex; align-items: center; gap: 6px; }
+.promo-icon { font-size: 14px; }
+.arrow-icon { font-size: 14px; opacity: 0.7; }
+
+/* --- RESPONSIVE GRID (Desktop) --- */
+@media (min-width: 768px) {
+  .service-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 30px;
+  }
+}

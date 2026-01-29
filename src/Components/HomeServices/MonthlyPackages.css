@@ -1,0 +1,155 @@
+/* MonthlyPackages.css */
+
+.packages-container {
+  padding-bottom: 20px;
+  animation: fadeIn 0.4s ease;
+}
+
+.packages-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- CARD DESIGN --- */
+.package-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid #f0f0f0;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Header Section */
+.pkg-header {
+  padding: 20px;
+  color: #fff;
+  position: relative;
+}
+
+.best-value-badge {
+  position: absolute;
+  top: 15px; right: 15px;
+  background: #fff;
+  color: #000;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.pkg-name-row h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.wash-count-badge {
+  display: inline-block;
+  font-size: 11px;
+  background: rgba(255,255,255,0.2);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-top: 5px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.pkg-price-row {
+  margin-top: 15px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.pkg-price-row .currency { font-size: 18px; font-weight: 600; opacity: 0.9; }
+.pkg-price-row .price { font-size: 32px; font-weight: 800; }
+.pkg-price-row .original { 
+  font-size: 16px; 
+  text-decoration: line-through; 
+  opacity: 0.7; 
+  font-weight: 500;
+}
+
+.per-wash-tag {
+  background: rgba(0,0,0,0.3);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-top: 10px;
+  backdrop-filter: blur(4px);
+}
+
+/* Body Section */
+.pkg-body {
+  padding: 20px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.benefits-list li {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-icon {
+  color: #00b894;
+  font-weight: 900;
+  background: #e6fffa;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+}
+
+.savings-alert {
+  background: #e3f2fd;
+  color: #0066ff;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 15px;
+  border: 1px dashed #0066ff;
+}
+
+.subscribe-btn {
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.subscribe-btn:hover {
+  background: #222;
+  transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
