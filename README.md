@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# 🚗 Car Wash Booking Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A high-performance, frontend-focused web application designed to streamline vehicle service bookings. This project demonstrates advanced state management, asset optimization, and a persistent "cart" experience without requiring a backend server.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Local Storage](https://img.shields.io/badge/Data-Local_Storage-orange?style=for-the-badge)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
 
-In the project directory, you can run:
+## 🌟 Key Features
 
-### `npm start`
+* **🛒 Persistent Cart Architecture:** Utilizes browser **Local Storage** to persist user state (selected services, vehicle type, and booking slot) across sessions, ensuring data survives page refreshes.
+* **📂 Dynamic Service Catalog:** Scalable data structure rendering complex service hierarchies (Steam Wash, Detailing, Ceramic Coating) from efficient JSON files.
+* **⚡ Media & Asset Optimization:**
+    * **Cloudinary CDN:** Offloaded high-resolution marketing assets to Cloudinary to prevent GitHub file-size bloat and ensure fast LCP (Largest Contentful Paint).
+    * **YouTube Embeds:** Replaced heavy local video files with optimized `<iframe>` embeds to reduce bundle size and improve Time to Interactive (TTI).
+* **🎨 Responsive "Electric Blue" UI:** A custom-designed interface featuring glassmorphism effects, mobile-first Grid layouts, and smooth CSS transitions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **Frontend Engine:** React.js + Vite (for ultra-fast HMR)
+* **State Management:** React Hooks (`useState`, `useEffect`) + Local Storage API
+* **Asset Management:** Cloudinary (Images), YouTube (Video)
+* **Styling:** Modern CSS3 (Flexbox, CSS Grid, CSS Variables)
 
-### `npm test`
+## 🚀 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project is built with Vite and requires no backend setup. You can run it immediately:
 
-### `npm run build`
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/lekhan-03/Car-Wash-Platform.git](https://github.com/lekhan-03/Car-Wash-Platform.git)
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2.  **Navigate to the project directory**
+    ```bash
+    cd Car-Wash-Platform
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
 
-### `npm run eject`
+## 🔮 Future Roadmap
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* **Backend Migration:** Migrate data persistence from Local Storage to a Node.js/PostgreSQL backend.
+* **User Authentication:** Implement JWT-based login for user profiles and order history.
+* **Payment Integration:** Connect Razorpay or Stripe API for real-time checkout.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Developed by Lekhan. This project showcases proficiency in Frontend Architecture, React Performance Optimization, and System Design.*
