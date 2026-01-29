@@ -29,7 +29,7 @@ This project is built with Vite and requires no backend setup. You can run it im
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/lekhan-03/Car-Wash-Platform.git](https://github.com/lekhan-03/Car-Wash-Platform.git)
+    git clone [https://github.com/lekhan-03/Car-Wash-Platform.git]
     ```
 
 2.  **Navigate to the project directory**
