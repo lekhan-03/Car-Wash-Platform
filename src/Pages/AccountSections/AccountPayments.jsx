@@ -1,8 +1,6 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
 
 const AccountPayments = () => {
-  const { user } = useOutletContext();
   return (
     <div className="account-section">
       <h3>Payment Options</h3>

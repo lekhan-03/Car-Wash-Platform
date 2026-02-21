@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./RewardsPie.css";
 
 const RewardsPie = () => {
@@ -8,7 +8,8 @@ const RewardsPie = () => {
   const [orderCount, setOrderCount] = useState(0);
 
   // --- LOGIC TO CALCULATE PROGRESS ---
-  const calculateProgress = () => {
+  // Wrapped in useCallback to provide a stable reference for the useEffect dependency array
+  const calculateProgress = useCallback(() => {
     try {
       const orders = JSON.parse(localStorage.getItem("orders")) || [];
       
@@ -51,7 +52,7 @@ const RewardsPie = () => {
     } catch (error) {
       console.error("Error calculating rewards:", error);
     }
-  };
+  }, [orderCount]); // calculateProgress now depends on orderCount
 
   // --- USE EFFECT TRIGGERS ---
   useEffect(() => {
@@ -72,7 +73,7 @@ const RewardsPie = () => {
       window.removeEventListener("storage", calculateProgress);
       clearInterval(intervalId);
     };
-  }, [orderCount]); // Re-run if count changes (mostly for safety)
+  }, [calculateProgress]); // calculateProgress is now safely in the dependency array
 
   const handleRedeem = () => {
     alert("🎉 Coupon Code 'FREEWASH' applied! Use this on your next booking.");

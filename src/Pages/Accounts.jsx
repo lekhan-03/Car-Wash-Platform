@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import "./Accounts.css";
 
 const Accounts = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("user"));

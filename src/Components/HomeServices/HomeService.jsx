@@ -60,10 +60,6 @@ const HomeService = () => {
     setSelectedService(null);
   };
 
-  const handleImageError = (e) => {
-    e.target.src = "https://cdn-icons-png.flaticon.com/512/296/296216.png"; 
-  };
-
   // 1. FLATTEN ALL SERVICES into a single array for searching
   const allServices = useMemo(() => {
     if (Array.isArray(services)) return services;
