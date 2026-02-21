@@ -23,7 +23,7 @@ import AccountAddresses from "./Pages/AccountSections/AccountAddresses";
 import AccountPayments from "./Pages/AccountSections/AccountPayments";
 import AccountHelp from "./Pages/AccountSections/AccountHelp";
 import Checkout from "./Pages/Checkout/Checkout";
-import GlobalAds from './Pages/GlobalAds/GlobalAds';
+
 
 function App() {
   return (
