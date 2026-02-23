@@ -1,67 +1,90 @@
-.video-section {
-  padding: 15px 20px 30px 20px;
-  background: #f4f6f9; /* Matches Home bg */
+/* ServiceVideo.css - Premium Modernization */
+
+.video-section-premium {
+  padding: 40px 0 20px 0; /* Removed side padding so videos peek off the screen edge */
+  background: #fdfdfd; 
+  font-family: 'Poppins', sans-serif;
 }
 
-.video-header {
-  margin-bottom: 15px;
+/* Header Styling */
+.video-header-modern {
+  padding: 0 20px;
+  margin-bottom: 20px;
 }
 
-.video-header h2 {
-  font-size: 18px;
+.header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.video-icon {
+  color: #0066ff; /* Accent Blue */
+}
+
+.header-title-row h2 {
+  font-size: 20px;
   font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 4px;
+  color: #0a1929; /* Midnight Blue */
+  margin: 0;
+  letter-spacing: -0.5px;
 }
 
-.video-header p {
+.video-header-modern p {
   font-size: 13px;
   color: #666;
+  margin: 0;
 }
 
-/* Horizontal Scroll Container */
-.video-scroll-container {
+/* App-like Snap Scrolling Carousel */
+.video-carousel {
   display: flex;
-  gap: 15px;
+  gap: 16px;
   overflow-x: auto;
-  padding-bottom: 10px;
+  padding: 10px 20px 30px 20px;
+  scroll-snap-type: x mandatory; /* Forces snapping to cards */
   scrollbar-width: none; /* Firefox */
-  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Smooth iOS scroll */
 }
 
-.video-scroll-container::-webkit-scrollbar {
+.video-carousel::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
 }
 
-/* Video Card Styling */
-.video-card {
-  min-width: 280px; /* Made wider for 16:9 videos */
+/* Premium Video Card */
+.video-card-premium {
+  /* Sizes card perfectly for mobile so the next one slightly peeks out */
+  flex: 0 0 85%; 
+  max-width: 320px;
   background: #fff;
-  border-radius: 12px;
-  padding: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 10px 25px rgba(10, 25, 41, 0.06);
+  border: 1px solid #f0f4f8;
+  scroll-snap-align: center; /* Snaps the card to the center of the screen */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.video-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.15);
-  border-color: #0047ff;
+.video-card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 102, 255, 0.12);
+  border-color: rgba(0, 102, 255, 0.2);
 }
 
-/* Video Container - Enforces 16:9 Aspect Ratio */
-.video-thumbnail {
+/* 16:9 Thumbnail Wrapper with perfect corners */
+.video-thumbnail-wrapper {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   height: 0;
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
-  background: #000;
+  background: #e3f2fd; /* Skeleton loading color */
+  /* Safari fix for border-radius on iframes */
+  transform: translateZ(0); 
 }
 
-/* The actual video element (Iframe) */
 .video-player {
   position: absolute;
   top: 0;
@@ -69,12 +92,47 @@
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: cover;
 }
 
-.video-card h3 {
-  font-size: 13px;
+/* Video Title */
+.video-info {
+  padding: 12px 4px 4px 4px;
+}
+
+.video-info h3 {
+  font-size: 14px;
   font-weight: 700;
-  color: #333;
-  margin-top: 10px;
-  margin-bottom: 2px;
+  color: #0a1929;
+  margin: 0;
+}
+
+/* --- FOOTER TAG TEXT ("India's #1...") --- */
+.app-footer-tag {
+  text-align: center;
+  padding: 30px 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tag-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #8ba1b7; /* The exact soft blue-gray from your image */
+  margin: 0 0 2px 0;
+  letter-spacing: 0.5px;
+}
+
+.tag-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #a0b2c6; /* Slightly lighter shade for a sleek look */
+  margin: 0 0 12px 0;
+}
+
+.trust-stars {
+  display: flex;
+  gap: 4px;
+  opacity: 0.6;
 }
