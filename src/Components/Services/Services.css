@@ -1,120 +1,467 @@
-/* Services.css */
+/* Services.css - Premium Dynamic Bento Grid */
 
-.our-services {
+.services-premium-wrapper {
   padding: 30px 20px;
-  background: #fff;
-  border-radius: 24px 24px 0 0; /* Rounded top overlap */
-  margin-top: -20px; /* Overlap Hero slightly */
+  background: #f4f7fb; /* Very soft cool gray to make white cards pop */
+  font-family: 'Poppins', sans-serif;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: -20px;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
-.services-header {
+/* Header */
+.services-header-premium {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-bottom: 25px;
-  text-align: left;
 }
 
-.services-header h2 {
-  font-size: 22px;
+.services-header-premium h2 {
+  font-size: 24px;
   font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 5px;
+  color: #0a1929;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.5px;
 }
 
-.services-header p {
-  font-size: 14px;
+.services-header-premium p {
+  font-size: 13px;
   color: #666;
+  margin: 0;
+}
+
+.header-badge {
+  background: #fff;
+  color: #0066ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 102, 255, 0.1);
 }
 
 /* Grid Layout */
-.service-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
+.bento-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin-bottom: 30px;
 }
 
-.service-card-link {
-  text-decoration: none;
-  color: inherit;
+.bento-row-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.service-card {
+/* Base Card Styles */
+.bento-card {
   background: #fff;
-  border: 1px solid #f0f0f0;
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 24px;
+  padding: 24px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(10, 25, 41, 0.04);
+  border: 1px solid #ffffff;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 100%;
 }
 
-.service-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 102, 255, 0.12);
+  border-color: rgba(0, 102, 255, 0.2);
 }
 
-.icon-box {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+.bento-content { z-index: 10; position: relative; }
+.z-10 { z-index: 10; }
+.mb-2 { margin-bottom: 8px; }
+
+/* Icon Wrappers */
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
+.icon-wrapper.glass { background: rgba(0, 102, 255, 0.1); backdrop-filter: blur(5px); }
+.icon-wrapper.soft-blue { background: #e3f2fd; }
+.accent-icon { color: #0066ff; }
+.dark-icon { color: #0a1929; }
+.light-icon { color: #fff; }
 
-.icon-box img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-}
+/* Typography inside cards */
+.bento-card h3 { font-size: 18px; font-weight: 800; color: #0a1929; margin: 0 0 6px 0; line-height: 1.2; }
+.bento-card p { font-size: 12px; color: #666; margin: 0; max-width: 65%; line-height: 1.4; }
+.bento-card h4 { font-size: 15px; font-weight: 800; color: #0a1929; margin: 0; line-height: 1.2; }
 
-.service-info h3 {
-  font-size: 16px;
+/* Action Links */
+.bento-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 15px;
+  font-size: 12px;
   font-weight: 700;
-  color: #222;
-  margin-bottom: 4px;
+  color: #0066ff;
+  transition: gap 0.2s;
+}
+.bento-card:hover .bento-action { gap: 8px; }
+
+/* --- PREMIUM HERO WASH CARD (Black Theme) --- */
+.hero-wash-card { 
+  min-height: 240px;
+  /* Gradient matching the sleek black paint and cool reflections of the car */
+  background: linear-gradient(135deg, #1a222e 0%, #050505 100%);
+  border: none; 
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
-.service-info p {
-  font-size: 11px;
-  color: #888;
-  line-height: 1.4;
-  margin-bottom: 10px;
+/* Enlarge Heading - Pure White */
+.hero-wash-card h3 { 
+  font-size: 26px;
+  color: #ffffff; 
+  margin-bottom: 8px;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-.arrow-btn {
-  margin-top: auto;
-  font-size: 18px;
-  font-weight: bold;
+/* Enlarge Paragraph - Cool Grey to match reflections */
+.hero-wash-card p { 
+  font-size: 14px;
+  color: #b0c4de; 
+  max-width: 60%; 
+  line-height: 1.5;
 }
 
-/* Blue Promo Banner */
-.home-promo-banner {
-  background: #206aff; /* Brand Blue */
-  color: white;
-  padding: 14px 20px;
+/* Action Button - Bright Electric Blue */
+.hero-wash-card .bento-action {
+  font-size: 14px;
+  color: #4da6ff; 
+  margin-top: 20px;
+}
+
+/* Icon Box - subtle cool glass effect */
+.hero-wash-card .icon-wrapper.glass {
+  background: rgba(200, 225, 255, 0.15); 
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-wash-card .accent-icon {
+  color: #ffffff; 
+}
+
+/* Deeper shadow on hover */
+.hero-wash-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+/* --- SUB-GRID OVERRIDES --- */
+.square-card { min-height: 200px; padding: 20px; }
+
+/* --- MONTHLY PACKAGES (DARK CARD) FULL COVER FIX --- */
+
+.dark-card { 
+  background: #0a1929; /* Ensures the base is dark */
+  border: none; 
+}
+
+.dark-card .image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Fills the entire card from top to bottom */
+  z-index: 1;
+  border-radius: inherit; /* Curves all 4 corners perfectly */
+  overflow: hidden;
+}
+
+.dark-card .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom; /* Keeps the Fortuner and membership card perfectly in frame */
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Dark overlay gradient starting from the top so your white text is perfectly readable */
+.dark-card .image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Fades from a solid dark blue at the top text area to fully transparent at the car */
+  background: linear-gradient(to bottom, rgba(10, 25, 41, 0.95) 0%, rgba(10, 25, 41, 0.5) 45%, rgba(10, 25, 41, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Smooth zoom effect */
+.dark-card:hover .image-wrapper img {
+  transform: scale(1.08);
+}
+.text-white { color: #fff !important; }
+.text-light-blue { color: #8ba1b7 !important; }
+
+/* Discount Pill */
+.discount-pill {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffe8e8;
+  color: #ff4d4f;
+  padding: 4px 10px;
   border-radius: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  z-index: 10;
+}
+
+/* Wide Row Card (Insurance) */
+.wide-row-card {
+  flex-direction: row;
+  align-items: center;
+  padding: 18px 24px;
+  min-height: 100px;
+}
+.row-content { display: flex; align-items: center; gap: 15px; width: 100%; }
+.row-content .icon-wrapper { margin-bottom: 0; }
+.text-group p { max-width: 100%; }
+
+.image-wrapper { position: absolute; pointer-events: none; }
+
+/* --- PREMIUM PHOTOGRAPH HERO IMAGE SETTINGS --- */
+.hero-img { 
+  position: absolute;
+  right: 0;   
+  top: 0;
+  bottom: 0;
+  width: 50%; /* Takes up exactly half the card */
+  height: 100%;
+  z-index: 1; 
+  /* Curves both the top and bottom right corners to match the card perfectly */
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit; 
+  overflow: hidden;
+}
+
+/* The actual photograph */
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills the space without stretching */
+  object-position: center 20%; /* Keeps the face/upper body centered */
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Creates a seamless fade from the black text area into the photo */
+.hero-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1px; /* Prevents a harsh line */
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(to right, #0a0e14 0%, transparent 100%);
+  z-index: 2;
+}
+
+/* Subtle zoom on hover (removed the awkward shifting) */
+.bento-card:hover .hero-img img { 
+  transform: scale(1.06); 
+}
+
+/* Keep text from overlapping the person's face */
+.hero-wash-card .bento-content {
+  max-width: 55%; 
+}
+
+/* Continuous Floating Animations */
+/* @keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-delayed {
+  0% { transform: translateY(0px) translateX(-50%); }
+  50% { transform: translateY(-8px) translateX(-50%); }
+  100% { transform: translateY(0px) translateX(-50%); }
+}
+
+.floating-img { animation: float 4s ease-in-out infinite; }
+.floating-img-delayed { animation: float-delayed 4s ease-in-out infinite; animation-delay: 2s; }
+
+.bento-card:hover img { transform: scale(1.05); transition: transform 0.3s ease; } */
+
+/* Glow Effects */
+.glow-backdrop {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.blue-glow { background: rgba(0, 102, 255, 0.3); }
+.white-glow { background: rgba(255, 255, 255, 0.2); }
+
+/* --- PREMIUM PROMO BANNER --- */
+.premium-promo-banner {
+  background: #0066ff; /* Accent Blue Background */
+  border-radius: 24px;
+  padding: 30px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 700;
-  font-size: 14px;
-  box-shadow: 0 5px 15px rgba(32, 106, 255, 0.3);
-  margin-top: 10px;
-  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 102, 255, 0.25);
 }
 
-.sparkle { margin-right: 8px; }
+.promo-content { z-index: 10; max-width: 55%; }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .service-items {
-    grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
-  }
+.pulse-badge {
+  background: #fff;
+  color: #ff4d4f;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 12px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.promo-content h2 { font-size: 26px; color: #fff; margin: 0 0 4px 0; font-weight: 800; line-height: 1.1; }
+.promo-content p { font-size: 12px; color: #e3f2fd; margin: 0 0 15px 0; line-height: 1.4; }
+.promo-content strong { color: #fff; font-size: 14px; background: rgba(10, 25, 41, 0.2); padding: 2px 6px; border-radius: 4px; }
+
+.promo-btn {
+  background: #0a1929;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.promo-btn:hover { background: #172a3a; }
+
+.promo-image-wrapper {
+  position: absolute;
+  right: -30px;
+  bottom: -20px;
+  width: 250px;
+  pointer-events: none;
+}
+.promo-image-wrapper img { width: 100%; display: block; }
+.products-img-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56%; /* Takes up only the bottom area, hiding the top text */
+  z-index: 1;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  overflow: hidden;
+}
+
+.products-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom; /* Anchors focus to the bottles at the bottom */
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Soft fade gradient from the white card into the photograph */
+.products-img-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Smooth zoom effect on hover */
+.square-card:hover .products-img-wrapper img {
+  transform: scale(1.08);
+}
+.insurance-img-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%; /* Takes up the right 60% of the card */
+  height: 100%; /* Fills the entire height */
+  z-index: 1;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  overflow: hidden;
+}
+
+.insurance-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the area without stretching */
+  object-position: right center; /* Focuses on the vehicles and banner */
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Seamless white fade from the text area into the photo */
+.insurance-img-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 25%; /* Width of the fade gradient */
+  height: 100%;
+  background: linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Subtle zoom effect on hover */
+.wide-row-card:hover .insurance-img-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Ensure text doesn't overlap the main part of the image */
+.wide-row-card .row-content {
+  max-width: 45%;
+  position: relative;
+  z-index: 5;
 }

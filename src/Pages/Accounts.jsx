@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { LogOut, CarFront, MapPin, CreditCard, Wrench, Package, User } from "lucide-react";
 import "./Accounts.css";
 
 const Accounts = () => {
@@ -7,6 +8,7 @@ const Accounts = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Reads from local storage as per your current backend setup
     const currentUser = JSON.parse(localStorage.getItem("user"));
     if (!currentUser) {
       navigate("/login");
@@ -22,40 +24,46 @@ const Accounts = () => {
 
   if (!user) return <div className="account-loading">Loading...</div>;
 
+  const navItems = [
+    { path: "details", name: "Profile", icon: <User size={26} strokeWidth={1.5} /> },
+    { path: "cars", name: "Cars", icon: <CarFront size={26} strokeWidth={1.5} /> },
+    { path: "addresses", name: "Address", icon: <MapPin size={26} strokeWidth={1.5} /> },
+    { path: "orders", name: "Orders", icon: <Package size={26} strokeWidth={1.5} /> },
+    { path: "payments", name: "Payments", icon: <CreditCard size={26} strokeWidth={1.5} /> },
+    { path: "help", name: "Help", icon: <Wrench size={26} strokeWidth={1.5} /> },
+    
+  ];
+
   return (
-    <div className="account-container">
-      {/* 1. Header Card */}
-      <div className="account-header-card">
-        <div className="user-profile-row">
-          <div className="user-avatar">
+    <div className="account-page-wrapper">
+      <div className="account-top-bg">
+        <div className="profile-header-content">
+          <div className="avatar-circle-lrg">
             {user.name.charAt(0).toUpperCase()}
           </div>
-          <div className="user-text">
-            <h2>Hello, {user.name.split(" ")[0]}</h2>
-            <p>+91 {user.mobile || "9876543210"}</p>
+          <div className="user-details-text">
+            <h2>{user.name}</h2>
+            <p>+91 {user.mobile || "06364105424"}</p>
           </div>
+          <button className="logout-icon-btn" onClick={handleLogout} title="Logout">
+            <LogOut size={22} />
+          </button>
         </div>
-        <button className="logout-btn-pill" onClick={handleLogout}>
-          Logout
-        </button>
+
+        <div className="floating-nav-scroll">
+          {navItems.map((item) => (
+            <NavLink key={item.path} to={item.path} className="nav-card-float">
+              <div className="nav-icon">{item.icon}</div>
+              <span>{item.name}</span>
+            </NavLink>
+          ))}
+        </div>
       </div>
 
-      {/* 2. Scrollable Navigation (Pills) */}
-      <div className="account-nav-scroll">
-        <NavLink to="details" className="nav-pill-item">👤 Details</NavLink>
-        <NavLink to="orders" className="nav-pill-item">📦 Orders</NavLink>
-        <NavLink to="cars" className="nav-pill-item">🚗 Garage</NavLink>
-        <NavLink to="addresses" className="nav-pill-item">📍 Address</NavLink>
-        <NavLink to="payments" className="nav-pill-item">💳 Payments</NavLink>
-        <NavLink to="help" className="nav-pill-item">🛠 Help</NavLink>
-      </div>
-
-      {/* 3. Dynamic Content Area */}
-      <div className="account-content-area">
+      <div className="account-bottom-content">
         <Outlet context={{ user }} />
       </div>
       
-      {/* Spacer for bottom nav */}
       <div style={{height: "80px"}}></div>
     </div>
   );

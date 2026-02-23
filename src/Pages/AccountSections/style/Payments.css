@@ -1,0 +1,95 @@
+/* Payments.css */
+
+.payments-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payments-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a1929; /* Midnight Blue */
+  margin-bottom: 20px;
+}
+
+/* Wallet Card Layout */
+.wallet-card {
+  background: linear-gradient(135deg, #0a1929 0%, #1a2c42 100%);
+  border-radius: 16px;
+  padding: 24px;
+  color: #fff;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 20px rgba(10, 25, 41, 0.15);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.wallet-subtitle {
+  font-size: 13px;
+  color: #a0b2c6; /* Light gray-blue for contrast */
+  margin: 0;
+  text-align: left;
+}
+
+.wallet-balance {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 15px 0 25px 0;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.add-money-btn {
+  background: #fff;
+  color: #0a1929;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  align-self: flex-start; /* Aligns to bottom left like your mockup */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-money-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Saved Cards Dashed Box Layout */
+.saved-cards-card {
+  background: transparent;
+  border: 1.5px dashed #b3c6d8; /* Dashed border matching the image style */
+  border-radius: 16px;
+  padding: 35px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards-icon-wrapper {
+  color: #0066ff; /* Accent Blue */
+  margin-bottom: 16px;
+}
+
+.saved-cards-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0a1929;
+  margin: 0 0 12px 0;
+}
+
+.saved-cards-card p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 320px;
+}

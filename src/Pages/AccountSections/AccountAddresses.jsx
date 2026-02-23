@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { MapPin, Trash2 } from "lucide-react";
 import "./style/Addresses.css";
 
-const Addresses = () => {
+const AccountAddresses = () => {
   const [addresses, setAddresses] = useState([]);
 
   useEffect(() => {
@@ -25,13 +26,17 @@ const Addresses = () => {
         <div className="addr-list">
           {addresses.map((addr, index) => (
             <div key={index} className="addr-card-v2">
-              <div className="addr-icon">📍</div>
+              <div className="addr-icon-wrapper">
+                <MapPin size={24} />
+              </div>
               <div className="addr-info">
                 <h4>{addr.fullName}</h4>
                 <p>{addr.street}, {addr.city} - {addr.pincode}</p>
                 <p className="ph">📞 {addr.phone}</p>
               </div>
-              <button onClick={() => handleDelete(index)} className="del-text-btn">Delete</button>
+              <button onClick={() => handleDelete(index)} className="del-icon-btn">
+                <Trash2 size={18} />
+              </button>
             </div>
           ))}
         </div>
@@ -40,4 +45,4 @@ const Addresses = () => {
   );
 };
 
-export default Addresses;
+export default AccountAddresses;

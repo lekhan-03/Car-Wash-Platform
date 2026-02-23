@@ -1,0 +1,211 @@
+/* ServiceDetail.css */
+
+.service-detail-page {
+  background: #f5f7fb;
+  min-height: 100vh;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding-bottom: 0;
+}
+
+/* 1. Header */
+.sd-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+.sd-back-btn {
+  background: none; border: none; font-size: 20px; color: #333; cursor: pointer;
+}
+.sd-header-title { font-weight: 600; font-size: 16px; }
+.sd-filter-btn {
+  background: #fff; border: 1px solid #ddd; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;
+}
+
+/* Scrollable Content */
+.sd-scroll-content {
+  padding: 0;
+  overflow-y: auto;
+}
+
+/* 2. Gallery */
+.sd-gallery {
+  display: flex;
+  overflow-x: auto;
+  padding: 15px;
+  gap: 10px;
+  background: #fff;
+  scrollbar-width: none;
+}
+.sd-gallery::-webkit-scrollbar { display: none; }
+
+.sd-gallery-item {
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sd-gallery-item img {
+  width: 140px; height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+.sd-gallery-label { font-size: 11px; color: #666; }
+.sd-main-img { width: 100%; height: 200px; object-fit: cover; }
+
+/* 3. Info Section */
+.sd-info-section {
+  padding: 15px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+.sd-title-row {
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+.sd-service-name {
+  font-size: 18px; font-weight: 700; color: #222; margin: 0; max-width: 70%;
+}
+.sd-rating-box {
+  background: #f8f9fa; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; text-align: right;
+}
+.sd-star { color: #f5a623; }
+.sd-rating-count { display: block; font-size: 10px; color: #888; font-weight: 400; }
+
+.sd-price-time-row {
+  display: flex; align-items: baseline; gap: 10px; margin-top: 10px;
+}
+.sd-price-large { font-size: 22px; font-weight: 800; color: #0047ff; }
+.sd-time { font-size: 12px; color: #666; }
+.sd-link { font-size: 12px; color: #0047ff; font-weight: 600; margin-left: auto; }
+
+/* 4. Banner */
+.sd-banner {
+  margin: 0 15px 15px;
+  background: #111;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex; justify-content: space-between; align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+.sd-banner-content { display: flex; flex-direction: column; }
+.sd-banner-yellow { color: #f1c40f; font-weight: 800; font-size: 12px; letter-spacing: 0.5px; }
+.sd-banner-text { font-weight: 700; font-size: 14px; }
+.sd-banner small { font-size: 10px; color: #aaa; }
+.sd-banner-icon { width: 40px; height: 40px; object-fit: contain; filter: invert(1); }
+
+/* 5. Tabs */
+.sd-tabs-section {
+  padding: 15px; background: #fff; margin-bottom: 10px;
+}
+.sd-tabs-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.sd-tabs-header h3 { font-size: 15px; font-weight: 700; margin: 0; }
+.sd-see-all { font-size: 12px; color: #0047ff; font-weight: 600; }
+
+.sd-tab-buttons { display: flex; gap: 0; margin-bottom: 15px; background: #f0f0f0; border-radius: 8px; padding: 2px; }
+.sd-tab-btn {
+  flex: 1; border: none; padding: 10px; font-size: 12px; font-weight: 600; cursor: pointer; border-radius: 6px;
+  background: transparent; color: #666;
+}
+.sd-tab-btn.active.included { background: #28a745; color: #fff; }
+.sd-tab-btn.active.excluded { background: #dc3545; color: #fff; }
+
+.sd-features-grid { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 5px; }
+.sd-feature-item { min-width: 100px; display: flex; flex-direction: column; gap: 5px; }
+.sd-feature-item img { width: 100px; height: 80px; border-radius: 8px; object-fit: cover; }
+.sd-feature-item span { font-size: 11px; color: #444; }
+
+/* 6. Comparison Card */
+.sd-comparison-card {
+  margin: 15px;
+  background: linear-gradient(180deg, #1a237e 0%, #283593 100%);
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+}
+.sd-comp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.sd-comp-col { font-size: 12px; font-weight: 700; width: 40%; }
+.sd-comp-col.hoora { text-align: right; color: #f1c40f; font-size: 16px; }
+.sd-comp-vs { font-style: italic; color: #f1c40f; font-weight: 800; }
+
+.sd-comp-row { display: flex; justify-content: space-between; margin-bottom: 15px; align-items: flex-start; }
+.sd-comp-left, .sd-comp-right { width: 45%; font-size: 11px; line-height: 1.3; }
+.sd-comp-left { color: rgba(255,255,255,0.8); }
+.sd-comp-right { text-align: right; color: #fff; }
+.sd-comp-left p span, .sd-comp-right p span { font-size: 9px; opacity: 0.7; }
+
+.cross-icon { color: #ff4d4d; font-weight: bold; margin-right: 5px; }
+.check-icon { color: #2ecc71; font-weight: bold; margin-right: 5px; }
+.sd-comp-right .check-icon { margin-left: 5px; margin-right: 0; }
+
+/* 7. BOOKING SECTION (Replaces Add-ons) */
+.sd-booking-section {
+  background: #fff; padding: 20px 15px; margin-bottom: 10px;
+}
+.sd-booking-section h3 {
+  font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #222;
+}
+
+.sd-slots-grid {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;
+}
+.sd-slot-chip {
+  background: #fff; border: 1px solid #ddd;
+  padding: 10px 12px; border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center;
+  cursor: pointer; min-width: 80px; flex: 1;
+  transition: all 0.2s;
+}
+.sd-slot-chip.active {
+  border-color: #0047ff; background: #f0f5ff; color: #0047ff;
+  box-shadow: 0 4px 10px rgba(0, 71, 255, 0.15);
+}
+.sd-slot-chip { font-size: 13px; font-weight: 600; color: #333; }
+.sd-slot-dur { font-size: 10px; color: #888; margin-top: 2px; font-weight: 400; }
+
+/* MAIN ADD BTN */
+.sd-main-add-btn {
+  width: 100%;
+  padding: 15px;
+  background: #000; color: #fff;
+  border: none; border-radius: 12px;
+  font-size: 16px; font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.2s;
+}
+.sd-main-add-btn:hover { background: #222; }
+.sd-main-add-btn.disabled { background: #ccc; cursor: not-allowed; box-shadow: none; }
+
+/* 8. Help Links */
+.sd-help-links { background: #fff; padding: 20px 15px; margin-top: 10px; }
+.sd-help-links h3 { font-size: 15px; margin-bottom: 15px; }
+.sd-link-item { 
+  display: flex; justify-content: space-between; padding: 12px 0; 
+  border-bottom: 1px solid #f5f5f5; font-size: 13px; color: #333; 
+}
+
+/* 9. Sticky Footer */
+.sd-sticky-footer {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; border-top: 1px solid #eee;
+  padding: 12px 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 200;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+.sd-footer-price-block { display: flex; flex-direction: column; }
+.sd-footer-price { font-size: 18px; font-weight: 700; color: #0047ff; }
+.sd-footer-time { font-size: 11px; color: #666; }
+
+.sd-footer-btn {
+  padding: 12px 30px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer;
+}
+.sd-footer-btn.black { background: #000; color: #fff; }

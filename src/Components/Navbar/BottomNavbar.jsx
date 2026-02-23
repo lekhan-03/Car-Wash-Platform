@@ -21,20 +21,21 @@ const BottomNavbar = () => {
 
   return (
     <div className="bottom-navbar mobile-only">
-      
-      <Link to="/CarWash" className={`nav-item ${isActive("/CarWash")}`}>
-        <div className="icon-wrapper">
-          <img src={washIcon} alt="Car Wash" />
-        </div>
-        <span>Car Wash</span>
-      </Link>
-
-      <Link to="/HomeService" className={`nav-item ${isActive("/HomeService")}`}>
+      <Link to="/waterwash" className={`nav-item ${isActive("/waterwash")}`}>
         <div className="icon-wrapper">
           <img src={serviceIcon} alt="Service" />
         </div>
-        <span>Service</span>
+        <span>Water Wash</span>
       </Link>
+      
+      <Link to="/steamwash" className={`nav-item ${isActive("/steamwash")}`}>
+        <div className="icon-wrapper">
+          <img src={washIcon} alt="Car Wash" />
+        </div>
+        <span>Steam Wash</span>
+      </Link>
+
+      
 
       <Link to="/Detailing" className={`nav-item ${isActive("/Detailing")}`}>
         <div className="icon-wrapper">

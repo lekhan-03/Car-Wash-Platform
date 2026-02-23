@@ -1,15 +1,21 @@
 import React, { useState, useEffect, useMemo } from "react";
-import "./HomeService.css";
+import "./steamService.css";
 import { motion, AnimatePresence } from "framer-motion";
-import { services } from "../../data/servicesData"; 
+import { services } from "../../data/steamServices"; 
 import adsData from "../../data/detailAdsData";
 import ServiceList from "./ServiceList"; 
-import ServiceDetails from "./ServiceDetail"; 
+import SteamServiceDetail from "./ServiceDetail";
 import MonthlyPackages from "./MonthlyPackages"; 
 
 // --- CATEGORIES AS KEYWORDS ---
 const defaultCategories = [
   
+  { 
+    id: "steam-wash", 
+    label: "Steam Wash", 
+    keywords: ["steam", "dry", "eco"] ,
+    exclude: ["foam"]
+  },
   { 
     id: "interior", 
     label: "💺 Interior", 
@@ -27,8 +33,8 @@ const defaultCategories = [
   }
 ];
 
-const HomeService = () => {
-  const [selectedCategory, setSelectedCategory] = useState("with-water");
+const SteamService = () => {
+  const [selectedCategory, setSelectedCategory] = useState("steam-water");
   const [selectedService, setSelectedService] = useState(null);
   const [viewMode, setViewMode] = useState("one-time"); 
   const [bannerIndex, setBannerIndex] = useState(0);
@@ -216,7 +222,7 @@ const HomeService = () => {
             >
               <div className="sheet-handle-bar"><div className="handle"></div></div>
               <div className="sheet-content-scroll">
-                 <ServiceDetails service={selectedService} onBack={closeBottomSheet} />
+                 <SteamServiceDetail service={selectedService} onBack={closeBottomSheet} />
               </div>
             </motion.div>
           </>
@@ -226,4 +232,4 @@ const HomeService = () => {
   );
 };
 
-export default HomeService;
+export default SteamService;

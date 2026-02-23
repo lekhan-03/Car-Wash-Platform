@@ -92,8 +92,9 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <ul className="nav-menu desktop-only">
-            <li><Link to="/CarWash">Car Wash</Link></li>
-            <li><Link to="/HomeService">Service</Link></li>
+            <li><Link to="/waterwash">Water wash</Link></li>
+            <li><Link to="/steamwash">Steam Wash</Link></li>
+            
             <li><Link to="/Detailing">Detailing</Link></li>
             <li><Link to="/insurance">Insurance</Link></li>
           </ul>

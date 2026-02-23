@@ -3,13 +3,15 @@ import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './Pages/Home';
 import Insurance from './Pages/Insurance/Insurance';
-import CarWash from './Pages/CarWash/CarWashPage';
+// import CarWash from './Pages/CarWash/CarWashPage';
+import SteamService from './Components/SteamServices/SteamService';
 import HomeService from './Components/HomeServices/HomeService';
 import ServiceDetail from './Components/HomeServices/ServiceDetail';
 import Detailing from './Pages/Detailing/Detailing';
 import Cart from './Pages/Cart/Cart';
 import LoginSignup from './Pages/LoginSIgnup';
-import CarWashDetails from './Pages/CarWash/CarWashDetails';
+// import CarWashDetails from './Pages/CarWash/CarWashDetails';
+import SteamServiceDetail from './Components/SteamServices/ServiceDetail';
 // import SelectCarModal from './Components/Navbar/SelectCarModal';
 // import ProductDetails from './Pages/Products/ProductDetails';
 import ProductDetailing from './Pages/Detailing/DetailingProductDetails';
@@ -37,12 +39,12 @@ function App() {
           <Route path="/" element={<Home />} />
 
           {/* Car Wash */}
-          <Route path="/carwash" element={<CarWash />} />
-          <Route path="/carwash/:id" element={<CarWashDetails />} />
+          <Route path="/steamwash" element={<SteamService />} />
+          <Route path="/steamwash/:id" element={<SteamServiceDetail />} />
 
           {/* Home Service */}
-          <Route path="/homeservice" element={<HomeService />} />
-          <Route path="/homeservice/service/:id" element={<ServiceDetail />} />
+          <Route path="/waterwash" element={<HomeService />} />
+          <Route path="/waterwash/service/:id" element={<ServiceDetail />} />
 
           {/* Detailing */}
           <Route path="/detailing" element={<Detailing />} />
