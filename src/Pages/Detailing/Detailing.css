@@ -259,3 +259,56 @@
 .stat-card { display: flex; flex-direction: column; align-items: center; gap: 5px; }
 .stat-val { font-weight: 800; font-size: 19px; color: #0047ff; }
 .stat-lbl { font-size: 10px; color: #999; font-weight: 600; }
+.card-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px; /* Spacing between groups */
+}
+
+.detailing-card {
+  background: #fff; 
+  border-radius: 18px; 
+  padding: 18px;
+  display: flex; 
+  justify-content: space-between;
+  /* Remove bottom shadow if you want it to blend into the promo */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+  cursor: pointer;
+  position: relative;
+  z-index: 2; /* Keeps card above the promo strip's margin */
+}
+
+.promo-banner-strip {
+  background: #040404; /* Matches the Rev2Blush blue */
+  color: white; 
+  padding: 10px 16px; 
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  font-weight: 600; 
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+  /* The Fix: Pull the banner up to touch the card */
+  margin-top: -8px; 
+  padding-top: 15px; /* Extra padding to account for the overlap */
+  z-index: 1;
+  position: relative;
+}
+
+.promo-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Ensure images don't overflow */
+.card-media img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 12px;
+}

@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
+import { Sparkles } from "lucide-react";
 import "./HomeService.css";
 import { motion, AnimatePresence } from "framer-motion";
+
 import { services } from "../../data/servicesData"; 
 import adsData from "../../data/detailAdsData";
 import ServiceList from "./ServiceList"; 
 import ServiceDetails from "./ServiceDetail"; 
-import MonthlyPackages from "./MonthlyPackages"; 
 
 // --- CATEGORIES AS KEYWORDS ---
 const defaultCategories = [
-  
   { 
     id: "interior", 
     label: "💺 Interior", 
@@ -28,9 +29,10 @@ const defaultCategories = [
 ];
 
 const HomeService = () => {
-  const [selectedCategory, setSelectedCategory] = useState("with-water");
+  const navigate = useNavigate();
+  // Defaulting to "interior" since "with-water" wasn't in the defaultCategories array
+  const [selectedCategory, setSelectedCategory] = useState("interior");
   const [selectedService, setSelectedService] = useState(null);
-  const [viewMode, setViewMode] = useState("one-time"); 
   const [bannerIndex, setBannerIndex] = useState(0);
 
   // Auto-scroll banner
@@ -52,33 +54,28 @@ const HomeService = () => {
   // 1. FLATTEN ALL SERVICES into a single array for searching
   const allServices = useMemo(() => {
     if (Array.isArray(services)) return services;
-    // If services is an object { 'cat1': [], 'cat2': [] }, flatten it
     return Object.values(services).flat();
   }, []);
 
   // 2. FILTER SERVICES BASED ON CATEGORY KEYWORDS
   const currentServices = useMemo(() => {
-    if (viewMode === "monthly") return [];
-
     const categoryDef = defaultCategories.find(c => c.id === selectedCategory);
     if (!categoryDef) return allServices;
 
     return allServices.filter(service => {
       const name = service.name ? service.name.toLowerCase() : "";
       
-      // Check if ANY keyword matches
       const matchesKeyword = categoryDef.keywords.some(keyword => 
         name.includes(keyword)
       );
 
-      // Check if any EXCLUDED keyword is present (e.g. no "waterless" in "water wash")
       const matchesExclude = categoryDef.exclude 
         ? categoryDef.exclude.some(ex => name.includes(ex))
         : false;
 
       return matchesKeyword && !matchesExclude;
     });
-  }, [selectedCategory, allServices, viewMode]);
+  }, [selectedCategory, allServices]);
 
   return (
     <div className="home-container">
@@ -87,45 +84,35 @@ const HomeService = () => {
       <div className="glass-header">
         <div className="header-top-row">
           {/* <div className="location-info">
-            <span className="location-icon">📍</span>
-            <div className="loc-text">
-              <span className="loc-label">Location</span>
-              <span className="loc-city">Bengaluru, KA</span>
-            </div>
+             <MapPin size={18} color="#ff3b30" />
+             <div className="loc-text">
+                <span className="loc-label">Current Location</span>
+                <span className="loc-city">Vasanthnagar, Bengaluru</span>
+             </div>
           </div> */}
           
-          {/* TOGGLE SWITCH */}
-          <div className="view-toggle-container">
-            <div 
-              className={`toggle-option ${viewMode === "one-time" ? "active" : ""}`}
-              onClick={() => setViewMode("one-time")}
-            >
-              One-Time
-            </div>
-            <div 
-              className={`toggle-option ${viewMode === "monthly" ? "active" : ""}`}
-              onClick={() => setViewMode("monthly")}
-            >
-              Monthly 👑
-            </div>
-            <div className={`active-slider ${viewMode === "monthly" ? "slide-right" : ""}`}></div>
-          </div>
+          {/* REDIRECT BUTTON FOR MONTHLY PLANS */}
+          <button 
+            className="subscription-nav-btn"
+            onClick={() => navigate("/monthly-packages")}
+          >
+            <Sparkles size={14} fill="white" />
+            <span>Monthly Plans</span>
+          </button>
         </div>
 
-        {/* Categories Scroll (Visible in One-Time mode) */}
-        {viewMode === "one-time" && (
-          <div className="category-scroll">
-            {defaultCategories.map((cat) => (
-              <button 
-                key={cat.id} 
-                className={`glass-pill ${selectedCategory === cat.id ? "active" : ""}`}
-                onClick={() => setSelectedCategory(cat.id)}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-        )}
+        {/* Categories Scroll */}
+        <div className="category-scroll">
+          {defaultCategories.map((cat) => (
+            <button 
+              key={cat.id} 
+              className={`glass-pill ${selectedCategory === cat.id ? "active" : ""}`}
+              onClick={() => setSelectedCategory(cat.id)}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="scrollable-content with-header-space">
@@ -152,25 +139,19 @@ const HomeService = () => {
 
         {/* 3. CONTENT AREA */}
         <div className="content-area">
-          {viewMode === "one-time" ? (
-            <>
-              <div className="section-header">
-                <h3>Select Service</h3>
-              </div>
-              
-              {currentServices.length > 0 ? (
-                <ServiceList 
-                  services={currentServices} 
-                  onServiceClick={handleServiceClick} 
-                />
-              ) : (
-                <div className="no-services-found">
-                  <p>No services found for "{defaultCategories.find(c=>c.id===selectedCategory)?.label}".</p>
-                </div>
-              )}
-            </>
+          <div className="section-header">
+            <h3>Select Service</h3>
+          </div>
+          
+          {currentServices.length > 0 ? (
+            <ServiceList 
+              services={currentServices} 
+              onServiceClick={handleServiceClick} 
+            />
           ) : (
-            <MonthlyPackages />
+            <div className="no-services-found">
+              <p>No services found for "{defaultCategories.find(c=>c.id===selectedCategory)?.label}".</p>
+            </div>
           )}
         </div>
 

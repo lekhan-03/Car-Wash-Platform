@@ -10,7 +10,7 @@ const slides = [
     subHeadline: "CLEAN CAR",
     desc: "Premium Car Wash & Detailing Services",
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads/Hero/Hero1.png", // Replace with actual car image
-    link: "/CarWash"
+    link: "/waterwash"
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const slides = [
     subHeadline: "PERFECTION",
     desc: "Deep Clean & Sanitize Your Cabin",
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads/Hero/Hero2.png",
-    link: "/Detailing"
+    link: "/steamwash"
   },
   {
     id: 3,

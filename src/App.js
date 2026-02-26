@@ -25,6 +25,7 @@ import AccountAddresses from "./Pages/AccountSections/AccountAddresses";
 import AccountPayments from "./Pages/AccountSections/AccountPayments";
 import AccountHelp from "./Pages/AccountSections/AccountHelp";
 import Checkout from "./Pages/Checkout/Checkout";
+import MonthlyPackagePageWater from './Components/HomeServices/MonthlyPackages';
 
 
 function App() {
@@ -41,10 +42,12 @@ function App() {
           {/* Car Wash */}
           <Route path="/steamwash" element={<SteamService />} />
           <Route path="/steamwash/:id" element={<SteamServiceDetail />} />
+          
 
           {/* Home Service */}
           <Route path="/waterwash" element={<HomeService />} />
           <Route path="/waterwash/service/:id" element={<ServiceDetail />} />
+          <Route path="/monthly-packages" element={<MonthlyPackagePageWater />} />
 
           {/* Detailing */}
           <Route path="/detailing" element={<Detailing />} />

@@ -1,112 +1,131 @@
-import React from "react";
-import "./MonthlyPackages.css";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft, CheckCircle, ShieldCheck, Zap, Star } from "lucide-react";
 import { useCart } from "../../Context/CartContext";
+import "./MonthlyPackages.css";
 
-const packages = [
-  {
-    id: "pkg_1",
-    name: "Silver Shine",
-    washCount: 2,
-    price: 899,
-    originalPrice: 1200,
-    perWash: 449,
-    color: "linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%)", // Silver Gradient
-    benefits: ["Exterior Foam Wash", "Interior Vacuuming", "Tyre Dressing"],
-    popular: false
-  },
-  {
-    id: "pkg_2",
-    name: "Gold Glow",
-    washCount: 4,
-    price: 1599,
-    originalPrice: 2400,
-    perWash: 399,
-    color: "linear-gradient(135deg, #f1c40f 0%, #d35400 100%)", // Gold Gradient
-    benefits: ["4 Premium Washes", "1 Wax Polish FREE", "Priority Booking", "Interior Deep Clean"],
-    popular: true // Shows "Best Value"
-  },
-  {
-    id: "pkg_3",
-    name: "Platinum Pro",
-    washCount: 8,
-    price: 2999,
-    originalPrice: 4800,
-    perWash: 375,
-    color: "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)", // Electric Blue Gradient
-    benefits: ["8 Premium Washes", "2 Wax Polish", "Engine Bay Cleaning", "Dedicated Washer"],
-    popular: false
-  }
-];
+const plans = {
+  basic: [
+    { 
+      id: "silver", 
+      name: "Silver Shine", 
+      price: 899, 
+      original: 1200, 
+      washes: 2, 
+      features: ["Exterior Foam Wash", "Tyre Dressing", "Basic Vacuuming"], 
+      color: "#94a3b8" 
+    },
+    { 
+      id: "gold", 
+      name: "Gold Glow", 
+      price: 1599, 
+      original: 2400, 
+      washes: 4, 
+      features: ["4 Premium Washes", "Interior Vacuuming", "Dashboard Polish", "Glass Cleaning"], 
+      color: "#f59e0b", 
+      popular: true 
+    }
+  ],
+  premium: [
+    { 
+      id: "platinum", 
+      name: "Platinum Pro", 
+      price: 2999, 
+      original: 4800, 
+      washes: 8, 
+      features: ["8 Premium Washes", "Engine Bay Cleaning", "Deep Interior Spa", "Hard Wax Protection"], 
+      color: "#3b82f6" 
+    }
+  ]
+};
 
-const MonthlyPackages = () => {
+const MonthlyPackagePageSteam = () => {
+  const navigate = useNavigate();
   const { addToCart } = useCart();
+  const [tier, setTier] = useState("basic");
 
-  const handleSubscribe = (pkg) => {
-    // Add package to cart with specific type
-    addToCart({
-      id: pkg.id,
-      name: pkg.name + " Membership",
-      price: pkg.price,
-      image: "https://cdn-icons-png.flaticon.com/512/3845/3845868.png", // Generic Membership Icon
-      type: "Membership",
-      quantity: 1
+  const handleSubscribe = (plan) => {
+    addToCart({ 
+        id: plan.id,
+        name: plan.name + " Membership",
+        price: plan.price,
+        image: "https://cdn-icons-png.flaticon.com/512/3845/3845868.png",
+        type: "Membership",
+        quantity: 1
     });
+    navigate('/cart');
   };
 
   return (
-    <div className="packages-container">
-      <div className="section-header">
-        <h3>Monthly Subscriptions 💎</h3>
-        <p>Save up to 40% with our smart plans.</p>
+    <div className="package-page">
+      <div className="package-nav">
+        <button onClick={() => navigate(-1)} className="back-icon"><ArrowLeft size={24} color="#1e293b" /></button>
+        <h1>Subscription Plans</h1>
+        <div style={{ width: 24 }} /> {/* Placeholder for center alignment */}
       </div>
 
-      <div className="packages-grid">
-        {packages.map((pkg) => (
-          <div className="package-card" key={pkg.id}>
+      <div className="tier-selector">
+        {["basic", "premium"].map(t => (
+          <button 
+            key={t} 
+            className={tier === t ? "active" : ""} 
+            onClick={() => setTier(t)}
+          >
+            {t.charAt(0).toUpperCase() + t.slice(1)} Plans
+          </button>
+        ))}
+      </div>
+
+      <div className="plans-list">
+        {plans[tier].map((plan) => (
+          <div className={`plan-card ${plan.popular ? 'featured' : ''}`} key={plan.id}>
+            {plan.popular && (
+                <div className="popular-badge">
+                    <Star size={12} fill="white"/> Best Value
+                </div>
+            )}
             
-            {/* Header / Background */}
-            <div className="pkg-header" style={{ background: pkg.color }}>
-              {pkg.popular && <span className="best-value-badge">BEST VALUE</span>}
-              <div className="pkg-name-row">
-                <h4>{pkg.name}</h4>
-                <span className="wash-count-badge">{pkg.washCount} Washes</span>
+            <div className="plan-card-header">
+              <div className="plan-meta">
+                <h2 style={{ color: plan.color }}>{plan.name}</h2>
+                <span className="washes-count">{plan.washes} Washes / Month</span>
               </div>
-              <div className="pkg-price-row">
-                <span className="currency">₹</span>
-                <span className="price">{pkg.price}</span>
-                <span className="original">₹{pkg.originalPrice}</span>
-              </div>
-              <div className="per-wash-tag">
-                Effective: <strong>₹{pkg.perWash}/wash</strong>
+              <div className="plan-pricing">
+                <span className="price">₹{plan.price}</span>
+                <span className="old-price">₹{plan.original}</span>
               </div>
             </div>
 
-            {/* Benefits List */}
-            <div className="pkg-body">
-              <ul className="benefits-list">
-                {pkg.benefits.map((benefit, index) => (
-                  <li key={index}>
-                    <span className="check-icon">✓</span> {benefit}
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="savings-alert">
-                You save <strong>₹{pkg.originalPrice - pkg.price}</strong> with this pack!
-              </div>
+            <ul className="plan-features-list">
+              {plan.features.map((f, i) => (
+                <li key={i}>
+                    <CheckCircle size={16} color="#10b981" /> {f}
+                </li>
+              ))}
+            </ul>
 
-              <button 
-                className="subscribe-btn"
-                onClick={() => handleSubscribe(pkg)}
-              >
-                Subscribe Now
-              </button>
+            <div className="savings-banner">
+              <Zap size={14} fill="#f59e0b" color="#f59e0b" />
+              <span>You save ₹{plan.original - plan.price} every month!</span>
             </div>
+
+            <button 
+              className="buy-plan-btn" 
+              style={{ background: plan.color }} 
+              onClick={() => handleSubscribe(plan)}
+            >
+              Subscribe Now
+            </button>
           </div>
         ))}
+      </div>
+
+      <div className="insurance-trust-footer">
+        <ShieldCheck size={24} color="#0066ff" />
+        <p>Doorstep service included. 100% Satisfaction Guarantee.</p>
       </div>
     </div>
   );
 };
 
-export default MonthlyPackages;
+export default MonthlyPackagePageSteam;
