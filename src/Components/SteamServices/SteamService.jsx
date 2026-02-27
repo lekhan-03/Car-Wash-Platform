@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useMemo } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./steamService.css";
-
+import { Sparkles } from "lucide-react";
 import { services } from "../../data/steamServices";
 import adsData from "../../data/detailAdsData";
-import ServiceList from "./ServiceList";
+import ServiceList from "./ServiceListSteam";
 import SteamServiceDetail from "./ServiceDetail";
 
 // --- CATEGORIES AS KEYWORDS ---
@@ -34,8 +34,8 @@ const defaultCategories = [
 ];
 
 const SteamService = () => {
-  // const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState("steam-wash");
+  const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState("default");
   const [selectedService, setSelectedService] = useState(null);
   const [bannerIndex, setBannerIndex] = useState(0);
 
@@ -86,8 +86,8 @@ const SteamService = () => {
 
       {/* 1. GLASS HEADER */}
       <div className="glass-header">
-        {/* <div className="header-top-row">
-          <div className="location-info">
+        <div className="header-top-row">
+          {/* <div className="location-info">
              <MapPin size={18} color="#ff3b30" />
              <div className="loc-text">
                 <span className="loc-label">Current Location</span>
@@ -96,14 +96,14 @@ const SteamService = () => {
           </div>
 
           {/* NEW REDIRECT BUTTON FOR MONTHLY PLANS */}
-          {/* <button
+          <button
             className="subscription-nav-btn"
             onClick={() => navigate("/monthly-packages")}
           >
             <Sparkles size={14} fill="white" />
             <span>Monthly Plans</span>
           </button>
-        </div> */}
+        </div>
 
         {/* Categories Scroll */}
         <div className="category-scroll">

@@ -324,9 +324,13 @@
 .blue-glow { background: rgba(0, 102, 255, 0.3); }
 .white-glow { background: rgba(255, 255, 255, 0.2); }
 
-/* --- PREMIUM PROMO BANNER --- */
+/* --- PREMIUM PROMO BANNER --- *//* --- PREMIUM PROMO BANNER --- */
 .premium-promo-banner {
-  background: #0066ff; /* Accent Blue Background */
+  /* Rich animated gradient instead of a flat solid color */
+  background: linear-gradient(135deg, #0066ff 0%, #0042cc 50%, #002db3 100%);
+  background-size: 200% 200%;
+  animation: bannerGradient 6s ease infinite;
+  
   border-radius: 24px;
   padding: 30px 24px;
   display: flex;
@@ -334,54 +338,217 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0, 102, 255, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 102, 255, 0.3); /* Stronger outer glow */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Premium glass edge */
 }
 
-.promo-content { z-index: 10; max-width: 55%; }
+/* Background gradient animation */
+@keyframes bannerGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
+/* Drifting ambient spotlight to make the text pop */
+.premium-promo-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -40px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: spotlightDrift 8s ease-in-out infinite alternate;
+}
+
+@keyframes spotlightDrift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 30px) scale(1.1); }
+}
+
+.promo-content { 
+  z-index: 10; 
+  max-width: 55%; 
+  position: relative; 
+}
+
+/* Smoother, softer pulse badge */
 .pulse-badge {
-  background: #fff;
+  background: #ffffff;
   color: #ff4d4f;
   font-size: 10px;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 12px;
   display: inline-block;
   margin-bottom: 12px;
-  animation: pulse 2s infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: softPulse 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-  70% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+@keyframes softPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); }
   100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
 
-.promo-content h2 { font-size: 26px; color: #fff; margin: 0 0 4px 0; font-weight: 800; line-height: 1.1; }
-.promo-content p { font-size: 12px; color: #e3f2fd; margin: 0 0 15px 0; line-height: 1.4; }
-.promo-content strong { color: #fff; font-size: 14px; background: rgba(10, 25, 41, 0.2); padding: 2px 6px; border-radius: 4px; }
+.promo-content h2 { 
+  font-size: 26px; 
+  color: #fff; 
+  margin: 0 0 6px 0; 
+  font-weight: 800; 
+  line-height: 1.15; 
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
 
+.promo-content p { 
+  font-size: 13px; 
+  color: #e3f2fd; 
+  margin: 0 0 18px 0; 
+  line-height: 1.4; 
+}
+
+.promo-content strong { 
+  color: #fff; 
+  font-size: 14px; 
+  background: rgba(10, 25, 41, 0.25); 
+  padding: 4px 8px; 
+  border-radius: 6px; 
+  backdrop-filter: blur(4px);
+}
+
+/* Premium Button with "Lift" Animation */
 .promo-btn {
-  background: #0a1929;
+  background: #0a1929; /* Midnight Blue */
   color: #fff;
   border: none;
-  padding: 8px 20px;
+  padding: 10px 24px;
   border-radius: 20px;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
   cursor: pointer;
-  transition: background 0.2s;
+  box-shadow: 0 6px 15px rgba(10, 25, 41, 0.3);
+  /* Cubic-bezier gives it a snappy, spring-like feel */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.promo-btn:hover { background: #172a3a; }
 
+.promo-btn:hover { 
+  background: #172a3a; 
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 20px rgba(10, 25, 41, 0.4);
+}
+
+.promo-btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 10px rgba(10, 25, 41, 0.2);
+}
+
+/* Floating Image Animation with 3D Shadow */
 .promo-image-wrapper {
   position: absolute;
-  right: -30px;
-  bottom: -20px;
+  right: -20px;
+  bottom: -15px;
   width: 250px;
   pointer-events: none;
+  z-index: 5;
+  /* Casts a realistic shadow directly from the shape of the image onto the blue banner */
+  filter: drop-shadow(-10px 15px 15px rgba(0, 0, 0, 0.3));
+  /* Floating animation */
+  animation: floatPromoItem 5s ease-in-out infinite;
 }
-.promo-image-wrapper img { width: 100%; display: block; }
+
+.promo-image-wrapper img { 
+  width: 100%; 
+  display: block; 
+}
+
+/* Makes the image gently bob up and down and rotate slightly */
+@keyframes floatPromoItem {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-1.5deg); }
+}
+
+/* =========================================
+   MOBILE OPTIMIZATION FOR PROMO BANNER
+   ========================================= */
+
+/* For Tablets and smaller desktop screens */
+@media (max-width: 768px) {
+  .premium-promo-banner {
+    padding: 24px 20px;
+  }
+  
+  .promo-content {
+    max-width: 60%; /* Give text a bit more breathing room */
+  }
+
+  .promo-content h2 {
+    font-size: 22px;
+  }
+
+  .promo-image-wrapper {
+    width: 200px; /* Shrink the floating image */
+    right: -15px;
+  }
+}
+
+/* For Mobile Phones */
+@media (max-width: 480px) {
+  .premium-promo-banner {
+    padding: 20px 16px;
+    border-radius: 20px; /* Slightly tighter curves for mobile */
+  }
+
+  .promo-content {
+    max-width: 65%; /* Prioritize the text taking up space */
+  }
+
+  .pulse-badge {
+    font-size: 9px;
+    padding: 4px 10px;
+    margin-bottom: 8px;
+  }
+
+  .promo-content h2 {
+    font-size: 18px; /* Scale down the main heading */
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .promo-content p {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .promo-content strong {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+
+  .promo-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* Keep the car image out of the text's way on tiny screens */
+  .promo-image-wrapper {
+    width: 145px; 
+    right: -25px; 
+    bottom: -10px;
+  }
+  
+  /* Shrink the ambient spotlight so it doesn't wash out the mobile card */
+  .premium-promo-banner::before {
+    width: 180px;
+    height: 180px;
+    top: -40px;
+    left: -20px;
+  }
+}
 .products-img-wrapper {
   position: absolute;
   bottom: 0;

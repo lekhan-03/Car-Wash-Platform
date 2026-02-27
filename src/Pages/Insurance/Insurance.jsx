@@ -58,8 +58,8 @@ export default function Insurance() {
           </div>
           <img 
             src={activeTab === 'car' 
-              ? "https://cdn3d.iconscout.com/3d/premium/thumb/car-insurance-4993616-4160467.png" 
-              : "https://cdn3d.iconscout.com/3d/premium/thumb/motorcycle-insurance-6789785-5586617.png"} 
+              ? "https://res.cloudinary.com/ddgxphtda/image/upload/v1772188388/Insurance_photo.png" 
+              : "https://res.cloudinary.com/ddgxphtda/image/upload/v1772189364/bike_insurance.png"} 
             className="hero-3d-img" 
             alt="vehicle"
           />

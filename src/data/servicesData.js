@@ -82,7 +82,7 @@ export const services = {
       name: "Interior + Exterior + Underbody + Odor Blaster + Ceramic Coat",
       description: "Deep cleaning with odor treatment and ceramic protection.",
       price: { hatchback: 579, sedan: 579, suv: 630, lux: 699 },
-      image: "images/HomeService/Services/Pressure Wash.png",
+      image: "https://res.cloudinary.com/ddgxphtda/image/upload/HomeService/Services/Foaming.png",
       video: "/videos/washDemo.mp4",
       features: ["Foam Wash", "Odor Eliminator", "Hybrid CeramicCoating"],
       gallery: [...fullGallery],

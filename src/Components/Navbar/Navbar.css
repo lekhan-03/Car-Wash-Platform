@@ -1,12 +1,16 @@
-/* src/Components/Navbar/Navbar.css */
+/* src/Components/Navbar/Navbar.css - Premium UI/UX */
 
-/* --- Wrapper to hold sticky behavior --- */
+/* --- Wrapper (Glassmorphism) --- */
 .navbar-container {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
 }
 
 /* --- Base Navbar --- */
@@ -15,119 +19,139 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
-  background: #fff;
+  background: transparent;
 }
 
 /* --- Logo --- */
+/* --- Animated Premium Logo (Fast Color Shift) --- */
 .logo {
-  font-size: 24px;
-  font-weight: 800;
-  /* New Gradient: Deep Blue to Cyan */
-  background: linear-gradient(90deg, #0066ff, #00d2ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 26px;
+  font-weight: 900;
   text-decoration: none;
   letter-spacing: -0.5px;
+  
+  /* 1. Vibrant Multi-Color Gradient */
+  background: linear-gradient(
+    90deg, 
+    #0066ff, /* Electric Blue */
+    #a855f7, /* Purple */
+    #ec4899, /* Pink */
+    #06b6d4, /* Cyan */
+    #0066ff  /* Back to Blue to make the loop seamless */
+  );
+  background-size: 300% auto; /* Stretched so we can scroll through the colors */
+  
+  /* 2. Clip the background to the text */
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* 3. The FAST Interval Animation (1.5 seconds) */
+  animation: fastColorShift 1.5s linear infinite;
+  
+  /* Smooth Hover Physics */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Hover: Pops up with a glowing shadow */
+.logo:hover {
+  transform: scale(1.05) translateY(-1px);
+  filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.4)); /* Purple glow */
+}
+
+/* Click: Presses inward */
+.logo:active {
+  transform: scale(0.96) translateY(1px);
+}
+
+/* The Keyframe that rapidly scrolls the colors */
+@keyframes fastColorShift {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
 /* --- Desktop Menu --- */
 .nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+  list-style: none; display: flex; gap: 32px; margin: 0; padding: 0;
 }
 .nav-menu li a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 600;
-  font-size: 15px;
-  transition: color 0.2s;
+  text-decoration: none; color: #64748b; font-weight: 600; font-size: 15px;
+  transition: all 0.3s ease; position: relative;
 }
-.nav-menu li a:hover { 
-  color: #0066ff; /* Electric Blue hover */
+.nav-menu li a:hover { color: #0066ff; }
+/* Underline animation on hover */
+.nav-menu li a::after {
+  content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%;
+  background-color: #0066ff; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%); border-radius: 2px;
 }
-
-/* --- Navbar Icons --- */
-.navbar-icons {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+.nav-menu li a:hover::after { width: 100%; }
 
 /* --- Desktop Pills --- */
+.navbar-icons { display: flex; align-items: center; gap: 16px; }
+
 .nav-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #f0f7ff; /* Very light blue bg */
-  padding: 6px 14px;
-  border-radius: 30px;
-  border: 1px solid #cce4ff; /* Light blue border */
-  cursor: pointer;
-  transition: all 0.2s ease;
+  display: flex; align-items: center; gap: 8px;
+  background: #f8fafc; padding: 6px 14px; border-radius: 30px;
+  border: 1px solid #e2e8f0; cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .nav-pill:hover { 
-  background: #e3f2fd;
-  border-color: #0066ff;
-  transform: translateY(-1px); 
+  background: #fff; border-color: #0066ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 102, 255, 0.1);
 }
+.nav-pill:active { transform: translateY(1px) scale(0.98); }
 
-.pill-icon { width: 20px; height: 20px; }
+.pill-icon { width: 20px; height: 20px; transition: transform 0.3s; }
+.nav-pill:hover .pill-icon { transform: scale(1.1); }
 .pill-text { display: flex; flex-direction: column; line-height: 1.1; }
-.pill-label { 
-  font-size: 9px; 
-  color: #0066ff; /* Blue Text */
-  font-weight: 700; 
-  text-transform: uppercase; 
-}
-.pill-value { font-size: 13px; color: #333; font-weight: 700; white-space: nowrap; }
+.pill-label { font-size: 9px; color: #0066ff; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+.pill-value { font-size: 13px; color: #0f172a; font-weight: 700; white-space: nowrap; }
 
-/* --- Icons --- */
+/* --- Cart Icon & Profile Icon --- */
 .icon-btn {
-  background: none; border: none; cursor: pointer; padding: 5px; position: relative;
+  background: none; border: none; cursor: pointer; padding: 6px; position: relative;
+  border-radius: 50%; transition: background 0.2s;
+  display: flex; align-items: center; justify-content: center;
 }
-.icon-btn img { width: 24px; height: 24px; }
+.icon-btn:hover { background: #f1f5f9; }
+.svg-icon { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.icon-btn:hover .svg-icon { transform: scale(1.15) rotate(-5deg); color: #0066ff; }
 
 .cart-badge {
-  position: absolute; top: -2px; right: -2px;
-  background: #0066ff; /* Blue Badge */
-  color: white; font-size: 10px; font-weight: bold;
-  height: 16px; width: 16px; display: flex; align-items: center; justify-content: center;
+  position: absolute; top: 0; right: 0;
+  background: #ff3b30; color: white; font-size: 10px; font-weight: 800;
+  height: 18px; width: 18px; display: flex; align-items: center; justify-content: center;
   border-radius: 50%; border: 2px solid white;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* --- Profile --- */
+/* --- Profile Dropdown (Bouncy Entrance) --- */
 .profile-section { position: relative; }
 .profile-dropdown {
-  display: none; position: absolute; right: 0; top: 45px;
-  background: white; border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1); min-width: 180px; padding: 8px;
+  display: none; position: absolute; right: 0; top: 50px;
+  background: #fff; border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1); min-width: 200px; padding: 10px;
   flex-direction: column; z-index: 1001; border: 1px solid #f0f0f0;
+  animation: slideUpFade 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: top right;
 }
 .profile-section:hover .profile-dropdown { display: flex; }
-.dropdown-header { padding: 8px 12px; font-size: 13px; color: #888; font-weight: 600; border-bottom: 1px solid #eee; }
-.profile-dropdown a, .logout-btn {
-  text-decoration: none; color: #333; font-size: 14px; padding: 10px; border-radius: 8px; text-align: left; background: none; border: none; cursor: pointer;
-}
-.profile-dropdown a:hover, .logout-btn:hover { 
-  background: #e3f2fd;
-  color: #0066ff; 
-}
 
+.dropdown-header { padding: 10px 12px; font-size: 13px; color: #64748b; font-weight: 700; border-bottom: 1px solid #f1f5f9; margin-bottom: 5px; }
+.profile-dropdown a, .logout-btn {
+  text-decoration: none; color: #0f172a; font-size: 14px; font-weight: 500; padding: 10px 12px; border-radius: 10px; text-align: left; background: none; border: none; cursor: pointer; transition: all 0.2s;
+}
+.profile-dropdown a:hover, .logout-btn:hover { background: #f0f7ff; color: #0066ff; padding-left: 16px; }
+
+/* Login Button */
 .login-link { 
-  color: #0066ff; 
-  font-weight: 700; 
-  text-decoration: none; 
-  border: 1px solid #0066ff; 
-  padding: 6px 16px; 
-  border-radius: 20px; 
+  color: #0066ff; font-weight: 800; text-decoration: none; 
+  border: 2px solid #0066ff; padding: 8px 20px; border-radius: 20px; 
+  transition: all 0.3s;
 }
-.login-link:hover {
-  background: #0066ff;
-  color: white;
-}
+.login-link:hover { background: #0066ff; color: white; box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3); transform: translateY(-2px); }
 
 /* --- MOBILE ONLY STYLES --- */
 .mobile-only { display: none; }
@@ -136,54 +160,36 @@
   .desktop-only { display: none !important; }
   .mobile-only { display: flex !important; }
 
-  .navbar { padding: 12px 16px; } /* Slimmer padding on mobile */
+  .navbar { padding: 12px 16px; }
 
-  /* Mobile Sub-Header Row */
   .mobile-action-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px 12px 16px; /* Bottom padding only */
-    background: #fff;
-    border-bottom: 1px solid #f0f0f0;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 16px 12px 16px; background: transparent; border-bottom: none;
   }
 
-  /* Mobile Location */
-  .mobile-location {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .mob-loc-icon {
-    width: 20px;
-    filter: drop-shadow(0 2px 2px rgba(0, 102, 255, 0.3));
-  }
-  .mob-loc-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-  }
-  .mob-label { font-size: 10px; color: #888; font-weight: 600; text-transform: uppercase; }
-  .mob-value { font-size: 14px; font-weight: 700; color: #222; }
+  .mobile-location { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  .mob-loc-icon { width: 22px; filter: drop-shadow(0 2px 4px rgba(0, 102, 255, 0.3)); }
+  .mob-loc-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .mob-label { font-size: 10px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .mob-value { font-size: 14px; font-weight: 800; color: #0f172a; }
 
-  /* Mobile Car Pill */
   .mobile-car-pill {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #f0f7ff; /* Very light blue */
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    background: #fff; padding: 6px 12px; border-radius: 20px; border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); cursor: pointer; transition: transform 0.2s;
   }
-  .mob-car-text {
-    font-size: 12px;
-    font-weight: 700;
-    color: #0066ff; /* Electric Blue */
-  }
-  .mob-car-icon {
-    width: 18px;
-    height: 18px;
-  }
+  .mobile-car-pill:active { transform: scale(0.95); }
+  .mob-car-text { font-size: 12px; font-weight: 800; color: #0066ff; }
+  .mob-car-icon { width: 20px; height: 20px; }
+}
+
+/* Reusable Animations */
+@keyframes slideUpFade {
+  0% { opacity: 0; transform: translateY(15px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes popIn {
+  0% { transform: scale(0); }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }

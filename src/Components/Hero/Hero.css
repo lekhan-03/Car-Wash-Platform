@@ -1,187 +1,163 @@
-/* src/Components/Hero/Hero.css */
+/* src/Components/Hero/Hero.css - Premium Modernization */
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-.hero-container {
+.hero-premium-container {
   width: 100%;
-  height: 350px; /* Taller for banner look */
+  height: 400px; /* Slightly taller for breathing room */
   position: relative;
   overflow: hidden;
-  /* Deep Dark Navy/Black Background matching the image */
-  background: radial-gradient(circle at 70% 50%, #0d1b2a 0%, #000000 100%);
-  border-bottom: 4px solid #0066ff; /* Bottom accent line */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  /* Deep Midnight Gradient */
+  background: linear-gradient(135deg, #020813 0%, #0a1929 50%, #000000 100%);
+  background-size: 200% 200%;
+  animation: bgShift 15s ease infinite;
   display: flex;
   align-items: center;
+  border-bottom: 2px solid rgba(255,255,255,0.05);
 }
 
-.hero-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5%; /* 5% padding on sides */
-  z-index: 1;
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.hero-slide.active {
-  opacity: 1;
-  z-index: 2;
-}
-
-/* --- Content Styling --- */
-.hero-content {
-  flex: 1;
-  z-index: 3;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 600px;
-}
-
-.hero-content h1 {
-  font-size: 42px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin: 0 0 10px 0;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.hero-content h1 .highlight-text {
-  color: #ffffff; /* Keep white for "CLEAN CAR" */
-}
-
-.hero-content p {
-  font-size: 16px;
-  font-weight: 500;
-  color: #3b82f6; /* Blueish text for subtitle "Premium Car Wash..." */
-  margin: 0 0 25px 0;
-  text-transform: capitalize;
-}
-
-/* --- Rectangular Button (Matching Image) --- */
-.hero-btn-rect {
-  background: #0066ff; /* Solid Electric Blue */
-  color: #fff;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 20px; /* Small radius for rectangular look */
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
-  transition: all 0.3s ease;
-}
-
-.hero-btn-rect:hover {
-  background: #0052cc;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.6);
-}
-
-/* --- Image Side --- */
-.hero-image-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 100%;
-}
-
-.slide-img {
-  width: 100%;
-  max-width: 500px;
-  object-fit: contain;
-  z-index: 2;
-  /* Slight blue shadow behind car */
-  filter: drop-shadow(0 0 20px rgba(0, 102, 255, 0.2)); 
-}
-
-/* --- Bubble Effects (Subtle background details) --- */
-.bubble {
+/* --- AMBIENT GLOW ORBS --- */
+.glow-orb {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  z-index: 1;
-  animation: float 6s infinite ease-in-out;
+  filter: blur(60px);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+  transition: background 1s ease;
 }
-.b1 { width: 40px; height: 40px; top: 20%; right: 20%; animation-delay: 0s; }
-.b2 { width: 20px; height: 20px; top: 60%; right: 40%; animation-delay: 2s; }
-.b3 { width: 60px; height: 60px; top: 10%; right: 10%; animation-delay: 1s; }
+.orb-1 { width: 300px; height: 300px; top: -50px; left: -50px; animation: orbit 10s linear infinite; }
+.orb-2 { width: 400px; height: 400px; bottom: -100px; right: -100px; animation: orbit 15s linear infinite reverse; }
 
-@keyframes float {
-  0% { transform: translateY(0px); opacity: 0.5; }
-  50% { transform: translateY(-20px); opacity: 0.8; }
-  100% { transform: translateY(0px); opacity: 0.5; }
-}
-
-/* --- Dots Indicator --- */
-.hero-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 10;
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
 }
 
-.h-dot {
-  width: 8px;
-  height: 8px;
-  background: rgba(255,255,255,0.3);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s;
+/* --- SLIDE LAYOUT --- */
+.hero-slide-modern {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 8%;
+  opacity: 0; z-index: 1; pointer-events: none;
+  transition: opacity 0.6s ease-in-out;
 }
 
-.h-dot.active {
-  background: #0066ff;
-  width: 20px;
-  border-radius: 4px;
+.hero-slide-modern.active {
+  opacity: 1; z-index: 2; pointer-events: all;
 }
 
-/* --- Mobile Responsive --- */
+/* --- STAGGERED TEXT REVEAL --- */
+.hero-content-staggered {
+  flex: 1; z-index: 3; display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start; max-width: 500px;
+}
+
+.hero-title, .hero-subtitle, .hero-desc, .hero-btn-premium {
+  opacity: 0; transform: translateY(20px);
+}
+
+/* When slide is active, trigger staggered fade-up */
+.hero-slide-modern.active .animate-1 { animation: fadeUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s forwards; }
+.hero-slide-modern.active .animate-2 { animation: fadeUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s forwards; }
+.hero-slide-modern.active .animate-3 { animation: fadeUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards; }
+.hero-slide-modern.active .animate-4 { animation: fadeUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s forwards; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title { font-size: 38px; font-weight: 800; color: #fff; margin: 0; line-height: 1; letter-spacing: 1px; }
+.hero-subtitle { font-size: 42px; font-weight: 800; color: #0066ff; margin: 0 0 12px 0; line-height: 1.1; text-shadow: 0 0 20px rgba(0, 102, 255, 0.4); }
+.hero-desc { font-size: 15px; font-weight: 500; color: #cbd5e1; margin: 0 0 30px 0; line-height: 1.5; }
+
+/* --- PREMIUM BUTTON --- */
+.hero-btn-premium {
+  background: #fff; color: #0a1929; border: none; padding: 14px 28px;
+  border-radius: 14px; font-size: 13px; font-weight: 800; cursor: pointer;
+  display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-btn-premium:hover {
+  background: #0066ff; color: #fff; transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 102, 255, 0.4);
+}
+.hero-btn-premium:active { transform: translateY(1px) scale(0.98); }
+
+/* --- CAR ENTRANCE & FLOAT --- */
+.hero-image-stage {
+  flex: 1.2; display: flex; justify-content: flex-end; align-items: center;
+  position: relative; height: 100%; z-index: 2;
+}
+
+.slide-car-img {
+  width: 100%; max-width: 550px; object-fit: contain;
+  filter: drop-shadow(-15px 20px 25px rgba(0, 0, 0, 0.6));
+  opacity: 0; transform: translateX(50px) scale(0.95);
+}
+
+/* Snappy slide-in followed by a smooth infinite hover */
+.hero-slide-modern.active .slide-car-img {
+  animation: 
+    carEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s forwards,
+    carFloat 5s ease-in-out 1s infinite alternate;
+}
+
+@keyframes carEntrance {
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes carFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-12px) rotate(-1deg); }
+}
+
+/* --- INDICATORS (Modern Pills) --- */
+.hero-indicators {
+  position: absolute; bottom: 25px; left: 8%; display: flex; gap: 8px; z-index: 10;
+}
+
+.indicator-pill {
+  width: 10px; height: 6px; background: rgba(255,255,255,0.2);
+  border-radius: 6px; cursor: pointer; transition: all 0.3s;
+  position: relative; overflow: hidden;
+}
+
+.indicator-pill.active { width: 35px; background: rgba(255,255,255,0.3); }
+
+/* Fills up slowly like a progress bar */
+.pill-progress {
+  position: absolute; top: 0; left: 0; height: 100%; width: 0%;
+  background: #0066ff; animation: fillProgress 5s linear forwards;
+}
+
+@keyframes fillProgress {
+  to { width: 100%; }
+}
+
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
-  .hero-container {
-    height: 450px; /* Taller on mobile to stack */
-    padding: 20px;
-    align-items: flex-start;
+  .hero-premium-container { height: 480px; }
+  
+  .hero-slide-modern {
+    flex-direction: column-reverse; justify-content: center;
+    padding: 20px; text-align: center;
   }
 
-  .hero-slide {
-    flex-direction: column-reverse; /* Text on bottom, Image on top */
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-  }
+  .hero-content-staggered { align-items: center; margin-top: 10px; }
+  .hero-title { font-size: 28px; }
+  .hero-subtitle { font-size: 32px; }
+  .hero-desc { font-size: 13px; margin-bottom: 20px; }
 
-  .hero-content {
-    align-items: center;
-    margin-top: 20px;
-  }
+  .hero-image-stage { align-items: flex-end; justify-content: center; }
+  .slide-car-img { max-width: 300px; filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.5)); }
 
-  .hero-content h1 {
-    font-size: 32px;
-  }
-
-  .slide-img {
-    max-width: 300px;
-  }
+  .hero-indicators { left: 50%; transform: translateX(-50%); bottom: 15px; }
 }

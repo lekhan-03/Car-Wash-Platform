@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { services } from "../../data/servicesData"; 
 import adsData from "../../data/detailAdsData";
-import ServiceList from "./ServiceList"; 
+import ServiceList from "./ServiceListWater"; 
 import ServiceDetails from "./ServiceDetail"; 
 
 // --- CATEGORIES AS KEYWORDS ---
@@ -31,7 +31,7 @@ const defaultCategories = [
 const HomeService = () => {
   const navigate = useNavigate();
   // Defaulting to "interior" since "with-water" wasn't in the defaultCategories array
-  const [selectedCategory, setSelectedCategory] = useState("interior");
+  const [selectedCategory, setSelectedCategory] = useState("default");
   const [selectedService, setSelectedService] = useState(null);
   const [bannerIndex, setBannerIndex] = useState(0);
 

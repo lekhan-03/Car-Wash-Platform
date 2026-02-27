@@ -70,7 +70,7 @@ h2 {
 }
 
 .brand-card:hover {
-  border-color: #7b2cbf;
+  border-color: #0066ff;
   background: #f8f0ff;
   transform: translateY(-3px);
 }
@@ -97,7 +97,7 @@ h2 {
 /* Models Section */
 .modal-back-btn {
   background: none; border: none;
-  color: #7b2cbf; font-weight: 600; font-size: 14px;
+  color: #0066ff; font-weight: 600; font-size: 14px;
   margin-bottom: 15px; cursor: pointer;
 }
 
@@ -119,7 +119,7 @@ h2 {
 
 .vehicle-card:hover {
   background: #fff;
-  border-color: #7b2cbf;
+  border-color: #0066ff;
   box-shadow: 0 4px 12px rgba(123, 44, 191, 0.15);
 }
 

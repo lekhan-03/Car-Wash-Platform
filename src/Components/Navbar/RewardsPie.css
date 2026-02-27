@@ -1,207 +1,95 @@
-/* RewardsPie.css */
+/* src/Components/Navbar/RewardsPie.css - Premium Rewards UI */
 
 .rewards-container {
-  position: relative;
-  cursor: pointer;
-  margin-right: 15px; /* Spacing from Location/Car pills */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1002;
+  position: relative; cursor: pointer; margin-right: 15px;
+  display: flex; align-items: center; justify-content: center; z-index: 1002;
 }
 
-/* --- PIE CHART (Donut) --- */
+/* --- PIE CHART --- */
 .pie-wrapper {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease;
+  width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-.pie-wrapper:hover {
-  transform: scale(1.05);
-}
+.pie-wrapper:hover { transform: scale(1.1) rotate(5deg); }
 
 .pie-chart {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Soft blue shadow */
-  box-shadow: 0 4px 10px rgba(0, 102, 255, 0.15);
+  width: 100%; height: 100%; border-radius: 50%; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+  transition: background 0.5s ease;
 }
-
 .pie-inner-hole {
-  width: 32px;
-  height: 32px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  font-weight: 700;
-  color: #0066ff;
+  width: 32px; height: 32px; background: #fff; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800; color: #0066ff;
   box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* --- GIFT ICON STATE --- */
 .gift-icon-wrapper {
-  width: 40px;
-  height: 40px;
-  background: #e3f2fd;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  border: 2px solid #0066ff;
-  position: relative;
+  width: 42px; height: 42px; background: #fff; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; border: 2px solid #0066ff; position: relative;
+  box-shadow: 0 0 15px rgba(0, 102, 255, 0.4);
 }
-
 .notification-dot {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  background: #ff3b30;
-  border: 2px solid #fff;
-  border-radius: 50%;
+  position: absolute; top: -2px; right: -2px; width: 12px; height: 12px;
+  background: #ff3b30; border: 2px solid #fff; border-radius: 50%;
+  animation: pulseGlow 2s infinite;
 }
 
-.shake-animation {
-  animation: shake 2s infinite;
-}
-
-@keyframes shake {
-  0%, 100% { transform: rotate(0deg); }
-  10%, 30%, 50%, 70%, 90% { transform: rotate(-5deg); }
-  20%, 40%, 60%, 80% { transform: rotate(5deg); }
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(255, 59, 48, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
 }
 
 /* --- DROPDOWN --- */
 .rewards-dropdown {
-  position: absolute;
-  top: 55px;
-  right: -60px; /* Center alignment adjustment */
-  width: 260px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-  border: 1px solid #f0f0f0;
-  padding: 16px;
-  cursor: default;
-  animation: slideUp 0.2s ease-out;
+  position: absolute; top: 60px; right: -50px; width: 280px;
+  background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.5);
+  padding: 20px; cursor: default;
+  /* Spring Entrance */
+  animation: popDropdown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: top right;
 }
 
-.dropdown-arrow {
-  position: absolute;
-  top: -6px;
-  right: 75px;
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  border-top: 1px solid #f0f0f0;
-  border-left: 1px solid #f0f0f0;
-  transform: rotate(45deg);
+@keyframes popDropdown {
+  0% { opacity: 0; transform: scale(0.8) translateY(-10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .rewards-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #f5f5f5;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;
 }
+.rewards-header h4 { margin: 0; font-size: 15px; font-weight: 800; color: #0f172a; }
+.badge-blue { font-size: 9px; background: #eef4ff; color: #0066ff; padding: 4px 10px; border-radius: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
 
-.rewards-header h4 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a1a;
-}
+.progress-text { font-size: 13px; color: #64748b; margin-bottom: 15px; line-height: 1.5; }
+.progress-text strong { color: #0066ff; font-weight: 800; font-size: 15px; }
 
-.badge-blue {
-  font-size: 9px;
-  background: #0066ff;
-  color: #fff;
-  padding: 3px 8px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.progress-text {
-  font-size: 13px;
-  color: #555;
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-
-.progress-text strong {
-  color: #0066ff;
-}
-
-/* Linear Segments inside Dropdown */
-.segments-track {
-  display: flex;
-  gap: 4px;
-  margin-top: 5px;
-}
-
-.segment-bar {
-  flex: 1;
-  height: 6px;
-  background: #eef4ff;
-  border-radius: 3px;
-  transition: background 0.3s;
-}
-
-.segment-bar.active {
-  background: linear-gradient(90deg, #0066ff, #00d2ff);
-  box-shadow: 0 2px 5px rgba(0, 102, 255, 0.2);
-}
+/* Linear Segments */
+.segments-track { display: flex; gap: 6px; margin-top: 5px; }
+.segment-bar { flex: 1; height: 8px; background: #f1f5f9; border-radius: 4px; transition: background 0.4s ease; }
+.segment-bar.active { background: linear-gradient(90deg, #0066ff, #00d2ff); box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3); }
 
 /* Success State */
-.success-state {
-  text-align: center;
-}
-.confetti-icon { font-size: 24px; margin-bottom: 5px; }
-.success-state h5 { margin: 0 0 5px 0; color: #0066ff; }
-.success-state p { font-size: 12px; color: #666; margin-bottom: 10px; }
+.success-state { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.confetti-icon { margin-bottom: 10px; animation: bounce 2s infinite; }
+.success-state h5 { margin: 0 0 8px 0; color: #0f172a; font-size: 18px; font-weight: 800; }
+.success-state p { font-size: 13px; color: #64748b; margin-bottom: 16px; }
+.success-state strong { color: #00b894; font-weight: 800; }
 
 .redeem-btn {
-  width: 100%;
-  padding: 8px;
-  background: linear-gradient(90deg, #0066ff, #0052cc);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);
-  transition: transform 0.1s;
+  width: 100%; padding: 12px; background: linear-gradient(135deg, #0066ff 0%, #0042cc 100%);
+  color: #fff; border: none; border-radius: 12px; font-weight: 800; font-size: 14px;
+  cursor: pointer; box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.redeem-btn:active { transform: scale(0.98); }
+.redeem-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(0, 102, 255, 0.4); }
+.redeem-btn:active { transform: translateY(1px) scale(0.98); }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Mobile Adjustments */
 @media (max-width: 768px) {
-  .rewards-container { margin-right: 10px; }
-  .pie-wrapper { width: 34px; height: 34px; }
-  .pie-inner-hole { width: 26px; height: 26px; font-size: 9px; }
-  .rewards-dropdown { right: -50px; width: 240px; }
-  .dropdown-arrow { right: 62px; }
+  .rewards-dropdown { right: -60px; width: 260px; }
 }

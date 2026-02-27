@@ -2,13 +2,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
-
-// Icons
-import washIcon from "../Assets/Icons/WashIcon.svg";
-import serviceIcon from "../Assets/Icons/HomeService.svg";
-import detailIcon from "../Assets/Icons/Detailing.svg";
-import insuranceIcon from "../Assets/Icons/InsuranceIcon.png";
-import profileIcon from "../Assets/Icons/Profile.svg";
+import { Droplets, Wind, Sparkles, ShieldCheck, User } from "lucide-react";
 
 import "./BottomNavbar.css";
 
@@ -16,45 +10,41 @@ const BottomNavbar = () => {
   const location = useLocation();
   const { user } = useAuth();
 
-  // Helper to check active state
   const isActive = (path) => location.pathname === path ? "active" : "";
 
   return (
     <div className="bottom-navbar mobile-only">
       <Link to="/waterwash" className={`nav-item ${isActive("/waterwash")}`}>
         <div className="icon-wrapper">
-          <img src={serviceIcon} alt="Service" />
+          <Droplets size={22} strokeWidth={2} />
         </div>
         <span>Water Wash</span>
       </Link>
       
       <Link to="/steamwash" className={`nav-item ${isActive("/steamwash")}`}>
         <div className="icon-wrapper">
-          <img src={washIcon} alt="Car Wash" />
+          <Wind size={22} strokeWidth={2} />
         </div>
         <span>Steam Wash</span>
       </Link>
 
-      
-
       <Link to="/Detailing" className={`nav-item ${isActive("/Detailing")}`}>
         <div className="icon-wrapper">
-          <img src={detailIcon} alt="Detailing" />
+          <Sparkles size={22} strokeWidth={2} />
         </div>
         <span>Detailing</span>
       </Link>
 
       <Link to="/insurance" className={`nav-item ${isActive("/insurance")}`}>
         <div className="icon-wrapper">
-          <img src={insuranceIcon} alt="Insurance" />
+          <ShieldCheck size={22} strokeWidth={2} />
         </div>
         <span>Insurance</span>
       </Link>
 
-      {/* Profile/Login Switch */}
       <Link to={user ? "/account" : "/login"} className={`nav-item ${isActive(user ? "/account" : "/login")}`}>
         <div className="icon-wrapper">
-          <img src={profileIcon} alt="Account" />
+          <User size={22} strokeWidth={2} />
         </div>
         <span>{user ? "Account" : "Login"}</span>
       </Link>

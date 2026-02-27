@@ -5,12 +5,10 @@ import { useCar } from "../../Context/CarContext";
 import { useCart } from "../../Context/CartContext";
 import { useAuth } from "../../Context/AuthContext";
 import SelectCarModal from "./SelectCarModal";
-import RewardsPie from "./RewardsPie"; // <--- 1. IMPORT THIS
+import RewardsPie from "./RewardsPie"; 
 
-import cartIcon from "../Assets/cart_icon.png";
-import carIcon from "../Assets/Icons/Car.svg";
-import locationIcon from "../Assets/Icons/location-pin-svgrepo-com.svg";
-import profileIcon from "../Assets/Icons/Profile.svg";
+// Premium Lucide Icons
+import { MapPin, CarFront, ShoppingCart, User } from "lucide-react";
 
 import "./Navbar.css";
 
@@ -25,7 +23,6 @@ const Navbar = () => {
   
   const navigate = useNavigate();
 
-  // Load saved location from local storage on mount
   useEffect(() => {
     const savedLoc = localStorage.getItem("userLocation");
     if (savedLoc) setLocationName(savedLoc);
@@ -36,7 +33,6 @@ const Navbar = () => {
     navigate("/login");
   };
 
-  // --- LOCATION LOGIC ---
   const detectLocation = () => {
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by your browser");
@@ -94,7 +90,6 @@ const Navbar = () => {
           <ul className="nav-menu desktop-only">
             <li><Link to="/waterwash">Water wash</Link></li>
             <li><Link to="/steamwash">Steam Wash</Link></li>
-            
             <li><Link to="/Detailing">Detailing</Link></li>
             <li><Link to="/insurance">Insurance</Link></li>
           </ul>
@@ -102,12 +97,11 @@ const Navbar = () => {
           {/* Icons & Desktop Actions */}
           <div className="navbar-icons">
             
-            {/* 2. ADD REWARDS PIE HERE */}
             <RewardsPie /> 
 
             {/* Desktop Location Pill */}
             <div className="nav-pill desktop-only" onClick={detectLocation}>
-              <img src={locationIcon} alt="Loc" className={`pill-icon ${isLocating ? "spin" : ""}`} />
+              <MapPin className={`pill-icon ${isLocating ? "spin" : ""}`} color="#0066ff" />
               <div className="pill-text">
                 <span className="pill-label">Current Location</span>
                 <span className="pill-value" title={locationName}>
@@ -118,7 +112,7 @@ const Navbar = () => {
 
             {/* Desktop Car Pill */}
             <button className="nav-pill desktop-only" onClick={() => setIsModalOpen(true)}>
-              <img src={carIcon} alt="Car" className="pill-icon" />
+              <CarFront className="pill-icon" color="#0066ff" />
               <div className="pill-text">
                 <span className="pill-label">My Car</span>
                 <span className="pill-value">
@@ -129,7 +123,7 @@ const Navbar = () => {
 
             {/* Cart Icon */}
             <Link to="/cart" className="icon-btn cart-btn">
-              <img src={cartIcon} alt="Cart" />
+              <ShoppingCart size={22} color="#0f172a" strokeWidth={2.5} className="svg-icon" />
               {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
             </Link>
 
@@ -138,7 +132,7 @@ const Navbar = () => {
               {user ? (
                 <>
                   <button className="icon-btn profile-btn">
-                    <img src={profileIcon} alt="Profile" />
+                    <User size={22} color="#0f172a" strokeWidth={2.5} className="svg-icon" />
                   </button>
                   <div className="profile-dropdown">
                     <div className="dropdown-header">Hi, {user.name}</div>
@@ -158,7 +152,7 @@ const Navbar = () => {
           
           {/* Mobile Location */}
           <div className="mobile-location" onClick={detectLocation}>
-            <img src={locationIcon} alt="Pin" className={`mob-loc-icon ${isLocating ? "spin" : ""}`} />
+            <MapPin className={`mob-loc-icon ${isLocating ? "spin" : ""}`} size={20} color="#0066ff" />
             <div className="mob-loc-text">
               <span className="mob-label">
                 {isLocating ? "Detecting..." : "Current Location"}
@@ -174,12 +168,11 @@ const Navbar = () => {
             <span className="mob-car-text">
               {selectedCar ? selectedCar.name : "Select Car"}
             </span>
-            <img src={carIcon} alt="Car" className="mob-car-icon" />
+            <CarFront size={18} color="#0066ff" className="mob-car-icon" />
           </button>
         </div>
       </div>
 
-      {/* Car Selection Modal */}
       {isModalOpen && <SelectCarModal onClose={() => setIsModalOpen(false)} />}
     </>
   );

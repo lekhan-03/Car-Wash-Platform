@@ -12,43 +12,36 @@
 .service-unit-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Small gap between the Card and its Banner */
+  gap: 0; /* Important: Remove the gap so the negative margin works seamlessly */
 }
 
 /* --- THE GLASS CARD --- */
 .glass-card {
-  /* 1. Glass Background */
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  /* 1. Solid Background */
+  background: #ffffff; 
   
   /* 2. Border & Shape */
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  border: 1px solid #f0f4f8;
   
   /* 3. Layout */
-  padding: 20px;
+  padding: 18px;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  position: relative;
   
-  /* 4. Shadow & Transition */
-  box-shadow: 
-    0 8px 32px 0 rgba(31, 38, 135, 0.07), 
-    0 2px 4px 0 rgba(255, 255, 255, 0.5) inset;
+  /* 4. CRITICAL: Overlap Physics */
+  position: relative;
+  z-index: 2; /* Forces card to sit ABOVE the promo banner */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* Casts a shadow directly onto the black banner */
+  
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  overflow: hidden;
   cursor: pointer;
 }
 
 .glass-card:hover {
-  transform: translateY(-5px) scale(1.01);
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 
-    0 15px 40px 0 rgba(31, 38, 135, 0.12),
-    0 0 0 1px #0066ff;
-  z-index: 10;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
 /* --- LEFT SIDE: CONTENT --- */
@@ -206,24 +199,62 @@
 }
 
 /* --- PROMO BANNER --- */
+/* --- PROMO BANNER (Moving Marquee) --- */
 .promo-banner-strip-steam {
-  background: linear-gradient(90deg, #e3f2fd 0%, #f0f7ff 100%);
-  border: 1px dashed #0066ff;
-  color: #0066ff;
-  padding: 8px 16px;
-  border-radius: 12px;
+  background: #000000; 
+  color: white; 
+  
+  /* Removed horizontal padding so text scrolls edge-to-edge seamlessly */
+  padding: 24px 0 14px 0;
+  border-radius: 12px 12px 12px 12px;
+  
+  font-weight: 600; 
+  font-size: 13px;
+  margin-top: -14px; 
+  position: relative;
+  z-index: 1; 
+  
+  /* CRITICAL: Hides the text that goes outside the banner */
+  overflow: hidden; 
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-weight: 600;
-  font-size: 11px;
-  margin-top: 0; /* Tight to the card */
 }
 
-.promo-content { display: flex; align-items: center; gap: 6px; }
-.promo-icon { font-size: 14px; }
-.arrow-icon { font-size: 14px; opacity: 0.7; }
+/* The moving track */
+.marquee-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: max-content; /* Allows track to be as wide as the duplicated content */
+  /* Adjust '12s' to make it scroll faster or slower */
+  animation: marqueeScroll 12s linear infinite; 
+}
 
+/* Optional: Pauses the scrolling if the user touches/hovers over it */
+.promo-banner-strip-steam:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.promo-content { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+  /* Acts as the gap between each duplicated phrase */
+  padding-right: 40px; 
+}
+
+.arrow-icon { 
+  font-size: 14px; 
+  opacity: 0.8; 
+  margin-left: 8px;
+}
+
+/* The continuous scroll animation */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  /* Because we duplicated the content perfectly in JSX, shifting by -50% creates a flawless infinite loop */
+  100% { transform: translateX(-50%); } 
+}
 /* --- RESPONSIVE GRID (Desktop) --- */
 @media (min-width: 768px) {
   .service-list-container {

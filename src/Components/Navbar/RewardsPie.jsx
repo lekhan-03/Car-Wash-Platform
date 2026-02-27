@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { Gift, PartyPopper } from "lucide-react";
 import "./RewardsPie.css";
 
 const RewardsPie = () => {
@@ -8,19 +9,15 @@ const RewardsPie = () => {
   const [orderCount, setOrderCount] = useState(0);
 
   // --- LOGIC TO CALCULATE PROGRESS ---
-  // Wrapped in useCallback to provide a stable reference for the useEffect dependency array
   const calculateProgress = useCallback(() => {
     try {
       const orders = JSON.parse(localStorage.getItem("orders")) || [];
       
-      // Filter for Home Service Orders
-      // Checks if ANY item in the order matches keywords like "Home", "Service", "Wash", "Clean"
       const homeServiceOrders = orders.filter(order => 
         order.items && order.items.some(item => {
           const name = item.name ? item.name.toLowerCase() : "";
           const category = item.category ? item.category.toLowerCase() : "";
           
-          // Broad check to ensure we catch the order
           return (
             name.includes("home") || 
             category.includes("home") ||
@@ -34,11 +31,9 @@ const RewardsPie = () => {
 
       const count = homeServiceOrders.length;
       
-      // Update State only if changed to prevent re-renders
       if (count !== orderCount) {
         setOrderCount(count);
         
-        // Reward Logic: Every 5th order
         const remainder = count % 5;
         
         if (count > 0 && remainder === 0) {
@@ -52,20 +47,12 @@ const RewardsPie = () => {
     } catch (error) {
       console.error("Error calculating rewards:", error);
     }
-  }, [orderCount]); // calculateProgress now depends on orderCount
+  }, [orderCount]);
 
-  // --- USE EFFECT TRIGGERS ---
   useEffect(() => {
-    // 1. Initial Check
     calculateProgress();
-
-    // 2. Listen for 'orderPlaced' event (Immediate update)
     window.addEventListener("orderPlaced", calculateProgress);
-    
-    // 3. Listen for Storage changes (Cross-tab update)
     window.addEventListener("storage", calculateProgress);
-
-    // 4. Polling Interval (Backup: Checks every 2 seconds to guarantee sync)
     const intervalId = setInterval(calculateProgress, 2000);
 
     return () => {
@@ -73,11 +60,11 @@ const RewardsPie = () => {
       window.removeEventListener("storage", calculateProgress);
       clearInterval(intervalId);
     };
-  }, [calculateProgress]); // calculateProgress is now safely in the dependency array
+  }, [calculateProgress]);
 
   const handleRedeem = () => {
     alert("🎉 Coupon Code 'FREEWASH' applied! Use this on your next booking.");
-    setIsEligible(false); // Reset visual for UX
+    setIsEligible(false);
     setProgress(0);
   };
 
@@ -92,7 +79,7 @@ const RewardsPie = () => {
       <div className={`pie-wrapper ${isEligible ? "shake-animation" : ""}`}>
         {isEligible ? (
           <div className="gift-icon-wrapper">
-            <span className="gift-emoji">🎁</span>
+            <Gift size={20} color="#0066ff" strokeWidth={2.5} />
             <span className="notification-dot"></span>
           </div>
         ) : (
@@ -120,7 +107,7 @@ const RewardsPie = () => {
           <div className="rewards-content">
             {isEligible ? (
               <div className="success-state">
-                <div className="confetti-icon">🎉</div>
+                <PartyPopper size={36} color="#00b894" className="confetti-icon" />
                 <h5>Goal Reached!</h5>
                 <p>You've unlocked a <strong>Free Wash</strong>.</p>
                 <button className="redeem-btn" onClick={handleRedeem}>

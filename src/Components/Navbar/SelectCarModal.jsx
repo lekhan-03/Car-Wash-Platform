@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { carBrands, vehiclesByBrand } from "../../data/carData";
 import { useCar } from "../../Context/CarContext";
 import { toast } from "react-toastify";
+import { X, ArrowLeft } from "lucide-react";
 import "./SelectCarModel.css";
 
 const SelectCarModal = ({ onClose }) => {
@@ -14,7 +15,7 @@ const SelectCarModal = ({ onClose }) => {
       id: `${brand}-${vehicle.name}`, 
       brand, 
       name: vehicle.name, 
-      type: vehicle.type, // Ensure 'type' (SUV/Sedan) is passed for pricing logic
+      type: vehicle.type, 
       img: vehicle.img 
     };
     
@@ -24,7 +25,7 @@ const SelectCarModal = ({ onClose }) => {
       position: "bottom-center",
       autoClose: 2000,
       theme: "colored",
-      style: { background: "#7b2cbf", color: "#fff" }
+      style: { background: "#0066ff", color: "#fff" }
     });
     
     onClose();
@@ -33,7 +34,9 @@ const SelectCarModal = ({ onClose }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={onClose}>✕</button>
+        <button className="close-btn" onClick={onClose}>
+          <X size={20} strokeWidth={2.5} />
+        </button>
 
         <h2>{selectedBrand ? `Select ${selectedBrand} Model` : "Select Your Car Brand"}</h2>
 
@@ -55,7 +58,7 @@ const SelectCarModal = ({ onClose }) => {
         ) : (
           <div className="models-section">
             <button className="modal-back-btn" onClick={() => setSelectedBrand(null)}>
-              ← Back to Brands
+              <ArrowLeft size={16} strokeWidth={2.5} /> Back to Brands
             </button>
             
             <div className="vehicles-list">

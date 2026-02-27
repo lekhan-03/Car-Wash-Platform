@@ -75,7 +75,7 @@ const Services = () => {
           </Link>
 
           {/* Challan */}
-          <Link to="/Detailing" className="bento-card square-card dark-card">
+          <Link to="/monthly-packages" className="bento-card square-card dark-card">
             <div className="bento-content z-10">
               {/* <Receipt size={18} className="light-icon mb-2" /> */}
               <h4 className="text-white">Monthly Packages</h4>
@@ -125,10 +125,10 @@ const Services = () => {
         </div>
         <div className="promo-image-wrapper">
           <div className="glow-backdrop white-glow"></div>
-          <img
+          {/* <img
             src="https://cdn3d.iconscout.com/3d/premium/thumb/sports-bike-4993638-4160489.png"
             alt="Bike Wash"
-          />
+          /> */}
         </div>
       </div>
 

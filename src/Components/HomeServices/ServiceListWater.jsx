@@ -1,7 +1,8 @@
 import React from "react";
-import "./ServiceList.css";
+import "./ServiceListWater.css";
 import { motion } from "framer-motion";
 import { useCar } from "../../Context/CarContext"; 
+import { ShieldCheck } from "lucide-react"; // Import the premium icon
 
 const ServiceList = ({ services, onServiceClick }) => {
   const { selectedCar } = useCar();
@@ -30,7 +31,7 @@ const ServiceList = ({ services, onServiceClick }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
           >
-            {/* --- GLASS CARD --- */}
+            {/* --- THE MAIN CARD --- */}
             <div
               className="glass-card"
               onClick={() => onServiceClick(service)}
@@ -89,13 +90,33 @@ const ServiceList = ({ services, onServiceClick }) => {
               </div>
             </div>
 
-            {/* --- PROMO BANNER (Appears after every service) --- */}
-            <div className="promo-banner-strip">
-              <div className="promo-content">
-                <span className="promo-icon">💎</span>
-                <span>Best Price Guarantee</span>
+            {/* --- PROMO BANNER (Tucked Underneath & Animated) --- */}
+            <div className="promo-banner-strip-water">
+              <div className="marquee-track">
+                {/* SET 1 */}
+                <div className="promo-content">
+                  <ShieldCheck size={14} />
+                  <span>Best Price Guarantee</span>
+                  <span className="arrow-icon">➔</span>
+                </div>
+                <div className="promo-content">
+                  <ShieldCheck size={14} />
+                  <span>Premium Quality Assured</span>
+                  <span className="arrow-icon">➔</span>
+            </div>
+
+                {/* SET 2 (Duplicate for seamless loop) */}
+                <div className="promo-content">
+                  <ShieldCheck size={14} />
+                  <span>Best Price Guarantee</span>
+                  <span className="arrow-icon">➔</span>
+                </div>
+                <div className="promo-content">
+                  <ShieldCheck size={14} />
+                  <span>Premium Quality Assured</span>
+                  <span className="arrow-icon">➔</span>
+                </div>
               </div>
-              <span className="arrow-icon">➔</span>
             </div>
 
           </motion.div>

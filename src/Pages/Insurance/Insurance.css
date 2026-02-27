@@ -60,33 +60,102 @@
 .tab-img-icon { width: 20px; height: 20px; object-fit: contain; }
 
 /* --- HERO BANNER (Midnight Blue) --- */
+/* --- HERO BANNER (Premium 3D Pop) --- */
 .hero-card-premium {
-  margin: 0 20px 30px; border-radius: 24px; padding: 30px 24px;
-  background: linear-gradient(135deg, #0a1929 0%, #172a3a 100%);
-  position: relative; overflow: hidden; color: #fff; min-height: 180px;
-  display: flex; align-items: center; box-shadow: 0 15px 35px rgba(10, 25, 41, 0.15);
+  margin: 0 20px 30px;
+  border-radius: 20px;
+  padding: 32px 24px;
+  /* A richer gradient that mimics a spotlight effect from top-left to bottom-right */
+  background: linear-gradient(135deg, #0a1929 0%, #162f4c 100%);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  /* Deep, soft outer shadow */
+  box-shadow: 0 20px 40px rgba(10, 25, 41, 0.15);
+  /* Very subtle inner rim light to give the card a physical shape */
+  border: 1px solid rgba(255, 255, 255, 0.06); 
 }
 
+/* Subtle glowing orb behind the text for depth */
 .hero-glow-bg {
-  position: absolute; top: -50px; left: -50px; width: 150px; height: 150px;
-  background: rgba(0, 102, 255, 0.4); border-radius: 50%; filter: blur(50px);
+  position: absolute; 
+  top: -40px; 
+  left: -40px; 
+  width: 150px; 
+  height: 150px;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.25) 0%, rgba(0,0,0,0) 70%); 
+  border-radius: 50%; 
+  z-index: 0;
 }
 
-.hero-content-z { z-index: 2; max-width: 65%; position: relative; }
+.hero-content-z { 
+  z-index: 3; 
+  max-width: 55%; /* Keeps text strictly on the left */
+  position: relative; 
+}
 
+/* Make the badge actually POP */
 .premium-badge {
-  display: inline-flex; align-items: center; gap: 4px; font-size: 10px;
-  background: rgba(255,255,255,0.15); backdrop-filter: blur(5px);
-  padding: 6px 10px; border-radius: 20px; text-transform: uppercase;
-  font-weight: 800; letter-spacing: 0.5px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.1);
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  font-size: 10px;
+  background: #0066ff; /* Solid accent blue */
+  color: #ffffff;
+  padding: 6px 12px; 
+  border-radius: 20px; 
+  text-transform: uppercase;
+  font-weight: 800; 
+  letter-spacing: 0.5px; 
+  margin-bottom: 16px; 
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4); /* Blue glow */
 }
 
-.hero-card-premium h1 { font-size: 22px; font-weight: 800; margin: 0 0 8px 0; line-height: 1.2; }
-.hero-subtext { font-size: 12px; color: #b0c4de; margin: 0; font-weight: 500; }
+.hero-card-premium h1 { 
+  font-size: 24px; 
+  font-weight: 800; 
+  margin: 0 0 10px 0; 
+  line-height: 1.15; 
+  letter-spacing: -0.5px;
+}
 
-.hero-3d-img { position: absolute; right: -20px; bottom: -10px; width: 160px; z-index: 1; animation: floatImg 4s ease-in-out infinite; }
-@keyframes floatImg { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.hero-subtext { 
+  font-size: 12px; 
+  color: #cbd5e1; /* Sleek slate gray/blue */
+  margin: 0; 
+  font-weight: 500; 
+  display: flex; 
+  align-items: center; 
+  gap: 6px;
+}
 
+/* The Car Image - 3D Pop Effect */
+.hero-3d-img { 
+  position: absolute; 
+  right: -15px; 
+  bottom: -5px; /* Tucks it nicely against the bottom */
+  height: 105%; /* Makes the car slightly taller than the card for a dynamic look */
+  max-width: 55%; 
+  object-fit: contain;
+  object-position: right bottom;
+  z-index: 2; 
+  /* This casts a shadow from the car onto the card background, making it look 3D */
+  filter: drop-shadow(-8px 10px 15px rgba(0, 0, 0, 0.5));
+  animation: floatImg 6s ease-in-out infinite; 
+}
+
+@keyframes floatImg { 
+  0%, 100% { transform: translateY(0); } 
+  50% { transform: translateY(-4px); } 
+}
+
+/* Ensure no muddy overlays remain */
+.hero-card-premium::after {
+  display: none;
+}
 /* --- SECTIONS --- */
 .modern-section { padding: 0 20px 35px; }
 .no-bottom-pad { padding-bottom: 10px; }

@@ -1,0 +1,186 @@
+/* SplashScreen.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Ultra&display=swap');
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.splash-screen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Darkened background for better ring visibility */
+  background: radial-gradient(circle at center, #001a33 0%, #000c1a 70%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  overflow: hidden; 
+}
+
+/* --- ENHANCED ROTATING RINGS --- */
+.splash-bg-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Inner Dotted Ring - Brightened and Pulsing */
+.splash-bg-rings::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  margin: -160px 0 0 -160px;
+  border: 2px dashed rgba(255, 255, 255, 0.25); /* Increased thickness and opacity */
+  border-radius: 50%;
+  filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.4)); /* Added glow */
+  animation: rotateClockwise 15s linear infinite, ringPulse 4s ease-in-out infinite;
+}
+
+/* Outer Solid Ring - Darker with Glow */
+.splash-bg-rings::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  margin: -260px 0 0 -260px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 102, 255, 0.1);
+  animation: rotateCounterClockwise 40s linear infinite;
+}
+
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* --- CAR TRAIL PARTICLES --- */
+.car-particle-trail {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  display: flex;
+  gap: 15px;
+}
+
+.car-particle-trail span {
+  width: 6px;
+  height: 2px;
+  background: linear-gradient(90deg, #00d2ff, transparent);
+  border-radius: 2px;
+  opacity: 0;
+  animation: particleFade 1.2s linear 1.2s infinite;
+}
+
+.car-particle-trail span:nth-child(2) { animation-delay: 1.4s; }
+.car-particle-trail span:nth-child(3) { animation-delay: 1.6s; }
+
+@keyframes particleFade {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(150px); opacity: 0; }
+}
+
+/* --- CONTENT STYLES (Preserved) --- */
+.splash-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.splash-logo {
+  display: flex;
+  font-family: 'Ultra', serif;
+  font-size: 50px; 
+  font-weight: 400; 
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.splash-letter {
+  display: inline-block;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+  background-image: conic-gradient(from var(--angle), #ffffff 0deg, #ffffff var(--angle), transparent var(--angle));
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: fillRotate 0.6s linear forwards;
+}
+
+.splash-letter:nth-child(4) {
+  -webkit-text-stroke: 1px rgba(0, 102, 255, 0.4);
+  background-image: conic-gradient(from var(--angle), #00d2ff 0deg, #0066ff var(--angle), transparent var(--angle));
+  filter: drop-shadow(0 0 12px rgba(0, 102, 255, 0.6));
+}
+
+@keyframes fillRotate {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+.splash-car {
+  transform: translateX(100vw);
+  animation: driveInVideoMatch 2.5s cubic-bezier(0.1, 0.9, 0.2, 1) 1.0s forwards;
+}
+
+.real-car-img {
+  width: 130px; 
+  height: auto;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.7)); 
+}
+
+@keyframes driveInVideoMatch {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(0); }
+}
+
+.splash-subtitle {
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.9); /* Darkened text color for visibility */
+  opacity: 0;
+  transform: translateY(8px);
+  margin-top: 10px;
+  animation: fadeUpSubtitle 0.8s ease 3.0s forwards;
+}
+
+@keyframes fadeUpSubtitle {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.splash-screen-container.fade-out {
+  opacity: 0;
+  transform: scale(1.05); 
+  pointer-events: none;
+}

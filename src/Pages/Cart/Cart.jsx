@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
+import { ArrowLeft, Trash2, Zap, ShieldCheck, ArrowRight, ShoppingBag } from "lucide-react";
 import "./Cart.css";
 
 const Cart = () => {
@@ -28,11 +29,7 @@ const Cart = () => {
     return (
       <div className="cart-empty-state">
         <div className="empty-icon-wrapper">
-          <img 
-            src="https://cdn-icons-png.flaticon.com/512/11329/11329060.png" 
-            alt="Empty Cart"
-            className="empty-cart-icon" 
-          />
+          <ShoppingBag size={50} color="#0066ff" strokeWidth={1.5} className="empty-cart-icon" />
         </div>
         <h2>Your Cart is Empty</h2>
         <p>Looks like you haven't added any services yet.</p>
@@ -49,7 +46,7 @@ const Cart = () => {
       {/* --- Header --- */}
       <div className="cart-header-nav">
         <button onClick={() => navigate(-1)} className="back-btn">
-          <span className="icon">←</span> Back
+          <ArrowLeft size={18} /> Back
         </button>
         <h3>My Cart <span className="cart-count-badge">({cartItems.length})</span></h3>
         <button onClick={clearCart} className="clear-btn">Clear</button>
@@ -61,12 +58,16 @@ const Cart = () => {
         {/* LEFT COLUMN: Cart Items */}
         <div className="cart-left-section">
           <div className="cart-items-container">
-            {cartItems.map((item) => {
+            {cartItems.map((item, index) => {
               // Handle image source safely (supports singular 'image' or array 'images')
               const displayImage = item.image || (item.images && item.images.length > 0 ? item.images[0] : fallbackImage);
 
               return (
-                <div className="cart-card" key={item.id}>
+                <div 
+                  className="cart-card" 
+                  key={item.id}
+                  style={{ animationDelay: `${index * 0.1}s` }} // Staggered entrance
+                >
                   <div className="cart-card-media">
                     <img 
                       src={displayImage} 
@@ -92,7 +93,7 @@ const Cart = () => {
                       
                       {/* Remove Button */}
                       <button className="trash-btn" onClick={() => removeFromCart(item.id)}>
-                        <span className="trash-icon">🗑</span>
+                        <Trash2 size={16} />
                       </button>
                     </div>
                   </div>
@@ -108,7 +109,7 @@ const Cart = () => {
           {/* Promo Banner */}
           <div className="cart-promo-banner">
             <div className="promo-content">
-              <span className="sparkle">⚡</span>
+              <Zap size={24} fill="#fff" className="sparkle-icon" />
               <div className="promo-text">
                 <strong>Electric Deal!</strong>
                 <span>Extra ₹50 saved on this order</span>
@@ -145,11 +146,11 @@ const Cart = () => {
               className="btn-checkout-main"
               onClick={() => navigate("/checkout")}
             >
-              Proceed to Pay <span className="btn-arrow">→</span>
+              Proceed to Pay <ArrowRight size={18} className="btn-arrow" />
             </button>
             
             <div className="secure-badge">
-              🔒 100% Safe & Secure Payments
+              <ShieldCheck size={14} /> 100% Safe & Secure Payments
             </div>
           </div>
         </div>

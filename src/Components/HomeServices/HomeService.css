@@ -63,51 +63,57 @@
 
 /* --- NEW MONTHLY BUTTON IN HEADER --- */
 .subscription-nav-btn {
-  /* Layout: Centers the content and keeps it on one line */
+  /* --- Layout --- */
   display: flex; 
   align-items: center; 
   justify-content: center; 
   white-space: nowrap;
   gap: 8px; 
+  width: 90%;            
+  max-width: 400px;      
+  margin: 10px auto;      
+  padding: 14px 0; /* Slightly taller for a more premium app feel */
 
-  /* Horizontal Adjustment */
-  width: 90%;             /* Use a percentage so it fits its container nicely */
-  max-width: 400px;       /* Prevents it from getting absurdly wide on desktop */
-  margin: 10px auto;      /* Centers the button itself horizontally in the div */
-  padding: 12px 0;        /* Vertical padding for height; horizontal is handled by width */
-
-  /* Visuals */
-  border-radius: 12px;
-  border: 2px solid black; 
-  color: black; 
-  font-size: 14px; 
-  font-weight: 700;
+  /* --- Modern Visuals --- */
+  border-radius: 14px; /* Slightly rounder to match your new cards */
+  border: none; /* Removed the harsh black border */
+  color: #ffffff; /* Crisp white text */
+  font-size: 15px; 
+  font-weight: 800;
+  letter-spacing: 0.5px;
   cursor: pointer;
   
-  /* Background & Animation */
-  background: linear-gradient(90deg, #b45309 10%, #64748b 40%, #d9a806 80%, #eb258f 100%);
-  background-size: 200% auto;
-  background-clip: padding-box;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  /* --- Premium Animated Background --- */
+  /* Flows from Accent Blue to a bright Cyan, back to deep Accent Blue */
+  background: linear-gradient(270deg, #0066ff, #00d2ff, #0047ff, #0066ff);
+  background-size: 300% 300%;
+  
+  /* --- Outer Glow (Makes it POP) --- */
+  box-shadow: 0 8px 25px rgba(0, 102, 255, 0.35);
+  
+  /* Smooth transitions for hover */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
   animation: gradientFlow 4s ease infinite;
-  transition: transform 0.2s;
 }
 
+/* Smooth continuous gradient animation */
 @keyframes gradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Optional: Slight pop on hover */
+/* Combined hover effect for a premium "lift" */
 .subscription-nav-btn:hover {
-  transform: scale(1.03);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 102, 255, 0.45); /* Glow expands on hover */
 }
 
-.subscription-nav-btn:hover {
-  transform: translateY(-2px);
+/* Click effect */
+.subscription-nav-btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
 }
-
 /* --- CATEGORY SCROLL --- */
 .category-scroll {
   display: flex;
