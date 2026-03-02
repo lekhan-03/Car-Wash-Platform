@@ -198,16 +198,15 @@
   transform: scale(0.95);
 }
 
-/* --- PROMO BANNER (Moving Marquee Tucked Underneath) --- */
 .promo-banner-strip-water {
   background: #000000; /* Deep black matching the photo */
   color: white; 
   
-  /* Heavy top padding so text clears the overlapping card above it */
-  padding: 24px 0 14px 0; 
+  /* FIX 1: Removed the space in "24 px" and increased top padding slightly so the text perfectly clears the card */
+  padding: 26px 0 12px 0; 
   
-  /* Round only the bottom corners */
-  border-radius: 12px 12px 12px 12px;
+  /* FIX 2: Correctly round ONLY the bottom corners to make it look attached to the card */
+  border-radius: 0 0 16px 16px;
   
   display: flex; 
   align-items: center;
@@ -232,8 +231,8 @@
   animation: marqueeScroll 12s linear infinite; 
 }
 
-/* Pauses the scrolling on hover */
-.promo-banner-strip:hover .marquee-track {
+/* FIX 3: Corrected class name so the scrolling properly pauses on hover */
+.promo-banner-strip-water:hover .marquee-track {
   animation-play-state: paused;
 }
 
@@ -254,7 +253,7 @@
 /* The continuous scroll animation */
 @keyframes marqueeScroll {
   0% { transform: translateX(0); }
-  /* Because we duplicated the content perfectly in JSX, shifting by -50% creates a flawless infinite loop */
+  /* Because the JSX is duplicated perfectly, shifting by -50% creates a flawless infinite loop */
   100% { transform: translateX(-50%); } 
 }
 

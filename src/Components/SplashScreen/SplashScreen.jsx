@@ -1,62 +1,65 @@
 import React, { useState, useEffect } from 'react';
 import './SplashScreen.css';
-import MyCar from '../Assets/Toyota.png';
+import MyCar from '../Assets/Toyota.png'; // Make sure this path is correct
 
 const SplashScreen = ({ onFinish }) => {
+  const [startZoom, setStartZoom] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
+    // 1. Zoom triggers at 2.8s (exactly after the car finishes driving off-screen)
+    const zoomTimer = setTimeout(() => {
+      setStartZoom(true);
+    }, 2800);
+
+    // 2. Start fading out the entire splash screen at 3.6s (right as the zoom finishes)
     const exitTimer = setTimeout(() => {
       setIsExiting(true);
-    }, 5500); 
+    }, 3600);
 
+    // 3. Unmount completely and reveal your app
     const unmountTimer = setTimeout(() => {
       onFinish();
-    }, 6000); 
+    }, 4000);
 
     return () => {
+      clearTimeout(zoomTimer);
       clearTimeout(exitTimer);
       clearTimeout(unmountTimer);
     };
   }, [onFinish]);
 
-  const brandName = "Rev2Blush".split("");
-
   return (
     <div className={`splash-screen-container ${isExiting ? "fade-out" : ""}`}>
-      {/* Background Rotating Rings Layer */}
-      <div className="splash-bg-rings"></div>
-
-      <div className="splash-logo-wrapper">
-        <div className="splash-logo">
-          {brandName.map((letter, index) => (
-            <span 
-              key={index} 
-              className="splash-letter"
-              style={{ animationDelay: `${index * 0.1}s` }} 
-            >
-              {letter}
-            </span>
-          ))}
+      
+      <div className={`dark-phase ${startZoom ? "zooming" : ""}`}>
+        
+        {/* Detailed Astrology/Concentric Rings */}
+        <div className="mandala-bg">
+          <div className="m-circle m1"></div>
+          <div className="m-circle m2"></div>
+          <div className="m-circle m3"></div>
+          <div className="m-circle m4"></div>
+          <div className="m-circle m5"></div>
         </div>
 
-        <div className="splash-car-track">
-          <div className="splash-car">
-            <div className="car-particle-trail">
-              <span></span>
-              <span></span>
-              <span></span>
+        <div className="phase1-content-wrapper">
+          <h1 className="splash-logo-cursive">Rev2Blush</h1>
+          
+          {/* The Premium Car driving in AND out */}
+          <div className="splash-car-track">
+            <div className="splash-car">
+              <img 
+                src={MyCar} 
+                alt="Premium Car" 
+                className="real-car-img"
+              />
             </div>
-            <img 
-              src={MyCar} 
-              alt="Driving Car" 
-              className="real-car-img"
-            />
           </div>
         </div>
 
-        <div className="splash-subtitle">PREMIUM CAR CARE</div>
       </div>
+
     </div>
   );
 };

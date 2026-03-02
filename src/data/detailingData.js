@@ -2,7 +2,773 @@
 const detailingData = [
   {
     categoryId: 1,
+    categoryName: "PPF",
+    image: "https://res.cloudinary.com/ddgxphtda/image/upload/v1772461846/detailing/categories/PPF-new.jpg",
+    companies: [
+      {
+        id: 1,
+        name: "X Guard Film",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/logos/xguard.jpg",
+        products: [
+          {
+            id: 3001,
+            name: "TPU Gloss",
+            price: 4999,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3009.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3010.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3011.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
+
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3002,
+            name: "TPU Matte",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3009.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3010.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3011.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
+              
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
+
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3003,
+            name: "TPU Black Gloss",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3009.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3010.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3011.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
+              
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
+
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3004,
+            name: "TPU USA Instant Self Healing",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3009.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3010.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3011.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
+              
+
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+        ]
+      },
+      {
+        id: 2,
+        name: "Stek",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Logos/stek.jpg",
+        products: [
+          {
+            id: 3005,
+            name: "Gloss Defender",
+            price: 4999,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
+
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3006,
+            name: "TPU Matte",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3007,
+            name: "TPU Black Gloss",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
+
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3008,
+            name: "TPU USA Instant Self Healing",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
+
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+        ]
+      },
+      {
+        id: 3,
+        name: "Ultra Nano Sheild",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/UltraNanoSheild.jpeg",
+        products: [
+          {
+            id: 3009,
+            name: "CLEAR PROTECT",
+            price: 4999,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3010,
+            name: "CLEAR STANDARD ",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3011,
+            name: "CLEAR ATMARK",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3012,
+            name: "CRYSTAL CLEAR PRO",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          }, {
+            id: 3013,
+            name: "CLEAR HIDEFENCE",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+        ]
+      },
+    ]
+  }
+  , 
+{
+    categoryId: 2,
+    categoryName: "Ceramic Coating",
+    image: "https://res.cloudinary.com/ddgxphtda/image/upload/v1772456010/detailing/categories/Ceramic_coating.jpg",
+    companies: [
+      {
+        id: 1,
+        name: "Nasiol",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/logos/Nasiol.jpeg",
+        products: [
+          {
+            id: 2001,
+            name: "Nasiol ZR53 Nano Ceramic Coating For Car Paint Protection 50 Ml",
+            price: 4999,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Nasiol/101.jpg",
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `Ultimate Paint Protection: It offers a durable protective layer against various environmental elements like bird droppings, acid rain, UV rays, and other potential harms to car paint.Scratch and Chemical Resistance: The coating creates a resistant surface, providing protection against scratches and increasing resistance to chemicals.Hydrophobic and Oleophobic Properties: It makes the surface water and oil repellent, facilitating easy cleaning of stubborn stains like bird droppings and road salt residue.UV Protection: Nasiol ZR53 helps protect the vehicle's paint color from fading by offering UV protection.Enhanced Durability and Gloss: It is tested and certified for 9H hardness, providing long-lasting protection (up to 3 years, or up to 7 years with maintenance) and a crystal gloss reflection with a silky feel.Ease of Application: The product is designed to be user-friendly and can be applied without special equipment,with everything nee`,
+            stock: true
+          },
+          {
+            id: 2002,
+            name: "Nasiol XR03 Nano Ceramic Coating 50 Ml",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Nasiol/102.jpg",
+
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Nasiol XR03 has a super formula to shield the car paint from scratches and defend it against acid rain, bird droppings, road salt, and damaging sun rays. It rejuvenates the original color of the surface and ensures the vehicle has an attractive look.Nasiol XR03 coated surfaces achieve to a high hydrophobic surface and enables you to clean your car easily and with less time and energy.`,
+            stock: true
+          }
+        ]
+      },
+      {
+        id: 2,
+        name: "Sonax",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/sonax.jpg",
+        products: [
+          {
+            id: 2003,
+            name: "Sonax PROFILINE Professional CC EVO Hydrophobic Ceramic Coating ",
+            price: 4999,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Sonax/201.jpg",
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `SONAX PROFILINE Ceramic Coating CC Evo, a two-stage ceramic coating system designed for long-term paint protection and enhancement on vehicles. A person wearing black gloves is shown applying the product, specifically the "BASECOAT EVO," onto a car's paintwork using an applicator pad. The product aims to provide a high-gloss, wet-look finish, along with improved hydrophobicity, chemical resistance, UV resistance, and protection against environmental contaminants like insect dirt, bird droppings, and tree sap. The system includes a base coat (BASECOAT EVO) and a gloss coat (GLOSS COAT EVO), applied after a preparatory cleaning step using a product like PREPARE.`,
+            stock: true
+          },
+          {
+            id: 2004,
+            name: "SONAX PROFILINE Hybrid Coating CC One",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Sonax/202.jpg",
+
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `SONAX is a worldwide car care brand manufacturing premium products for optimum maintenance, protection and rejuvenation of vehicles. With 70 years of continuous research and development SONAX car care products that last longer, perform better and shine brighter than the competition. The ever expanding line of SONAX car car products includes car waxes, interior and exterior cleaners, tire gels, vehicle paint cleaners, auto shampoo and more.`,
+            stock: true
+          },
+          {
+            id: 2005,
+            name: "SONAX CC36 Ceramic Coating",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Sonax/203.jpg",
+
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `PROFESSIONAL-LEVEL PROTECTION – Provides superior gloss and long-lasting protection against water spots, bird droppings, car wash scratches, and environmental contaminants for up to 1 year.
+EASY TO APPLY – No special equipment required—achieve professional results at home with an intuitive 2-stage application process.
+ADVANCED CERAMIC FORMULATION – Bonding technology creates a durable, glass-like shield for lasting protection and outstanding sheeting properties.
+SUPERIOR GLOSS & FINISH – Delivers an exceptionally glossy surface with deep shine and a smooth finish without the need for frequent reapplication.
+SAFE & VERSATILE – Can be applied by any detailer, from novice to professional, without the need for special training or equipment`,
+            stock: true
+          }
+        ]
+      }, {
+        id: 4,
+        name: "#M",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/3m.jpg",
+        products: [
+          {
+            id: 2009,
+            name: "3M KIT",
+            price: 4999,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/3m/2009.jpg",
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `Enhanced Protection: It forms a chemical bond with the automotive paint, providing a protective barrier against various environmental elements like UV rays, dirt, chemicals, and water. 
+Water Beading Effect: The coating creates a hydrophobic surface that promotes excellent water beading, helping water shed quickly from the vehicle and carrying away surface dust and dirt. 
+Easy Maintenance: The slick surface finish makes cleaning easier, as dirt, bugs, and bird droppings are less likely to adhere firmly to the paint.`,
+            stock: true
+          },
+          {
+            id: 2010,
+            name: "3M Paint Coating Protection Surface Coating Agent 90ml",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/3m/2010.jpg",
+
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Purpose: It is a proprietary paint coating treatment or film designed to provide enhanced protection for automotive finishes. 
+Benefits: It helps guard against various elements like scratches, stone chips, bug damage, road tar, stains, and the effects of harsh outdoor weathering, including UV radiation. 
+Features: Products like 3M™ Ceramic Coating provide enhanced depth and luster, a slick surface for easy maintenance, and maximum water beading effect for a "just polished" look. Other products, like Scotchgard™ Paint Protection Film Pro Series, offer high levels of scratch and stain resistance, clarity, and durability, often featuring a clearcoat for optimal clarity and UV protection.`,
+            stock: true
+          }
+        ]
+      },
+      {
+        id: 5,
+        name: "Meguirs",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Meguiars.jpg",
+        products: [
+          {
+            id: 2011,
+            name: "Meguiar's Beyond Ceramic Paint Coating M888, 40ml",
+            price: 4999,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Meguiars/2011.jpg",
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `Meguiar's Beyond Ceramic Paint Coating M888 is an exciting professional coating that utilizes proprietary chemistry built on prior technology that we've continued to improve upon. M888 is a multi-year paint protection(1) that delivers excellent durability and chemical resistance wrapped up in one amazing car ceramic coating that's extremely user-friendly. With M888, you get a professional long-lasting coating but don't have to worry about being a certified or a trained installer to apply; anyone can purchase and use Beyond Ceramic Paint Coating. The advanced formula allows for an easy application with a low risk of high spotting, a single coat application, and easy wipe-off. To help ensure you obtain the best results possible, we've also included a pro application guide in the kit with a QR code where you can get the SOP, videos, and SDS. This ceramic car coating is different than our traditional SiO2 ceramic-based products, delivering even better durability`,
+            stock: true
+          }
+        ]
+      },
+      {
+        id: 3,
+        name: "CarPro",
+        logo: "https://www.auto-dna.co.za/wp-content/uploads/2019/11/CarPro.png",
+        products: [
+          {
+            id: 2006,
+            name: "CarPro Cquartz Lite, 100ml",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/CarPro/2006.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `Introducing the incredibly user-friendly CQUARTZ Lite ceramic coating! “Lite” is based on the incredible CQUARTZ UK ceramic coating technology, which has become famous around the world! CQUARTZ Lite can be applied as a stand-alone ceramic coating lasting more than 6 months, or it can be used as a topcoat for existing CQUARTZ coatings!
+CQUARTZ Lite was designed for those that are not ready to make the plunge into the industry leading strength of our professional grade coatings but wish to enjoy some of the many benefits that only CQUARTZ coatings offer.
+The capabilities of CQUARTZ Lite include: easier to clean surfaces, resistance to insect splatter, petrol spills, light solvents, and UV rays, whilst providing a beading contact angle of 110 Deg! In other words, CQUARTZ Lite helps keep your paint super glossy, well protected, beads like crazy, and washes off easy when properly maintained! 
+
+CQUARTZ Lite is built on a combination of Sio2 and Tio2 particles with over 45% solid ma`,
+            stock: true
+          },
+          {
+            id: 2007,
+            name: "CarPro Gliss 2.0, 50ml",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/CarPro/2007.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `Hyper-Slickness: It provides an extremely smooth surface, enhancing gloss and the tactile feel of the vehicle's paintwork, and improving the sliding angle to repel contaminants.
+Enhanced Protection: Gliss 2.0 offers improved durability and protection against water spots, oils, dust, and other environmental contaminants due to its advanced oleophobic properties and high water contact angle (over 110°).
+Versatility: It is safe for use on various surfaces, including matte and satin paintwork, and can be used as a standalone coating or as a top coat to add thickness and enhance the performance of other ceramic coatings `,
+            stock: true
+          },
+          {
+            id: 2008,
+            name: "CARPRO C.Quartz Finest Reserve Ceramic Coating",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/CarPro/2008.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `
+C.Quartz Finest Reserve is the pinnacle of professional-grade coatings from CARPRO, designed exclusively for highly skilled and certified installers. As a flagship coating, it is crafted for professionals who demand the highest standards of performance and durability.
+
+This state-of-the-art hybrid blend of SiO2-infused epoxy nanoparticles represents the ultimate in CARPRO’s advanced coating technology. The innovative “SiO2poxi” composition bridges the gap between ceramic and organic materials, delivering a high-gloss, dense, and incredibly durable protective layer.
+
+Engineered to provide extreme resistance to water spots, acids, solvents, ice, oils, dirt, UV rays, and environmental contaminants, C.Quartz Finest Reserve offers unrivaled protection. This professional-grade coating is the ideal solution for vehicles that require superior care and exceptional performance.`,
+            stock: true
+          }
+        ]
+      },
+      {
+        id: 6,
+        name: "Detroit",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Detroit.jpeg",
+        products: [
+          {
+            id: 2012,
+            name: "Detroit Ceramic Coating 10H Pro, 50ml",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Detroit/2012.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `DETROITSURFACECARE CERAMIC COATING PRO 10H. Discover the benefits of using Detroit Ceramic Coating Pro 10H for your vehicle! This revolutionary product offers 3 years of durability, 10H hardness, and a glossy finish. It is available in a 50ml size and is a clear, nano-crystalline coating that effectively protects against weather, chemicals, UV rays, and various contaminants, while also repelling water and dirt. Experience an ultra-hard, 2-3 micron thick coating that leaves a deep and reflective gloss with PRO CERAMIC.`,
+            stock: true
+          },
+          {
+            id: 2013,
+            name: "Detroit Graphene Coating 10H Pro, 50 ml",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Detroit/2013.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `It is a graphene-infused ceramic coating designed to protect vehicles from various elements like chemicals, UV rays, and weather. 
+The coating provides enhanced hydrophobicity, gloss, and depth of shine, with a durability claimed to last up to 7 years. It's known for its exceptional strength and forms a hard, durable layer on the vehicle's surface. The product is engineered in the USA and features graphene oxide for premium hydrophobic water repellency and UV protection. You can find this product and related items on various online platforms specializing in car care products.`,
+            stock: true
+          }
+        ]
+      },
+      {
+        id: 7,
+        name: "SystemX",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/systemx.jpg",
+        products: [
+          {
+            id: 2014,
+            name: "Hyper Gloss 9H Coating",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Systemx/2014.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `System X MAX G+™ redefines professional-grade ceramic coatings featuring a 30% glossier finish, significantly improved gloss retention, and exceptional slickness all while protecting paintwork in the industry-proven MAX resin system.
+
+Max G+™ is the highest-level coating offering for paint, gel coat, wraps, and PPF.`,
+            stock: true
+          },
+          {
+            id: 2015,
+            name: "System X Max MF",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Detroit/2013.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `Introducing System X MAX MF – a groundbreaking ceramic nano-coating, uniquely formulated to maintain the natural look of matte and satin paints, wraps, and paint protection films (PPF) while providing superior surface protection.
+
+If you aim to preserve the subtle sophistication of your vehicle’s matte or satin finish, System X MAX MF™ is the ideal choice. This cutting-edge coating is specifically designed to enhance and safeguard matte, satin, and vinyl-wrapped surfaces without altering their inherent low-gloss appearance. Leveraging the industry-proven MAX resin system, System X MAX MF ensures your vehicle retains its original aesthetic while receiving unmatched protection against environmental elements, scratches, and everyday wear.`,
+            stock: true
+          }
+        ]
+      },
+      {
+        id: 8,
+        name: "Wurth",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Wurth.jpg",
+        products: [
+          {
+            id: 2016,
+            name: "Wurth Ceramic Coating kit 50ML",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Wurth/2016.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `Wurth 50 ML Ceramic Coating kit
+Ceramic Coating provides the ultimate protection of automotive paint surfaces. Transforms the surface to provide a selfcleaning, anti-static, weather-resistant, clear hard surface. Ceramic coating can also be used on other surfaces like plastic trim, wheels, chrome and glass. Repels water and contaminants, one application can last up to three years..`,
+            stock: true
+          }
+        ]
+      },
+      {
+        id: 9,
+        name: "Gyeon",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/gyeon.jpg",
+        products: [
+          {
+            id: 2017,
+            name: "GYEON Q² MOHS EVO Kit",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/gyeon/2017.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `GYEON Q² MOHS EVO Kit
+
+GYEON Q² MOHS EVO Kit is professional 9H hard ceramic coating which is extremely chemical resistant and hydrophobic with high-durable ceramic protection for your car. Q² MOHS EVO is available only for our approved ceramic coating pros.
+
+Q² Mohs EVO uses fluoro modified polysilazanes for the first time in the car care industry. Why is that so important? Modifying polysilazanes at the precursory stages bring enormous benefits on all levels: durability, chemical resistance or ease of use. Amazingly easy to apply and wipe off, yet extremely chemical resistant. Slick and smooth, yet very durable. Gloss and extreme hydrophobic are just value-added.`,
+            stock: true
+          },
+          {
+            id: 2018,
+            name: "Q² Syncro EVO",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/gyeon/2018.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `Q² SYNCRO EVO is the most advanced multi-layer ceramic paint coating ever produced by GYEON that is available on the open market. The ceramic coating kit combines the all-new Q² MOHS EVO with an all-new Q² SKIN EVO top coat. This ceramic coating is designed for maximum durability and protection out of the base coatings while delivering incredible gloss and color enhancement out of the topcoat with incredible durability of the self-cleaning and hydrophobic effects.
+
+BOX CONTAINS: Q² MOHS EVO & Q² SKIN EVO / Q²M COATING APPLICATOR LIGHT / INSTRUCTION MANUAL / MAINTENANCE BOOKLET MINI / DOOR STICKERS / #GYEONIZED STICKER`,
+            stock: true
+          },
+          {
+            id: 2019,
+            name: " Gyeon Q2 One EVO 50 ml",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/gyeon/2019.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `Introducing the Q² One EVO 50ml, the perfect entry-level ceramic coating designed for enthusiasts seeking exceptional protection with easy application. Experience the best of both worlds – the simplicity of a wax and the long-lasting durability of a professional coating. With the enhanced EVO formula, achieve a stunning, glossy finish and reliable protection that lasts up to 24 months.`,
+            stock: true
+          },
+          {
+            id: 2020,
+            name: " GYEON Q² SYNCRO EVO Light Box",
+            price: 2999,
+            rating: 4.3,
+            reviewCount: 72,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/gyeon/2020.jpg",
+            ],
+            highlights: [
+              "Quick Application",
+              "High Water Beading",
+              "UV Protection"
+            ],
+            description: `Ceramic coating for cars is improved a lot over a period of time.
+
+Q² Mohs EVO uses fluoro modified polysilazanes for the first time in the car care industry. Why is that so important? Modifying polysilazanes at the precursory stages bring enormous benefits on all levels: durability, chemical resistance or ease of use. Q² Mohs EVO  is amazingly easy to apply and wipe off, yet extremely chemical resistant ceramic coating for cars. Slick and smooth, yet very durable. Gloss and extreme hydrophobicity are just value-added.
+
+Q² Syncro EVO is a unique opportunity to apply a specially designed coating system consisting of a sophisticated base coat Q² Mohs EVO and the Q² Skin EVO topcoat, which increases gloss and the durability of the hydrophobic effect massively. The topcoat provides also very strong colour enhancement, easily noticeable on dark coloured paints.`,
+            stock: true
+          }
+        ]
+      },
+    ]
+  },
+  {
+    categoryId: 3,
     categoryName: "Rubbing Polish",
+    image: "https://res.cloudinary.com/ddgxphtda/image/upload/v1772460584/detailing/categories/Rubbing_polish.jpg",
     companies: [
       {
         id: 1,
@@ -1063,770 +1829,9 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
     ]
   },
   {
-    categoryId: 2,
-    categoryName: "Ceramic Coating",
-    companies: [
-      {
-        id: 1,
-        name: "Nasiol",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/logos/Nasiol.jpeg",
-        products: [
-          {
-            id: 2001,
-            name: "Nasiol ZR53 Nano Ceramic Coating For Car Paint Protection 50 Ml",
-            price: 4999,
-            rating: 4.5,
-            reviewCount: 128,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Nasiol/101.jpg",
-            ],
-            highlights: [
-              "9H Hardness Protection",
-              "Hydrophobic Effect",
-              "UV Protection",
-              "Gloss Finish"
-            ],
-            description: `Ultimate Paint Protection: It offers a durable protective layer against various environmental elements like bird droppings, acid rain, UV rays, and other potential harms to car paint.Scratch and Chemical Resistance: The coating creates a resistant surface, providing protection against scratches and increasing resistance to chemicals.Hydrophobic and Oleophobic Properties: It makes the surface water and oil repellent, facilitating easy cleaning of stubborn stains like bird droppings and road salt residue.UV Protection: Nasiol ZR53 helps protect the vehicle's paint color from fading by offering UV protection.Enhanced Durability and Gloss: It is tested and certified for 9H hardness, providing long-lasting protection (up to 3 years, or up to 7 years with maintenance) and a crystal gloss reflection with a silky feel.Ease of Application: The product is designed to be user-friendly and can be applied without special equipment,with everything nee`,
-            stock: true
-          },
-          {
-            id: 2002,
-            name: "Nasiol XR03 Nano Ceramic Coating 50 Ml",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Nasiol/102.jpg",
-
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Nasiol XR03 has a super formula to shield the car paint from scratches and defend it against acid rain, bird droppings, road salt, and damaging sun rays. It rejuvenates the original color of the surface and ensures the vehicle has an attractive look.Nasiol XR03 coated surfaces achieve to a high hydrophobic surface and enables you to clean your car easily and with less time and energy.`,
-            stock: true
-          }
-        ]
-      },
-      {
-        id: 2,
-        name: "Sonax",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/sonax.jpg",
-        products: [
-          {
-            id: 2003,
-            name: "Sonax PROFILINE Professional CC EVO Hydrophobic Ceramic Coating ",
-            price: 4999,
-            rating: 4.5,
-            reviewCount: 128,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Sonax/201.jpg",
-            ],
-            highlights: [
-              "9H Hardness Protection",
-              "Hydrophobic Effect",
-              "UV Protection",
-              "Gloss Finish"
-            ],
-            description: `SONAX PROFILINE Ceramic Coating CC Evo, a two-stage ceramic coating system designed for long-term paint protection and enhancement on vehicles. A person wearing black gloves is shown applying the product, specifically the "BASECOAT EVO," onto a car's paintwork using an applicator pad. The product aims to provide a high-gloss, wet-look finish, along with improved hydrophobicity, chemical resistance, UV resistance, and protection against environmental contaminants like insect dirt, bird droppings, and tree sap. The system includes a base coat (BASECOAT EVO) and a gloss coat (GLOSS COAT EVO), applied after a preparatory cleaning step using a product like PREPARE.`,
-            stock: true
-          },
-          {
-            id: 2004,
-            name: "SONAX PROFILINE Hybrid Coating CC One",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Sonax/202.jpg",
-
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `SONAX is a worldwide car care brand manufacturing premium products for optimum maintenance, protection and rejuvenation of vehicles. With 70 years of continuous research and development SONAX car care products that last longer, perform better and shine brighter than the competition. The ever expanding line of SONAX car car products includes car waxes, interior and exterior cleaners, tire gels, vehicle paint cleaners, auto shampoo and more.`,
-            stock: true
-          },
-          {
-            id: 2005,
-            name: "SONAX CC36 Ceramic Coating",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Sonax/203.jpg",
-
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `PROFESSIONAL-LEVEL PROTECTION – Provides superior gloss and long-lasting protection against water spots, bird droppings, car wash scratches, and environmental contaminants for up to 1 year.
-EASY TO APPLY – No special equipment required—achieve professional results at home with an intuitive 2-stage application process.
-ADVANCED CERAMIC FORMULATION – Bonding technology creates a durable, glass-like shield for lasting protection and outstanding sheeting properties.
-SUPERIOR GLOSS & FINISH – Delivers an exceptionally glossy surface with deep shine and a smooth finish without the need for frequent reapplication.
-SAFE & VERSATILE – Can be applied by any detailer, from novice to professional, without the need for special training or equipment`,
-            stock: true
-          }
-        ]
-      }, {
-        id: 4,
-        name: "#M",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/3m.jpg",
-        products: [
-          {
-            id: 2009,
-            name: "3M KIT",
-            price: 4999,
-            rating: 4.5,
-            reviewCount: 128,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/3m/2009.jpg",
-            ],
-            highlights: [
-              "9H Hardness Protection",
-              "Hydrophobic Effect",
-              "UV Protection",
-              "Gloss Finish"
-            ],
-            description: `Enhanced Protection: It forms a chemical bond with the automotive paint, providing a protective barrier against various environmental elements like UV rays, dirt, chemicals, and water. 
-Water Beading Effect: The coating creates a hydrophobic surface that promotes excellent water beading, helping water shed quickly from the vehicle and carrying away surface dust and dirt. 
-Easy Maintenance: The slick surface finish makes cleaning easier, as dirt, bugs, and bird droppings are less likely to adhere firmly to the paint.`,
-            stock: true
-          },
-          {
-            id: 2010,
-            name: "3M Paint Coating Protection Surface Coating Agent 90ml",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/3m/2010.jpg",
-
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Purpose: It is a proprietary paint coating treatment or film designed to provide enhanced protection for automotive finishes. 
-Benefits: It helps guard against various elements like scratches, stone chips, bug damage, road tar, stains, and the effects of harsh outdoor weathering, including UV radiation. 
-Features: Products like 3M™ Ceramic Coating provide enhanced depth and luster, a slick surface for easy maintenance, and maximum water beading effect for a "just polished" look. Other products, like Scotchgard™ Paint Protection Film Pro Series, offer high levels of scratch and stain resistance, clarity, and durability, often featuring a clearcoat for optimal clarity and UV protection.`,
-            stock: true
-          }
-        ]
-      },
-      {
-        id: 5,
-        name: "Meguirs",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Meguiars.jpg",
-        products: [
-          {
-            id: 2011,
-            name: "Meguiar's Beyond Ceramic Paint Coating M888, 40ml",
-            price: 4999,
-            rating: 4.5,
-            reviewCount: 128,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Meguiars/2011.jpg",
-            ],
-            highlights: [
-              "9H Hardness Protection",
-              "Hydrophobic Effect",
-              "UV Protection",
-              "Gloss Finish"
-            ],
-            description: `Meguiar's Beyond Ceramic Paint Coating M888 is an exciting professional coating that utilizes proprietary chemistry built on prior technology that we've continued to improve upon. M888 is a multi-year paint protection(1) that delivers excellent durability and chemical resistance wrapped up in one amazing car ceramic coating that's extremely user-friendly. With M888, you get a professional long-lasting coating but don't have to worry about being a certified or a trained installer to apply; anyone can purchase and use Beyond Ceramic Paint Coating. The advanced formula allows for an easy application with a low risk of high spotting, a single coat application, and easy wipe-off. To help ensure you obtain the best results possible, we've also included a pro application guide in the kit with a QR code where you can get the SOP, videos, and SDS. This ceramic car coating is different than our traditional SiO2 ceramic-based products, delivering even better durability`,
-            stock: true
-          }
-        ]
-      },
-      {
-        id: 3,
-        name: "CarPro",
-        logo: "https://www.auto-dna.co.za/wp-content/uploads/2019/11/CarPro.png",
-        products: [
-          {
-            id: 2006,
-            name: "CarPro Cquartz Lite, 100ml",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/CarPro/2006.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `Introducing the incredibly user-friendly CQUARTZ Lite ceramic coating! “Lite” is based on the incredible CQUARTZ UK ceramic coating technology, which has become famous around the world! CQUARTZ Lite can be applied as a stand-alone ceramic coating lasting more than 6 months, or it can be used as a topcoat for existing CQUARTZ coatings!
-CQUARTZ Lite was designed for those that are not ready to make the plunge into the industry leading strength of our professional grade coatings but wish to enjoy some of the many benefits that only CQUARTZ coatings offer.
-The capabilities of CQUARTZ Lite include: easier to clean surfaces, resistance to insect splatter, petrol spills, light solvents, and UV rays, whilst providing a beading contact angle of 110 Deg! In other words, CQUARTZ Lite helps keep your paint super glossy, well protected, beads like crazy, and washes off easy when properly maintained! 
-
-CQUARTZ Lite is built on a combination of Sio2 and Tio2 particles with over 45% solid ma`,
-            stock: true
-          },
-          {
-            id: 2007,
-            name: "CarPro Gliss 2.0, 50ml",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/CarPro/2007.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `Hyper-Slickness: It provides an extremely smooth surface, enhancing gloss and the tactile feel of the vehicle's paintwork, and improving the sliding angle to repel contaminants.
-Enhanced Protection: Gliss 2.0 offers improved durability and protection against water spots, oils, dust, and other environmental contaminants due to its advanced oleophobic properties and high water contact angle (over 110°).
-Versatility: It is safe for use on various surfaces, including matte and satin paintwork, and can be used as a standalone coating or as a top coat to add thickness and enhance the performance of other ceramic coatings `,
-            stock: true
-          },
-          {
-            id: 2008,
-            name: "CARPRO C.Quartz Finest Reserve Ceramic Coating",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/CarPro/2008.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `
-C.Quartz Finest Reserve is the pinnacle of professional-grade coatings from CARPRO, designed exclusively for highly skilled and certified installers. As a flagship coating, it is crafted for professionals who demand the highest standards of performance and durability.
-
-This state-of-the-art hybrid blend of SiO2-infused epoxy nanoparticles represents the ultimate in CARPRO’s advanced coating technology. The innovative “SiO2poxi” composition bridges the gap between ceramic and organic materials, delivering a high-gloss, dense, and incredibly durable protective layer.
-
-Engineered to provide extreme resistance to water spots, acids, solvents, ice, oils, dirt, UV rays, and environmental contaminants, C.Quartz Finest Reserve offers unrivaled protection. This professional-grade coating is the ideal solution for vehicles that require superior care and exceptional performance.`,
-            stock: true
-          }
-        ]
-      },
-      {
-        id: 6,
-        name: "Detroit",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Detroit.jpeg",
-        products: [
-          {
-            id: 2012,
-            name: "Detroit Ceramic Coating 10H Pro, 50ml",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Detroit/2012.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `DETROITSURFACECARE CERAMIC COATING PRO 10H. Discover the benefits of using Detroit Ceramic Coating Pro 10H for your vehicle! This revolutionary product offers 3 years of durability, 10H hardness, and a glossy finish. It is available in a 50ml size and is a clear, nano-crystalline coating that effectively protects against weather, chemicals, UV rays, and various contaminants, while also repelling water and dirt. Experience an ultra-hard, 2-3 micron thick coating that leaves a deep and reflective gloss with PRO CERAMIC.`,
-            stock: true
-          },
-          {
-            id: 2013,
-            name: "Detroit Graphene Coating 10H Pro, 50 ml",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Detroit/2013.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `It is a graphene-infused ceramic coating designed to protect vehicles from various elements like chemicals, UV rays, and weather. 
-The coating provides enhanced hydrophobicity, gloss, and depth of shine, with a durability claimed to last up to 7 years. It's known for its exceptional strength and forms a hard, durable layer on the vehicle's surface. The product is engineered in the USA and features graphene oxide for premium hydrophobic water repellency and UV protection. You can find this product and related items on various online platforms specializing in car care products.`,
-            stock: true
-          }
-        ]
-      },
-      {
-        id: 7,
-        name: "SystemX",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/systemx.jpg",
-        products: [
-          {
-            id: 2014,
-            name: "Hyper Gloss 9H Coating",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Systemx/2014.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `System X MAX G+™ redefines professional-grade ceramic coatings featuring a 30% glossier finish, significantly improved gloss retention, and exceptional slickness all while protecting paintwork in the industry-proven MAX resin system.
-
-Max G+™ is the highest-level coating offering for paint, gel coat, wraps, and PPF.`,
-            stock: true
-          },
-          {
-            id: 2015,
-            name: "System X Max MF",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Detroit/2013.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `Introducing System X MAX MF – a groundbreaking ceramic nano-coating, uniquely formulated to maintain the natural look of matte and satin paints, wraps, and paint protection films (PPF) while providing superior surface protection.
-
-If you aim to preserve the subtle sophistication of your vehicle’s matte or satin finish, System X MAX MF™ is the ideal choice. This cutting-edge coating is specifically designed to enhance and safeguard matte, satin, and vinyl-wrapped surfaces without altering their inherent low-gloss appearance. Leveraging the industry-proven MAX resin system, System X MAX MF ensures your vehicle retains its original aesthetic while receiving unmatched protection against environmental elements, scratches, and everyday wear.`,
-            stock: true
-          }
-        ]
-      },
-      {
-        id: 8,
-        name: "Wurth",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Wurth.jpg",
-        products: [
-          {
-            id: 2016,
-            name: "Wurth Ceramic Coating kit 50ML",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/Wurth/2016.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `Wurth 50 ML Ceramic Coating kit
-Ceramic Coating provides the ultimate protection of automotive paint surfaces. Transforms the surface to provide a selfcleaning, anti-static, weather-resistant, clear hard surface. Ceramic coating can also be used on other surfaces like plastic trim, wheels, chrome and glass. Repels water and contaminants, one application can last up to three years..`,
-            stock: true
-          }
-        ]
-      },
-      {
-        id: 9,
-        name: "Gyeon",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/gyeon.jpg",
-        products: [
-          {
-            id: 2017,
-            name: "GYEON Q² MOHS EVO Kit",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/gyeon/2017.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `GYEON Q² MOHS EVO Kit
-
-GYEON Q² MOHS EVO Kit is professional 9H hard ceramic coating which is extremely chemical resistant and hydrophobic with high-durable ceramic protection for your car. Q² MOHS EVO is available only for our approved ceramic coating pros.
-
-Q² Mohs EVO uses fluoro modified polysilazanes for the first time in the car care industry. Why is that so important? Modifying polysilazanes at the precursory stages bring enormous benefits on all levels: durability, chemical resistance or ease of use. Amazingly easy to apply and wipe off, yet extremely chemical resistant. Slick and smooth, yet very durable. Gloss and extreme hydrophobic are just value-added.`,
-            stock: true
-          },
-          {
-            id: 2018,
-            name: "Q² Syncro EVO",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/gyeon/2018.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `Q² SYNCRO EVO is the most advanced multi-layer ceramic paint coating ever produced by GYEON that is available on the open market. The ceramic coating kit combines the all-new Q² MOHS EVO with an all-new Q² SKIN EVO top coat. This ceramic coating is designed for maximum durability and protection out of the base coatings while delivering incredible gloss and color enhancement out of the topcoat with incredible durability of the self-cleaning and hydrophobic effects.
-
-BOX CONTAINS: Q² MOHS EVO & Q² SKIN EVO / Q²M COATING APPLICATOR LIGHT / INSTRUCTION MANUAL / MAINTENANCE BOOKLET MINI / DOOR STICKERS / #GYEONIZED STICKER`,
-            stock: true
-          },
-          {
-            id: 2019,
-            name: " Gyeon Q2 One EVO 50 ml",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/gyeon/2019.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `Introducing the Q² One EVO 50ml, the perfect entry-level ceramic coating designed for enthusiasts seeking exceptional protection with easy application. Experience the best of both worlds – the simplicity of a wax and the long-lasting durability of a professional coating. With the enhanced EVO formula, achieve a stunning, glossy finish and reliable protection that lasts up to 24 months.`,
-            stock: true
-          },
-          {
-            id: 2020,
-            name: " GYEON Q² SYNCRO EVO Light Box",
-            price: 2999,
-            rating: 4.3,
-            reviewCount: 72,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/CC/gyeon/2020.jpg",
-            ],
-            highlights: [
-              "Quick Application",
-              "High Water Beading",
-              "UV Protection"
-            ],
-            description: `Ceramic coating for cars is improved a lot over a period of time.
-
-Q² Mohs EVO uses fluoro modified polysilazanes for the first time in the car care industry. Why is that so important? Modifying polysilazanes at the precursory stages bring enormous benefits on all levels: durability, chemical resistance or ease of use. Q² Mohs EVO  is amazingly easy to apply and wipe off, yet extremely chemical resistant ceramic coating for cars. Slick and smooth, yet very durable. Gloss and extreme hydrophobicity are just value-added.
-
-Q² Syncro EVO is a unique opportunity to apply a specially designed coating system consisting of a sophisticated base coat Q² Mohs EVO and the Q² Skin EVO topcoat, which increases gloss and the durability of the hydrophobic effect massively. The topcoat provides also very strong colour enhancement, easily noticeable on dark coloured paints.`,
-            stock: true
-          }
-        ]
-      },
-    ]
-  },
-  {
-    categoryId: 3,
-    categoryName: "PPF",
-    companies: [
-      {
-        id: 1,
-        name: "X Guard Film",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/logos/xguard.jpg",
-        products: [
-          {
-            id: 3001,
-            name: "TPU Gloss",
-            price: 4999,
-            rating: 4.5,
-            reviewCount: 128,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3009.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3010.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3011.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
-
-            ],
-            highlights: [
-              "9H Hardness Protection",
-              "Hydrophobic Effect",
-              "UV Protection",
-              "Gloss Finish"
-            ],
-            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
-            stock: true
-          },
-          {
-            id: 3002,
-            name: "TPU Matte",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3009.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3010.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3011.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
-              
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
-
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
-          {
-            id: 3003,
-            name: "TPU Black Gloss",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3009.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3010.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3011.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
-              
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
-
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
-          {
-            id: 3004,
-            name: "TPU USA Instant Self Healing",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3009.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3010.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3011.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
-              
-
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
-        ]
-      },
-      {
-        id: 2,
-        name: "Stek",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Logos/stek.jpg",
-        products: [
-          {
-            id: 3005,
-            name: "Gloss Defender",
-            price: 4999,
-            rating: 4.5,
-            reviewCount: 128,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
-
-            ],
-            highlights: [
-              "9H Hardness Protection",
-              "Hydrophobic Effect",
-              "UV Protection",
-              "Gloss Finish"
-            ],
-            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
-            stock: true
-          },
-          {
-            id: 3006,
-            name: "TPU Matte",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
-          {
-            id: 3007,
-            name: "TPU Black Gloss",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
-
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
-          {
-            id: 3008,
-            name: "TPU USA Instant Self Healing",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
-
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
-        ]
-      },
-      {
-        id: 3,
-        name: "Ultra Nano Sheild",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/UltraNanoSheild.jpeg",
-        products: [
-          {
-            id: 3009,
-            name: "CLEAR PROTECT",
-            price: 4999,
-            rating: 4.5,
-            reviewCount: 128,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
-            ],
-            highlights: [
-              "9H Hardness Protection",
-              "Hydrophobic Effect",
-              "UV Protection",
-              "Gloss Finish"
-            ],
-            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
-            stock: true
-          },
-          {
-            id: 3010,
-            name: "CLEAR STANDARD ",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
-          {
-            id: 3011,
-            name: "CLEAR ATMARK",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
-          {
-            id: 3012,
-            name: "CRYSTAL CLEAR PRO",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          }, {
-            id: 3013,
-            name: "CLEAR HIDEFENCE",
-            price: 7999,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
-            ],
-            highlights: [
-              "Superior Gloss",
-              "Long-lasting up to 5 years",
-              "Easy Maintenance"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
-        ]
-      },
-    ]
-  }
-  , {
     categoryId: 4,
     categoryName: "TINT",
+    image: "https://res.cloudinary.com/ddgxphtda/image/upload/v1772459154/detailing/categories/tint.jpg",
     companies: [
       {
         id: 1,
@@ -2132,7 +2137,8 @@ Q² Syncro EVO is a unique opportunity to apply a specially designed coating sys
         ]
       },
     ]
-  }
-];
+  },
+  
+  ];
 
 export default detailingData;
