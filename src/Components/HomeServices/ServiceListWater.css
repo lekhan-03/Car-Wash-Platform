@@ -265,3 +265,49 @@
     gap: 30px;
   }
 }
+/* --- INLINE AD BANNER --- */
+.inline-ad-banner {
+  width: 110%;
+  height: 110px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 102, 255, 0.15);
+  cursor: pointer;
+  position: relative;
+  /* Adjust margins if needed, but the gap in .service-list-container handles spacing perfectly */
+}
+
+.inline-ad-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.inline-ad-banner:hover img {
+  transform: scale(1.05);
+}
+/* --- INLINE AD BANNER --- */
+.inline-ad-banner {
+  width: 100%;
+  height: 130px;
+  border-radius: 20px;
+  /* overflow: hidden; */
+  box-shadow: 0 10px 25px rgba(0, 102, 255, 0.15);
+  cursor: pointer;
+  position: relative;
+  
+  /* CRITICAL FIX: If using a CSS Grid on desktop, this forces the ad to span all columns */
+  grid-column: 1 / -1; 
+}
+
+.inline-ad-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.inline-ad-banner:hover img {
+  transform: scale(0.75);
+}

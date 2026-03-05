@@ -8,10 +8,8 @@ export const carBrands = [
   { name: "Mahindra", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Mahindra.jpg" },
   { name: "Honda", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Honda.jpg" },
   { name: "Toyota", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Toyoto.jpg" },
+  { name: "MG", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/MG.jpg" },
   { name: "Volkswagon", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/VW.jpg" },
-  { name: "Aston Martin", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/AM.jpg" },
-  { name: "Audi", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Audi.jpg" },
-  { name: "Bentley", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Bentley.jpg" },
   { name: "Mercedes", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Benz.jpg" },
   { name: "BMW", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/BMW.jpg" },
   { name: "BYD", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/BYD.jpg" },
@@ -29,7 +27,6 @@ export const carBrands = [
   { name: "Lexus", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Lexus.jpg" },
   { name: "Land Rover", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/LR.jpg" },
   { name: "Maserati", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Maserati.jpg" },
-  { name: "MG", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/MG.jpg" },
   { name: "Mini Cooper", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Mini.jpg" },
   { name: "Mitsubishi", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Mitsubishi.jpg" },
   { name: "Nissan", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Nissan.jpg" },
@@ -37,15 +34,32 @@ export const carBrands = [
   { name: "Renult", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Renult.jpg" },
   { name: "Rolls Royce", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/RR.jpg" },
   { name: "Volvo", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Volvo.jpg" },
+  { name: "Aston Martin", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/AM.jpg" },
+  { name: "Audi", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Audi.jpg" },
+  { name: "Bentley", logo: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Logo/Bentley.jpg" },
+
 ];
 
 export const vehiclesByBrand = {
   "Maruti Suzuki": [
-    { name: "Baleno", img: "https://imgd.aeplcdn.com/370x208/cw/ec/40280/Baleno-Right-Front-Three-Quarter-162033.jpg", type: "hatchback" },
-    { name: "Swift", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Swift.jpeg", type: "hatchback" },
-    { name: "Dzire", img: "https://imgd.aeplcdn.com/370x208/cw/ec/40180/Dzire-Right-Front-Three-Quarter-161984.jpg", type: "sedan" },
-    { name: "Wagon R", img: "https://imgd.aeplcdn.com/370x208/cw/ec/39051/Wagon-R-Right-Front-Three-Quarter-162850.jpg", type: "hatchback" },
-    { name: "Alto", img: "https://imgd.aeplcdn.com/370x208/cw/ec/39060/Alto-Right-Front-Three-Quarter-161919.jpg", type: "hatchback" },
+    { name: "Alto K10", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/AltoK10.png", type: "hatchback" },
+    { name: "Baleno", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Baleno.png", type: "hatchback" },
+    { name: "Brezza", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Brezza.png", type: "suv" },
+    { name: "Celerio", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Celerio.png", type: "hatchback" },
+    { name: "Ciaz", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Ciaz.png", type: "hatchback" },
+    { name: "Dzire", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Dzire.png", type: "hatchback" },
+    { name: "Eeco", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Eeco.png", type: "hatchback" },
+    { name: "Ertiga", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Ertiga.png", type: "hatchback" },
+    { name: "E-Spresso", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/E-Spresso.png", type: "hatchback" },
+    { name: "Fronx", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Fronx.png", type: "hatchback" },
+    { name: "Grand Vitara", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/GrandVitara.png", type: "hatchback" },
+    { name: "Ignis", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Ignis.png", type: "hatchback" },
+    { name: "Invicto", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Invicto.png", type: "hatchback" },
+    { name: "Jimny", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Jimny.png", type: "hatchback" },
+    { name: "Swift", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Swift.png", type: "hatchback" },
+    { name: "Victoris", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/Victoris.png", type: "hatchback" },
+    { name: "Wagon R", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/WagonR.png", type: "hatchback" },
+    { name: "XL-6", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Suzuki/XL6.png", type: "hatchback" },
   ],
   "Hyundai": [
     { name: "Accent", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Hyundai/Accent.jpg", type: "sedan" },
@@ -125,6 +139,18 @@ export const vehiclesByBrand = {
     { name: "ZS", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/MG/ZS.jpg", type: "suv" },
     { name: "ZS-EV", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/MG/zsev.jpg", type: "suv" },
   ],
+  "Mercedes": [
+    { name: "V-Class", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/V-Clas.jpg", type: "suv" },
+    { name: "GLS", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/GLS.jpg", type: "suv" },
+    { name: "GLE", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/GLE.jpg", type: "suv" },
+    { name: "GLC", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/GLC.jpg", type: "suv" },
+    { name: "GLA", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/GLA.jpg", type: "suv" },
+    { name: "G-Class", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/G-Class.jpg", type: "suv" },
+    { name: "E-Class", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/E-Class.jpg", type: "suv" },
+    { name: "C-Class", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/C-Class.jpg", type: "suv" },
+    { name: "A-Class", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/A-Class.jpg", type: "suv" },
+    { name: "AMG", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Mercedes/AMG.jpg", type: "suv" },
+  ],
   "Tata": [
     { name: "Altroz", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Tata/Altroz.jpg", type: "hatchback" },
     { name: "Aria", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Tata/Aria.jpg", type: "suv" },
@@ -143,7 +169,7 @@ export const vehiclesByBrand = {
     { name: "Manza", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Tata/Manza.jpg", type: "sedan" },
     { name: "Zest", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Tata/Zest.jpg", type: "sedan" },
   ],
-  "Toyoto": [
+  "Toyota": [
     { name: "Altis", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Toyoto/Altis.jpg", type: "sedan" },
     { name: "Camry", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Toyoto/Camry.jpg", type: "sedan" },
     { name: "Corolla", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Toyoto/Corolla.jpg", type: "sedan" },
@@ -178,11 +204,11 @@ export const vehiclesByBrand = {
 
   ],
   "Land Rover": [
-    { name: "Car 1", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img4.jpg", type: "suv" },
-    { name: "Car 2", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img7.jpg", type: "suv" },
-    { name: "car 3", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img10.jpg", type: "suv" },
-    { name: "car 4", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img13.jpg", type: "suv" },
-    { name: "car 5", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img16.jpg", type: "suv" },
+    { name: "Car 1", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img4.jpg", type: "lux" },
+    { name: "Car 2", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img7.jpg", type: "lux" },
+    { name: "car 3", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img10.jpg", type: "lux" },
+    { name: "car 4", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img13.jpg", type: "lux" },
+    { name: "car 5", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/LandRover/img16.jpg", type: "lux" },
 
   ],
   "Renult": [
@@ -196,6 +222,21 @@ export const vehiclesByBrand = {
     { name: "Pulse", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Renult/Pulse.jpg", type: "suv" },
     { name: "Scala", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Renult/Scala.jpg", type: "suv" },
     { name: "Triber", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/Renult/Triber.jpg", type: "suv" },
+
+
+  ],
+  "BMW": [
+    { name: "X5", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/BMW/x5.png", type: "lux" },
+    { name: "X3", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/BMW/x43.png", type: "lux" },
+    { name: "X1", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/BMW/x1.png", type: "lux" },
+    { name: "X7", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/BMW/x7.png", type: "lux" },
+    { name: "2-series", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/BMW/2-series.png", type: "lux" },
+    { name: "3-series", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/BMW/3-series.png", type: "lux" },
+    { name: "340 I", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/BMW/340-i.png", type: "lux" },
+    { name: "M4", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/BMW/M4.png", type: "lux" },
+    { name: "M5", img: "https://res.cloudinary.com/ddgxphtda/image/upload/SelectCar/BMW/M5.png", type: "lux" },
+
+
 
   ],
 };

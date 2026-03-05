@@ -12,8 +12,8 @@ const detailingData = [
         products: [
           {
             id: 3001,
-            name: "TPU Gloss",
-            price: 4999,
+            name: "TPU Gloss PPF",
+            price: 30000,
             rating: 4.5,
             reviewCount: 128,
             images: [
@@ -40,7 +40,7 @@ const detailingData = [
           {
             id: 3002,
             name: "TPU Matte",
-            price: 7999,
+            price: 35000,
             rating: 4.8,
             reviewCount: 95,
             images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
@@ -50,7 +50,7 @@ const detailingData = [
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
-              
+
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
 
@@ -66,7 +66,7 @@ const detailingData = [
           {
             id: 3003,
             name: "TPU Black Gloss",
-            price: 7999,
+            price: 39000,
             rating: 4.8,
             reviewCount: 95,
             images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
@@ -77,7 +77,7 @@ const detailingData = [
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
-              
+
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
 
             ],
@@ -91,8 +91,8 @@ const detailingData = [
           },
           {
             id: 3004,
-            name: "TPU USA Instant Self Healing",
-            price: 7999,
+            name: "TPU White Gloss PPF",
+            price: 37000,
             rating: 4.8,
             reviewCount: 95,
             images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
@@ -104,7 +104,33 @@ const detailingData = [
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
-              
+
+
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3122,
+            name: "TPU Instant Heal PPF",
+            price: 57000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: ["https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3017.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3009.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3010.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3011.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3012.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3013.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3014.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3015.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/XGaurd/3016.jpeg",
+
 
             ],
             highlights: [
@@ -119,13 +145,13 @@ const detailingData = [
       },
       {
         id: 2,
-        name: "Stek",
+        name: "3M",
         logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Logos/stek.jpg",
         products: [
           {
             id: 3005,
-            name: "Gloss Defender",
-            price: 4999,
+            name: "100 Gloss PPF",
+            price: 77000,
             rating: 4.5,
             reviewCount: 128,
             images: [
@@ -147,8 +173,8 @@ const detailingData = [
           },
           {
             id: 3006,
-            name: "TPU Matte",
-            price: 7999,
+            name: "50 Gloss PPF",
+            price: 57000,
             rating: 4.8,
             reviewCount: 95,
             images: [
@@ -168,8 +194,8 @@ const detailingData = [
           },
           {
             id: 3007,
-            name: "TPU Black Gloss",
-            price: 7999,
+            name: "150 Gloss PPF",
+            price: 125000,
             rating: 4.8,
             reviewCount: 95,
             images: [
@@ -190,8 +216,8 @@ const detailingData = [
           },
           {
             id: 3008,
-            name: "TPU USA Instant Self Healing",
-            price: 7999,
+            name: "200 Gloss PPF",
+            price: 149000,
             rating: 4.8,
             reviewCount: 95,
             images: [
@@ -220,7 +246,7 @@ const detailingData = [
           {
             id: 3009,
             name: "CLEAR PROTECT",
-            price: 4999,
+            price: 34000,
             rating: 4.5,
             reviewCount: 128,
             images: [
@@ -240,7 +266,7 @@ const detailingData = [
           {
             id: 3010,
             name: "CLEAR STANDARD ",
-            price: 7999,
+            price: 41000,
             rating: 4.8,
             reviewCount: 95,
             images: [
@@ -258,7 +284,7 @@ const detailingData = [
           {
             id: 3011,
             name: "CLEAR ATMARK",
-            price: 7999,
+            price: 45000,
             rating: 4.8,
             reviewCount: 95,
             images: [
@@ -276,7 +302,7 @@ const detailingData = [
           {
             id: 3012,
             name: "CRYSTAL CLEAR PRO",
-            price: 7999,
+            price: 51000,
             rating: 4.8,
             reviewCount: 95,
             images: [
@@ -293,6 +319,249 @@ const detailingData = [
           }, {
             id: 3013,
             name: "CLEAR HIDEFENCE",
+            price: 69000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+        ]
+      },
+      {
+        id: 4,
+        name: "Garware",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        products: [
+          {
+            id: 3014,
+            name: "PROTECT PPF",
+            price: 32000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3015,
+            name: "Plus PPF",
+            price: 40000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3016,
+            name: "Premium PPF",
+            price: 52000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3017,
+            name: "Titanium PPF",
+            price: 79000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+        ]
+      },
+      {
+        id: 5,
+        name: "Saint Gobian",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        products: [
+          {
+            id: 3018,
+            name: "Norshield PPF",
+            price: 61000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3019,
+            name: "Sapphire PPF",
+            price: 76000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3020,
+            name: "Hydro PPF",
+            price: 89000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3021,
+            name: "Matte PPF",
+            price: 98000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+        ]
+      },
+      {
+        id: 6,
+        name: "Cosmo",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        products: [
+          {
+            id: 3018,
+            name: "Gold PPF",
+            price: 49000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3019,
+            name: "Platinum PPF",
+            price: 79000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3020,
+            name: "Hydro PPF",
+            price: 7999,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3021,
+            name: "Matte PPF",
             price: 7999,
             rating: 4.8,
             reviewCount: 95,
@@ -310,10 +579,383 @@ const detailingData = [
           },
         ]
       },
+      {
+        id: 8,
+        name: "Rodium",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        products: [
+          {
+            id: 3023,
+            name: "Rodium R2 PPF",
+            price: 89000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3024,
+            name: "Rodium R1 PPF",
+            price: 74000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3025,
+            name: "Rodium R3 PPF",
+            price: 139000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+        ]
+      },
+      {
+        id: 9,
+        name: "Xpel",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        products: [
+          {
+            id: 3026,
+            name: "Xpel Exo Armor PPF",
+            price: 89000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3027,
+            name: "Xpel Ultimate PPF",
+            price: 117000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+
+              "Non-Yellowing: Our film will not turn yellow from the sun's exposure so you will not even notice it’s there.",
+              "Discoloration & Stain Resistant: Ultimate Plus resists all stains and stays clear no matter what gets on it.",
+              "Edge Seal Technology: Our Edge Seal Technology keeps the film in place, so you don't have to worry about it peeling off.",
+              "Prevents Wear & Tear: It would Protect against scratches and chips. Preserves the integrity of the surface and prolongs the lifespan of the material.",
+              " Heat Activated Self-Healing Topcoat: Made from a special material called elastomeric polyurethane, ULTIMATE PLUS can fix small scratches and swirls when you gently heat it up."
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3028,
+            name: "Xpel Fusion PPF",
+            price: 140000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Flawless Fit: The best design patterns, customized for every car type.",
+
+              "Provides Protection From The Elements: It protects your car from rust, bug acid, and other harmful substances.",
+              "Hydrophobic Properties: Repels water, dirt, and road grime to keep surfaces clean and protected from environmental debris.",
+
+              "Self-Healing: Advanced top coat properties eliminate fine scratches and swirl marks, when it comes into contact to heat.",
+
+              "Improves Surface Clarity: Makes colors look richer and gives PPF a smooth, slick finish & improves the car's appearance, and increases overall aesthetic appeal."
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+        ]
+      },
+      {
+        id: 10,
+        name: "Eclipse",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        products: [
+          {
+            id: 3029,
+            name: "Eclipse Luna PPF",
+            price: 35000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3030,
+            name: "Eclipse Sola PPF",
+            price: 43000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3031,
+            name: "Eclipse Orion PPF",
+            price: 48000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3032,
+            name: "Eclipse Matte PPF",
+            price: 40000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+        ]
+      },
+      {
+        id: 12,
+        name: "Paint Guard",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        products: [
+          {
+            id: 3034,
+            name: "Paint Guard Prime PPF",
+            price: 24000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3035,
+            name: "Paint Guard Professional PPF",
+            price: 33000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+          {
+            id: 3036,
+            name: "Paint Guard Mansory PPF",
+            price: 49000,
+            rating: 4.8,
+            reviewCount: 95,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+            ],
+            highlights: [
+              "Superior Gloss",
+              "Long-lasting up to 5 years",
+              "Easy Maintenance"
+            ],
+            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
+            stock: true
+          },
+
+        ]
+      },
+      {
+        id: 11,
+        name: "Scotchgard",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        products: [
+          {
+            id: 3033,
+            name: "Scotchgard 200 Gloss PPF",
+            price: 35000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+        ]
+      },
+      {
+        id: 13,
+        name: "Llumar",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        products: [
+          {
+            id: 3037,
+            name: "Llumar Classic PPF",
+            price: 99000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3038,
+            name: "Llumar Platinum PPF",
+            price: 139000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+          {
+            id: 3039,
+            name: "Llumar Valor PPF",
+            price: 163000,
+            rating: 4.5,
+            reviewCount: 128,
+            images: [
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+            ],
+            highlights: [
+              "9H Hardness Protection",
+              "Hydrophobic Effect",
+              "UV Protection",
+              "Gloss Finish"
+            ],
+            description: `3M Ceramic Coating offers long-lasting shine, scratch resistance, and water-repellent protection for your car.`,
+            stock: true
+          },
+        ]
+      },
     ]
   }
-  , 
-{
+  ,
+  {
     categoryId: 2,
     categoryName: "Ceramic Coating",
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/v1772456010/detailing/categories/Ceramic_coating.jpg",
@@ -427,7 +1069,7 @@ SAFE & VERSATILE – Can be applied by any detailer, from novice to professional
         ]
       }, {
         id: 4,
-        name: "#M",
+        name: "3M",
         logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/3m.jpg",
         products: [
           {
@@ -1862,7 +2504,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -1879,7 +2521,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-            "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -1930,7 +2572,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -1947,7 +2589,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -1964,7 +2606,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4003.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -2022,7 +2664,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -2056,7 +2698,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -2073,7 +2715,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -2090,7 +2732,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -2107,7 +2749,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -2124,7 +2766,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
             rating: 4.0,
             reviewCount: 210,
             images: [
-            "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4001.jpeg",
               "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Tint/Garware/4002.jpeg"
             ],
             highlights: [
@@ -2138,7 +2780,7 @@ The clear coat safe formula dramatically reduces the time and effort to restore 
       },
     ]
   },
-  
-  ];
+
+];
 
 export default detailingData;
