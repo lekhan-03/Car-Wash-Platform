@@ -2,10 +2,10 @@ const adsStripData = [
   {
     id: 11,
     // Hoora-style Blue/Yellow Banner
-    image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads/2.png",
+    image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads-Strips/105.png",
     title: "50% OFF First Wash",
     redirect: "/services",
-    bgColor: "#0047ff"
+    bgColor: "#000000"
   },
   {
     id: 12,
@@ -13,7 +13,7 @@ const adsStripData = [
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads-Strips/106.png", 
     title: "Monthly Membership Starts @ ₹499",
     redirect: "/plans",
-    bgColor: "#ffffff"
+    bgColor: "#000000"
   },
   {
     id: 13,
@@ -21,7 +21,7 @@ const adsStripData = [
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads-Strips/104.png", 
     title: "Premium Interior Detailing",
     redirect: "/premium",
-    bgColor: "#1a1a1a"
+    bgColor: "#000000"
   },
   {
     id: 14,
@@ -29,7 +29,7 @@ const adsStripData = [
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads-Strips/102.png",
     title: "Monsoon Care Package",
     redirect: "/seasonal",
-    bgColor: "#206aff"
+    bgColor: "#000000"
   }
 ];
 

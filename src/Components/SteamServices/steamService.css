@@ -1,169 +1,296 @@
-/* steamService.css */
+/* ServiceListSteam.css */
 
-/* --- MAIN CONTAINER --- */
-.home-container {
-  width: 100%;
-  height: 100vh;
-  background: #f0f7ff;
+.service-list-container {
   display: flex;
   flex-direction: column;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
+  gap: 30px; /* Space between each Service Unit (Card + Banner) */
+  margin-bottom: 40px;
+  padding: 10px 5px;
 }
 
-/* --- GLASS HEADER --- */
-.glass-header {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.85); 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  padding: 15px 20px 15px 20px;
-  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.05);
+/* Wrapper to group Card and Banner together */
+.service-unit-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0; /* CRITICAL: Remove gap so the negative margin overlaps seamlessly */
 }
 
-.header-top-row {
+/* --- THE MAIN CARD (Solid to hide banner underneath) --- */
+.glass-card {
+  /* 1. Solid Background */
+  background: #ffffff; 
+  
+  /* 2. Border & Shape */
+  border-radius: 20px;
+  border: 1px solid #f0f4f8;
+  
+  /* 3. Layout */
+  padding: 18px;
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+  
+  /* 4. CRITICAL: Overlap Physics */
+  position: relative;
+  z-index: 2; /* Forces card to sit ABOVE the promo banner */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* Casts a shadow directly onto the black banner */
+  
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* --- LEFT SIDE: CONTENT --- */
+.card-left {
+  flex: 1;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+/* Rating */
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.star-badge {
+  background: #fff8e1;
+  color: #f59e0b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.review-count {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Features List */
+.glass-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.glass-features li {
+  font-size: 12px;
+  color: #475569;
+  margin-bottom: 5px;
+  display: flex;
   align-items: center;
 }
 
-/* Location */
-.location-info { display: flex; gap: 8px; align-items: center; }
-.loc-text { display: flex; flex-direction: column; }
-.loc-label { font-size: 10px; color: #666; font-weight: 600; text-transform: uppercase; }
-.loc-city { font-size: 14px; font-weight: 700; color: #0a1929; }
-
-/* --- NEW MONTHLY BUTTON IN HEADER --- */
-/* .subscription-nav-btn {
-  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
-  color: white; 
-  border: none; 
-  padding: 8px 14px; 
-  border-radius: 12px;
-  display: flex; 
-  align-items: center; 
-  gap: 8px; 
-  font-size: 12px; 
-  font-weight: 700;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  cursor: pointer;
-  transition: transform 0.2s;
+.glass-features li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #0066ff;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 5px rgba(0, 102, 255, 0.4);
 }
 
-.subscription-nav-btn:hover {
-  transform: translateY(-2px);
-} */
-
-/* --- CATEGORY SCROLL --- */
-.category-scroll {
-  display: flex; 
-  gap: 12px; 
-  overflow-x: auto;
-  padding-bottom: 5px; 
-  scrollbar-width: none;
-  width: 100%;
-  white-space: nowrap;
+/* Price Section */
+.card-price-row {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
 }
-.category-scroll::-webkit-scrollbar { display: none; }
 
-.glass-pill {
-  background: #fff;
-  border: 1px solid #dbeafe;
-  padding: 8px 20px;
-  border-radius: 25px;
-  font-size: 13px;
-  font-weight: 600;
+.price-main {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0066ff;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.price-main small { font-size: 12px; font-weight: 600; color: #0066ff; }
+
+.view-details-btn {
+  font-size: 11px;
   color: #64748b;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  font-weight: 600;
+  margin-top: 4px;
+  text-decoration: underline;
+  text-decoration-color: rgba(100, 116, 139, 0.3);
+  width: fit-content;
+}
+
+/* --- RIGHT SIDE: MEDIA --- */
+.card-right {
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
   flex-shrink: 0;
 }
 
-.glass-pill:hover {
-  transform: translateY(-1px);
-  border-color: #0066ff;
-  color: #0066ff;
+.img-wrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.glass-pill.active {
-  background: #0066ff;
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover .img-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Floating Add Button */
+.add-btn-glass {
+  position: absolute;
+  bottom: -10px;
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
   color: #fff;
-  border-color: #0066ff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+  z-index: 2;
 }
 
-/* --- SCROLL CONTENT --- */
-.scrollable-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 0 20px;
+.add-btn-glass:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 102, 255, 0.5);
 }
-.with-header-space { padding-top: 130px; } 
 
-/* --- BANNER --- */
-.top-banner-section {
+.add-btn-glass:active {
+  transform: scale(0.95);
+}
+
+/* --- PROMO BANNER --- */
+.promo-banner-strip-steam {
+  background: #000000; /* Deep black matching the photo */
+  color: white; 
+  
+  /* Increased top padding slightly so the text perfectly clears the card */
+  padding: 26px 0 12px 0; 
+  
+  /* Correctly round ONLY the bottom corners to make it look attached to the card */
+  border-radius: 0 0 16px 16px;
+  
+  display: flex; 
+  align-items: center;
+  font-weight: 600; 
+  font-size: 13px;
+  
+  /* Pull the banner up UNDER the card */
+  margin-top: -16px; 
+  
+  /* CRITICAL: Overlap Physics & Hide Overflow for animation */
   position: relative;
-  border-radius: 20px;
+  z-index: 1; /* Forces banner to sit BEHIND the main card */
+  overflow: hidden; 
+}
+
+/* The moving track */
+.marquee-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: max-content; /* Allows track to be as wide as the duplicated content */
+  animation: marqueeScroll 12s linear infinite; 
+}
+
+.promo-banner-strip-steam:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.promo-content { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+  /* Acts as the gap between each duplicated phrase */
+  padding-right: 40px; 
+}
+
+.arrow-icon { 
+  font-size: 14px; 
+  opacity: 0.8; 
+  margin-left: 8px;
+}
+
+/* The continuous scroll animation */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  /* Because the JSX is duplicated perfectly, shifting by -50% creates a flawless infinite loop */
+  100% { transform: translateX(-50%); } 
+}
+
+/* --- INLINE AD BANNER --- */
+.inline-ad-banner {
+  width: 100%; /* Matches the exact width of your service cards */
+  border-radius: 14px; 
   overflow: hidden;
-  height: 170px;
-  box-shadow: 0 10px 25px rgba(0, 102, 255, 0.15);
-  background: #fff;
-  margin-bottom: 25px;
-}
-.banner-img { width: 100%; height: 100%; object-fit: cover; }
-.dots-indicator {
-  position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
-  display: flex; gap: 6px;
-}
-.dot { width: 6px; height: 6px; background: rgba(255,255,255,0.6); border-radius: 50%; }
-.dot.active { background: #fff; width: 20px; border-radius: 4px; }
-
-/* --- HEADERS --- */
-.section-header h3 {
-  font-size: 18px; font-weight: 800; color: #0a1929; margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft shadow for a premium feel */
+  cursor: pointer;
+  position: relative;
+  
+  /* CRITICAL: display: flex removes the weird invisible gap that sometimes appears under images */
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  
+  /* Forces the ad to span all columns on desktop grids */
+  grid-column: 1 / -1; 
 }
 
-/* --- TRUST SECTION --- */
-.trust-section {
-  margin: 30px 0 50px;
-  background: rgba(255,255,255,0.6); 
-  border: 1px solid #fff;
-  border-radius: 18px; padding: 25px 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.03); text-align: center;
+.inline-ad-banner img {
+  width: 100%;
+  height: auto; /* CRITICAL FIX: This lets the image naturally dictate the perfect height without cropping anything! */
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.trust-section h3 { font-size: 14px; margin-bottom: 20px; color: #666; text-transform: uppercase; }
-.stats-row { display: flex; justify-content: space-around; align-items: center; }
-.stat-card { display: flex; flex-direction: column; }
-.stat-val { font-size: 18px; font-weight: 800; color: #0066ff; }
-.stat-lbl { font-size: 10px; color: #888; margin-top: 2px; }
-.stat-divider { width: 1px; height: 30px; background: #e0e0e0; }
 
-/* --- BOTTOM SHEET --- */
-.backdrop {
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5); z-index: 900;
-  backdrop-filter: blur(3px);
+.inline-ad-banner:hover img {
+  transform: scale(1.02);
 }
-.bottom-sheet-container {
-  position: fixed; bottom: 0; left: 0; right: 0;
-  height: 85vh;
-  background: #fff;
-  border-radius: 24px 24px 0 0;
-  z-index: 1000;
-  overflow: hidden;
-  box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
-  padding-bottom: env(safe-area-inset-bottom);
+
+/* --- RESPONSIVE GRID (Desktop) --- */
+@media (min-width: 768px) {
+  .service-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 30px;
+  }
 }
-.sheet-handle-bar {
-  width: 100%; height: 25px; display: flex; justify-content: center; align-items: center;
-}
-.handle { width: 40px; height: 4px; background: #ddd; border-radius: 2px; }
-.sheet-content-scroll { height: 100%; overflow-y: auto; padding-bottom: 80px; }
