@@ -238,20 +238,39 @@ li::before { content: "✓"; color: #0066ff; font-weight: 800; position: absolut
 .add-btn-primary.disabled { background: #cbd5e1; cursor: not-allowed; box-shadow: none; transform: none; }
 
 /* --- RESPONSIVE --- */
+/* --- RESPONSIVE --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
   .detailing-details-wrapper {
     padding: 15px;
-    padding-bottom: 120px;
+    padding-bottom: 160px; /* Increased padding so content doesn't get trapped under the footer */
     width: 100%;
   }
   .details-content { 
-    /* CRITICAL FIX 5: minmax(0, 1fr) STOPS grid blowout on mobile */
     grid-template-columns: minmax(0, 1fr); 
     gap: 25px; 
     padding: 20px; 
   }
   .main-image-card { height: 320px; width: 100%; }
   .product-title { font-size: 24px; }
-  .sticky-action-bar { padding: 12px 20px; }
-  .main-action-block { display: none; } /* Hide duplicate button on mobile, use sticky footer */
+  
+  /* FIX 1: Bring back the inline Add to Cart / Add Configuration buttons */
+  .main-action-block > .add-cart-hero-btn,
+  .tint-configurator-inline .add-cart-hero-btn { 
+    display: flex; /* Changed from 'none' so it always shows up */
+    margin-top: 15px;
+  }
+  
+  /* FIX 2: Lift the sticky footer ABOVE your app's bottom navigation menu */
+  .sticky-action-bar { 
+    padding: 12px 20px; 
+    bottom: 70px; /* Lifts it up by 70px so it sits right on top of your 'Water Wash / Steam Wash' menu */
+    z-index: 999;
+  }
+  
+  .main-action-block { 
+    border-bottom: none; 
+    margin-bottom: 10px; 
+    padding-bottom: 0; 
+  }
 }

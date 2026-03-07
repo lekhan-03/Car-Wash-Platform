@@ -33,6 +33,14 @@ const sortedCategories = [...detailingData].sort((a, b) =>
   getOrderIndex(a.categoryName) - getOrderIndex(b.categoryName)
 );
 
+// Helper to safely extract price for sorting and displaying
+const getSafePrice = (price) => {
+  if (typeof price === 'object' && price !== null) {
+    return Number(Object.values(price)[0]) || 0;
+  }
+  return Number(price) || 0;
+};
+
 export default function Detailing() {
   const [currentView, setCurrentView] = useState("categories"); 
   const [selectedCategory, setSelectedCategory] = useState(sortedCategories[0]);
@@ -45,7 +53,7 @@ export default function Detailing() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setBannerIndex((prev) => (prev + 1) % adsData.length);
+      setBannerIndex((prev) => (prev + 1) % (adsData?.length || 1));
     }, 4000);
     return () => clearInterval(interval);
   }, []);
@@ -54,6 +62,7 @@ export default function Detailing() {
     if (!selectedCategory) return [];
     let allProducts = [];
 
+    // 1. Gather Products
     if (selectedCompany) {
       allProducts = selectedCompany.products.map(p => ({...p, companyName: selectedCompany.name}));
     } else {
@@ -63,15 +72,20 @@ export default function Detailing() {
       });
     }
 
+    // 2. Safe Search Filtering (Prevents crashes if fields are missing)
+    let filteredProducts = allProducts;
     if (searchQuery.trim()) {
       const lowerQ = searchQuery.toLowerCase();
-      return allProducts.filter(p => 
-        p.name.toLowerCase().includes(lowerQ) ||
-        p.companyName.toLowerCase().includes(lowerQ) ||
-        (p.highlights && p.highlights.some(h => h.toLowerCase().includes(lowerQ)))
-      );
+      filteredProducts = allProducts.filter(p => {
+        const matchName = p.name?.toLowerCase().includes(lowerQ);
+        const matchCompany = p.companyName?.toLowerCase().includes(lowerQ);
+        const matchHighlights = p.highlights?.some(h => typeof h === 'string' && h.toLowerCase().includes(lowerQ));
+        return matchName || matchCompany || matchHighlights;
+      });
     }
-    return allProducts;
+
+    // 3. ENHANCEMENT: Sort by Price (Low to High)
+    return filteredProducts.sort((a, b) => getSafePrice(a.price) - getSafePrice(b.price));
   }, [selectedCategory, selectedCompany, searchQuery]);
 
   const handleCategoryClick = (cat) => {
@@ -92,33 +106,16 @@ export default function Detailing() {
             ========================================= */}
         {currentView === "categories" && (
           <div className="view-fade-in">
-            {/* SEARCH BAR */}
-            <div className="search-section">
-              <div className="search-box">
-                <Search size={18} className="search-icon" />
-                <input 
-                  type="text" 
-                  placeholder="Search products, brands..." 
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                {searchQuery && (
-                  <button className="clear-search" onClick={() => setSearchQuery("")}>
-                    <X size={14} />
-                  </button>
-                )}
-              </div>
-            </div>
 
             {/* BANNER / ADS */}
-            <div className="top-banner-section">
-              {adsData.length > 0 ? (
+            <div className="top-banner-section" style={{ marginTop: '20px' }}>
+              {adsData && adsData.length > 0 ? (
                 <img src={adsData[bannerIndex].image} alt="Promotion" className="banner-img" />
               ) : (
                 <div className="banner-placeholder">Premium Detailing Offers</div>
               )}
               <div className="dots-indicator">
-                {adsData.map((_, i) => (
+                {adsData && adsData.map((_, i) => (
                   <span key={i} className={`dot ${i === bannerIndex ? "active" : ""}`} />
                 ))}
               </div>
@@ -129,78 +126,83 @@ export default function Detailing() {
               <h3>Services Categories</h3>
             </div>
             
-            {sortedCategories.length >= 4 && (
+            {/* BUG FIX: Safe rendering for any number of categories so it never crashes */}
+            {sortedCategories.length > 0 && (
               <div className="category-bento-grid">
                 
                 {/* 1. HERO CARD: PPF */}
-                <div className="bento-card-detailing hero-wash-card-detailing" onClick={() => handleCategoryClick(sortedCategories[0])}>
-                  <div className="bento-content-detailing">
-                    <div className="icon-wrapper glass">
-                      <ShieldCheck size={20} className="accent-icon" style={{ color: '#fff' }} />
+                {sortedCategories[0] && (
+                  <div className="bento-card-detailing hero-wash-card-detailing" onClick={() => handleCategoryClick(sortedCategories[0])}>
+                    <div className="bento-content-detailing">
+                      <div className="icon-wrapper glass">
+                        <ShieldCheck size={20} className="accent-icon" style={{ color: '#fff' }} />
+                      </div>
+                      <h3>{sortedCategories[0].categoryName}</h3>
+                      <p>Ultimate paint protection film</p>
+                      <span className="bento-action">Explore <ArrowRight size={14} /></span>
                     </div>
-                    <h3>{sortedCategories[0].categoryName}</h3>
-                    <p>Ultimate paint protection film</p>
-                    <span className="bento-action">Explore <ArrowRight size={14} /></span>
+                    <div className="image-wrapper hero-img-detailing">
+                      <img
+                        src={sortedCategories[0].image || "https://res.cloudinary.com/ddgxphtda/image/upload/v1771850857/HomeService/Hero/0E1A4424.jpg"}
+                        alt="PPF"
+                      />
+                    </div>
                   </div>
-                  <div className="image-wrapper hero-img-detailing">
-                    <img
-                      src={sortedCategories[0].image || "https://res.cloudinary.com/ddgxphtda/image/upload/v1771850857/HomeService/Hero/0E1A4424.jpg"}
-                      alt="PPF"
-                    />
-                  </div>
-                </div>
+                )}
 
-                {/* 2 & 3. SUB-GRID: Ceramic & Polish */}
+                {/* 2 & 3. SUB-GRID */}
                 <div className="bento-row-split">
-                  {/* Ceramic Coating */}
-                  <div className="bento-card-detailing square-card" onClick={() => handleCategoryClick(sortedCategories[1])}>
-                    <div className="bento-content-detailing z-10">
-                      <Sparkles size={18} className="dark-icon mb-2" />
-                      <h4>{sortedCategories[1].categoryName}</h4>
-                      {/* <p className="sub-text-light" style={{ fontSize: '11px', color: '#64748b', marginTop: '4px'}}>Long-lasting 9H gloss</p> */}
+                  {sortedCategories[1] && (
+                    <div className="bento-card-detailing square-card" onClick={() => handleCategoryClick(sortedCategories[1])}>
+                      <div className="bento-content-detailing z-10">
+                        <Sparkles size={18} className="dark-icon mb-2" />
+                        <h4>{sortedCategories[1].categoryName}</h4>
+                      </div>
+                      <div className="image-wrapper products-img-wrapper">
+                        <img
+                          src={sortedCategories[1].image || "https://res.cloudinary.com/ddgxphtda/image/upload/v1771853385/HomeService/Hero/Detailing_final.jpg"}
+                          alt={sortedCategories[1].categoryName}
+                        />
+                      </div>
                     </div>
-                    <div className="image-wrapper products-img-wrapper">
+                  )}
+
+                  {sortedCategories[2] && (
+                    <div className="bento-card square-card dark-card" onClick={() => handleCategoryClick(sortedCategories[2])}>
+                      <div className="bento-content z-10">
+                        <h4 className="text-white">{sortedCategories[2].categoryName}</h4>
+                        <p className="text-light-blue" style={{ fontSize: '11px', marginTop: '4px'}}>Flawless correction</p>
+                      </div>
+                      <div className="image-wrapper bottom-right-img">
+                        <img
+                          src={sortedCategories[2].image || "https://res.cloudinary.com/ddgxphtda/image/upload/v1771856081/HomeService/Hero/Monthly_Membership.jpg"}
+                          alt={sortedCategories[2].categoryName}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* 4. WIDE CARD */}
+                {sortedCategories[3] && (
+                  <div className="bento-card-detailing wide-row-card" onClick={() => handleCategoryClick(sortedCategories[3])}>
+                    <div className="bento-content-detailing row-content z-10">
+                      <div className="icon-wrapper soft-blue">
+                        <Layers size={20} className="accent-icon" />
+                      </div>
+                      <div className="text-group">
+                        <h3>{sortedCategories[3].categoryName}</h3>
+                        <p>Premium sun control films</p>
+                      </div>
+                    </div>
+                    <div className="image-wrapper insurance-img-wrapper">
                       <img
-                        src={sortedCategories[1].image || "https://res.cloudinary.com/ddgxphtda/image/upload/v1771853385/HomeService/Hero/Detailing_final.jpg"}
-                        alt="Ceramic Coating"
+                        src={sortedCategories[3].image || "https://res.cloudinary.com/ddgxphtda/image/upload/v1771853971/HomeService/Hero/Insurance.jpg"}
+                        alt={sortedCategories[3].categoryName}
                       />
                     </div>
                   </div>
-
-                  {/* Rubbing Polish */}
-                  <div className="bento-card square-card dark-card" onClick={() => handleCategoryClick(sortedCategories[2])}>
-                    <div className="bento-content z-10">
-                      <h4 className="text-white">{sortedCategories[2].categoryName}</h4>
-                      <p className="text-light-blue" style={{ fontSize: '11px', marginTop: '4px'}}>Flawless correction</p>
-                    </div>
-                    <div className="image-wrapper bottom-right-img">
-                      <img
-                        src={sortedCategories[2].image || "https://res.cloudinary.com/ddgxphtda/image/upload/v1771856081/HomeService/Hero/Monthly_Membership.jpg"}
-                        alt="Rubbing Polish"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* 4. WIDE CARD: TINT */}
-                <div className="bento-card-detailing wide-row-card" onClick={() => handleCategoryClick(sortedCategories[3])}>
-                  <div className="bento-content-detailing row-content z-10">
-                    <div className="icon-wrapper soft-blue">
-                      <Layers size={20} className="accent-icon" />
-                    </div>
-                    <div className="text-group">
-                      <h3>{sortedCategories[3].categoryName}</h3>
-                      <p>Premium sun control films</p>
-                    </div>
-                  </div>
-                  <div className="image-wrapper insurance-img-wrapper">
-                    <img
-                      src={sortedCategories[3].image || "https://res.cloudinary.com/ddgxphtda/image/upload/v1771853971/HomeService/Hero/Insurance.jpg"}
-                      alt="Window TINT"
-                    />
-                  </div>
-                </div>
-
+                )}
               </div>
             )}
 
@@ -245,6 +247,31 @@ export default function Detailing() {
               <h2>{selectedCategory?.categoryName}</h2>
             </div>
 
+            {/* SEARCH BAR */}
+            <div className="search-section" style={{ paddingBottom: '10px' }}>
+              <div className="search-box">
+                <Search size={18} className="search-icon" />
+                <input 
+                  type="text" 
+                  placeholder={`Search ${selectedCategory?.categoryName || 'products'}...`} 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                {searchQuery && (
+                  <button className="clear-search" onClick={() => setSearchQuery("")}>
+                    <X size={14} />
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* ENHANCEMENT: Search Results Indicator */}
+            {searchQuery && (
+              <div style={{ padding: '0 18px', fontSize: '12px', color: '#666', marginBottom: '10px', fontWeight: '500' }}>
+                Showing {currentProducts.length} result{currentProducts.length !== 1 ? 's' : ''} for "{searchQuery}"
+              </div>
+            )}
+
             {/* COMPANY FILTER */}
             {selectedCategory && (
               <div className="company-filter-strip">
@@ -284,7 +311,7 @@ export default function Detailing() {
 
                         <div className="card-actions">
                           <div className="price-wrapper">
-                             <span className="price-tag">₹{typeof product.price === 'object' ? Object.values(product.price)[0] : product.price}</span>
+                             <span className="price-tag">₹{getSafePrice(product.price)}</span>
                              <span className={`stock-tag ${product.stock ? 'in' : 'out'}`}>
                                 {product.stock ? "Available" : "Sold Out"}
                              </span>
@@ -299,7 +326,10 @@ export default function Detailing() {
                           disabled={!product.stock}
                           onClick={(e) => {
                             e.stopPropagation();
-                            if(product.stock) addToCart({...product, price: typeof product.price === 'object' ? Object.values(product.price)[0] : product.price});
+                            if(product.stock) {
+                              // BUG FIX: Added quantity property
+                              addToCart({...product, price: getSafePrice(product.price), quantity: 1});
+                            }
                           }}
                         >
                           {product.stock ? "ADD" : "N/A"}
@@ -318,7 +348,7 @@ export default function Detailing() {
                 ))
               ) : (
                 <div className="no-services">
-                  <p>No products found in this category.</p>
+                  <p>No products found matching your search.</p>
                 </div>
               )}
             </div>

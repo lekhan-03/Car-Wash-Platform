@@ -13,7 +13,6 @@ import detailingData from "../../data/detailingData";
 import { useCart } from "../../Context/CartContext";
 import "./DetailingProductDetails.css";
 
-// Fallback image in case the product data doesn't have an image
 const fallbackImage = "https://cdn-icons-png.flaticon.com/512/296/296216.png";
 
 export default function DetailingDetails() {
@@ -22,12 +21,11 @@ export default function DetailingDetails() {
   const productId = parseInt(id, 10);
   const { addToCart } = useCart();
 
-  // 1. SAFE DATA EXTRACTION
   let product = null;
   for (const category of detailingData) {
-    if (!category.companies) continue; // Prevent crashes if companies array is missing
+    if (!category.companies) continue; 
     for (const company of category.companies) {
-      if (!company.products) continue; // Prevent crashes if products array is missing
+      if (!company.products) continue; 
       const found = company.products.find((p) => p.id === productId);
       if (found) {
         product = { ...found, companyName: company.name, categoryName: category.categoryName };
@@ -38,9 +36,8 @@ export default function DetailingDetails() {
   }
 
   const [mainImage, setMainImage] = useState(product?.images?.[0] || fallbackImage);
-  const [configValues, setConfigValues] = useState({ Front: "", Rear: "", Side: "" });
+  const [configValues, setConfigValues] = useState({ Front: "", Rear: "", Sides: "" });
 
-  // Update image correctly if navigating directly between products
   useEffect(() => {
     if (product?.images?.[0]) {
       setMainImage(product.images[0]);
@@ -62,24 +59,31 @@ export default function DetailingDetails() {
     );
   }
 
-  // 2. SAFE PRICE RENDER (Prevents "Objects are not valid as a React child" crash)
   const displayPrice = typeof product.price === 'object' && product.price !== null 
     ? (product.price.sedan || Object.values(product.price)[0]) 
     : product.price;
 
-  // 3. ALLOW PPF AND TINTS TO USE THE CONFIGURATOR
-  const isConfigurable = product.categoryName?.toUpperCase().includes("TINT") || product.categoryName?.toUpperCase().includes("PPF");
+  const originalPrice = product.originalPrice || Math.round(displayPrice * 1.2);
+  const discountLabel = product.discountLabel || "Save 20%";
+
+  const isConfigurable = product.categoryName?.toUpperCase().includes("TINT");
 
   const handleAddClick = () => {
+    if (!product.stock) return; 
+
     if (isConfigurable) {
-        const hasValue = Object.values(configValues).some(val => val.trim() !== "");
-        if (!hasValue) {
-            alert("Please specify measurements/microns for at least one panel.");
+        const activeConfigs = Object.entries(configValues)
+            .filter(([key, val]) => val.trim() !== "")
+            .reduce((acc, [key, val]) => ({ ...acc, [key]: val }), {});
+
+        if (Object.keys(activeConfigs).length === 0) {
+            alert("Please specify the tint percentage for at least one window.");
             return;
         }
-        addToCart({ ...product, config: configValues, price: displayPrice });
+
+        addToCart({ ...product, config: activeConfigs, price: displayPrice, quantity: 1 });
     } else {
-        addToCart({ ...product, price: displayPrice });
+        addToCart({ ...product, price: displayPrice, quantity: 1 });
     }
   };
 
@@ -133,41 +137,52 @@ export default function DetailingDetails() {
           
           <div className="price-row">
             <span className="current-price">₹{displayPrice}</span>
-            <span className="original-price">₹{Math.round(displayPrice * 1.2)}</span> 
-            <span className="discount-tag">Save 20%</span>
+            <span className="original-price">₹{originalPrice}</span> 
+            <span className="discount-tag">{discountLabel}</span>
           </div>
 
-          <div className="main-action-block">
-             {isConfigurable ? (
-                <div className="tint-configurator-inline">
-                  <h4><Zap size={16} /> Configure Details (Microns / Panel)</h4>
-                  <div className="tint-grid">
-                    {['Front', 'Rear', 'Side'].map((side) => (
-                      <div key={side} className="tint-field">
-                        <label>{side}</label>
-                        <input 
-                          type="number" 
-                          placeholder="0" 
-                          className="tint-input"
-                          onChange={(e) => setConfigValues({...configValues, [side]: e.target.value})}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  <button className="add-cart-hero-btn" onClick={handleAddClick}>
-                    <ShoppingCart size={18} /> Add Configuration
-                  </button>
-                </div>
-             ) : (
-                <button 
-                  className={`add-cart-hero-btn ${!product.stock ? 'disabled' : ''}`}
-                  onClick={handleAddClick}
-                  disabled={!product.stock}
-                >
-                  <ShoppingCart size={18} /> {product.stock ? "Add to Cart" : "Out of Stock"}
-                </button>
-             )}
-          </div>
+          {/* CRITICAL FIX: Only render this entire block if it's a TINT product. 
+              This perfectly removes the redundant inline "Add to Cart" button for normal products! */}
+          {isConfigurable && (
+            <div className="main-action-block">
+               <div className="tint-configurator-inline">
+                 <h4><Zap size={16} /> Configure Tint Darkness (VLT)</h4>
+                 <p style={{ fontSize: '11px', color: '#64748b', marginTop: '2px', marginBottom: '12px' }}>
+                   Enter the desired darkness percentage (e.g., 50, 70).
+                 </p>
+                 
+                 <div className="tint-grid">
+                   {['Front', 'Rear', 'Sides'].map((side) => (
+                     <div key={side} className="tint-field">
+                       <label>{side}</label>
+                       <div style={{ position: 'relative' }}>
+                         <input 
+                           type="number" 
+                           placeholder="70" 
+                           min="0"
+                           max="100"
+                           className="tint-input"
+                           value={configValues[side]}
+                           onChange={(e) => setConfigValues({...configValues, [side]: e.target.value})}
+                           style={{ paddingRight: '28px' }} 
+                         />
+                         <span style={{ position: 'absolute', right: '12px', top: '12px', color: '#94a3b8', fontSize: '13px', fontWeight: 'bold' }}>
+                           %
+                         </span>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+                 <button 
+                   className={`add-cart-hero-btn ${!product.stock ? 'disabled' : ''}`} 
+                   onClick={handleAddClick}
+                   disabled={!product.stock}
+                 >
+                   <ShoppingCart size={18} /> {product.stock ? "Add Configuration" : "Out of Stock"}
+                 </button>
+               </div>
+            </div>
+          )}
 
           <div className="promo-banner-embedded">
             <div className="promo-content-detailing">
@@ -185,7 +200,6 @@ export default function DetailingDetails() {
           <div className="highlights-box">
             <h3><CheckCircle2 size={18} /> Key Highlights</h3>
             <ul>
-              {/* 4. SAFE MAP EXECUTION (Prevents crashes if highlights aren't array formatted) */}
               {product.highlights && Array.isArray(product.highlights) ? (
                 product.highlights.map((h, i) => <li key={i}>{h}</li>)
               ) : (
