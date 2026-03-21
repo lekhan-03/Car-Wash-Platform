@@ -69,7 +69,9 @@ const ServiceVideos = () => {
           <Star size={16} fill="#a0b2c6" color="#a0b2c6" />
           <Star size={16} fill="#a0b2c6" color="#a0b2c6" />
           <Star size={16} fill="#a0b2c6" color="#a0b2c6" />
-          <Star size={16} fill="#a0b2c6" color="#a0b2c6" />
+          <Star size={16} fill="#a0b2c6" color="#a0b2c6" />    
+          <br />      
+          <br />      
         </div>
       </div>
 

@@ -34,6 +34,7 @@ const SteamServiceDetail = ({ service, onBack }) => {
       name: `${service.name} (${selectedSlot})`,
       price: finalPrice,
       quantity: 1,
+      image: service.image // <--- Add this line!
     });
   };
 

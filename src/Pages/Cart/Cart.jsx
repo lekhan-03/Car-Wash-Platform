@@ -8,22 +8,60 @@ const Cart = () => {
   const navigate = useNavigate();
   const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart();
 
-  // Calculate Totals
-  const itemTotal = (cartItems || []).reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  // --- CALCULATIONS ---
+  let itemTotal = 0;
+  let taxes = 0;
+  let serviceCharge = 0; // Moved here so we can add to it dynamically
+  let hasDetailing = false;
+  let hasStandard = false;
+
+  (cartItems || []).forEach((item) => {
+    const lineTotal = item.price * item.quantity;
+    itemTotal += lineTotal;
+    
+    // Detailing Products
+    if (item.companyName || item.categoryName) {
+      taxes += lineTotal * 0.18; 
+      hasDetailing = true;
+
+      // --- DYNAMIC SERVICE CHARGE LOGIC ---
+      const category = (item.categoryName || "").toUpperCase();
+      
+      // Change these numbers to your actual Service Charges!
+      if (category.includes("TINT")) {
+        serviceCharge += 99 * item.quantity; 
+      } 
+      else if (category.includes("CERAMIC")) {
+        serviceCharge += 149 * item.quantity;
+      } 
+      else if (category.includes("PPF")) {
+        serviceCharge += 199 * item.quantity;
+      } 
+      else if (category.includes("RUBBING") || category.includes("POLISH")) {
+        serviceCharge += 49 * item.quantity;
+      } 
+      else {
+        serviceCharge += 49 * item.quantity; // Default fallback for any other detailing
+      }
+
+    } 
+    // Standard Services
+    else {
+      taxes += lineTotal * 0.05; 
+      hasStandard = true;
+    }
+  });
+
+  let taxLabel = "Taxes";
+  if (hasDetailing && hasStandard) taxLabel = "Taxes (5% & 18%)";
+  else if (hasDetailing) taxLabel = "Taxes (18%)";
+  else if (hasStandard) taxLabel = "Taxes (5%)";
   
-  const taxes = itemTotal * 0.05; // 5% Tax
   const platformFee = 10;
-  const grandTotal = itemTotal + taxes + platformFee;
+  const grandTotal = itemTotal + taxes + serviceCharge + platformFee;
 
-  // Fallback image in case of broken links
   const fallbackImage = "https://cdn-icons-png.flaticon.com/512/3202/3202926.png";
-
-  const handleImageError = (e) => {
-    e.target.src = fallbackImage; 
-  };
+  const handleImageError = (e) => { e.target.src = fallbackImage; };
 
   if (!cartItems || cartItems.length === 0) {
     return (
@@ -42,38 +80,22 @@ const Cart = () => {
 
   return (
     <div className="cart-page-wrapper">
-      
-      {/* --- Header --- */}
       <div className="cart-header-nav">
-        <button onClick={() => navigate(-1)} className="back-btn">
-          <ArrowLeft size={18} /> Back
-        </button>
+        <button onClick={() => navigate(-1)} className="back-btn"><ArrowLeft size={18} /> Back</button>
         <h3>My Cart <span className="cart-count-badge">({cartItems.length})</span></h3>
         <button onClick={clearCart} className="clear-btn">Clear</button>
       </div>
 
-      {/* --- Main Content Grid --- */}
       <div className="cart-grid-layout">
-        
-        {/* LEFT COLUMN: Cart Items */}
         <div className="cart-left-section">
           <div className="cart-items-container">
             {cartItems.map((item, index) => {
-              // Handle image source safely (supports singular 'image' or array 'images')
               const displayImage = item.image || (item.images && item.images.length > 0 ? item.images[0] : fallbackImage);
 
               return (
-                <div 
-                  className="cart-card" 
-                  key={item.id}
-                  style={{ animationDelay: `${index * 0.1}s` }} // Staggered entrance
-                >
+                <div className="cart-card" key={item.id} style={{ animationDelay: `${index * 0.1}s` }}>
                   <div className="cart-card-media">
-                    <img 
-                      src={displayImage} 
-                      alt={item.name} 
-                      onError={handleImageError} 
-                    />
+                    <img src={displayImage} alt={item.name} onError={handleImageError} />
                   </div>
                   
                   <div className="cart-card-info">
@@ -84,17 +106,12 @@ const Cart = () => {
                     </div>
                     
                     <div className="action-row">
-                      {/* Quantity Controls */}
                       <div className="quantity-pill">
                         <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>−</button>
                         <span>{item.quantity}</span>
                         <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
                       </div>
-                      
-                      {/* Remove Button */}
-                      <button className="trash-btn" onClick={() => removeFromCart(item.id)}>
-                        <Trash2 size={16} />
-                      </button>
+                      <button className="trash-btn" onClick={() => removeFromCart(item.id)}><Trash2 size={16} /></button>
                     </div>
                   </div>
                 </div>
@@ -103,10 +120,7 @@ const Cart = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Bill & Actions */}
         <div className="cart-right-section">
-          
-          {/* Promo Banner */}
           <div className="cart-promo-banner">
             <div className="promo-content">
               <Zap size={24} fill="#fff" className="sparkle-icon" />
@@ -117,7 +131,6 @@ const Cart = () => {
             </div>
           </div>
 
-          {/* Bill Details Card */}
           <div className="bill-details-card">
             <h3>Bill Details</h3>
             
@@ -125,10 +138,20 @@ const Cart = () => {
               <span>Item Total</span>
               <span>₹{itemTotal.toFixed(2)}</span>
             </div>
+            
             <div className="bill-row">
-              <span>Taxes & Charges (5%)</span>
+              <span>{taxLabel}</span>
               <span>₹{taxes.toFixed(2)}</span>
             </div>
+
+            {/* Will only show if there is an actual service charge calculated */}
+            {serviceCharge > 0 && (
+              <div className="bill-row">
+                <span>Service Charge</span>
+                <span>₹{serviceCharge.toFixed(2)}</span>
+              </div>
+            )}
+
             <div className="bill-row">
               <span>Platform Fee</span>
               <span>₹{platformFee}</span>
@@ -141,11 +164,7 @@ const Cart = () => {
               <span className="grand-total">₹{grandTotal.toFixed(2)}</span>
             </div>
 
-            {/* Checkout Button */}
-            <button 
-              className="btn-checkout-main"
-              onClick={() => navigate("/checkout")}
-            >
+            <button className="btn-checkout-main" onClick={() => navigate("/checkout")}>
               Proceed to Pay <ArrowRight size={18} className="btn-arrow" />
             </button>
             
@@ -154,7 +173,6 @@ const Cart = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
+export const useCart = () => useContext(CartContext);
+
 export const CartProvider = ({ children }) => {
   // 1. Load initial state from localStorage safely
   const [cartItems, setCartItems] = useState(() => {
@@ -22,10 +24,11 @@ export const CartProvider = ({ children }) => {
   // ✅ Add to cart (Handles Unique Configurations)
   const addToCart = (product) => {
     setCartItems((prev) => {
-      // Generate a unique ID based on config (e.g., specific Tint values)
-      // If no config, use the standard Product ID
-      const uniqueId = product.tintConfig 
-        ? `${product.id}-${JSON.stringify(product.tintConfig)}` 
+      // FIX 1: Look for 'config' (used in Detailing) or 'tintConfig'
+      const activeConfig = product.config || product.tintConfig;
+      
+      const uniqueId = activeConfig 
+        ? `${product.id}-${JSON.stringify(activeConfig)}` 
         : product.id;
 
       const existing = prev.find((item) => item.uniqueId === uniqueId);
@@ -33,13 +36,18 @@ export const CartProvider = ({ children }) => {
       if (existing) {
         return prev.map((item) =>
           item.uniqueId === uniqueId
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { 
+                ...item, 
+                quantity: item.quantity + (product.quantity || 1),
+                // FIX 2: Force update the image if a new one is sent
+                image: product.image || item.image 
+              }
             : item
         );
       }
       
       // Add new item with uniqueId
-      return [...prev, { ...product, uniqueId, quantity: 1 }];
+      return [...prev, { ...product, uniqueId, quantity: product.quantity || 1 }];
     });
   };
 
@@ -71,18 +79,10 @@ export const CartProvider = ({ children }) => {
         updateQuantity,
         removeFromCart,
         clearCart,
-        cartCount,
+        cartCount
       }}
     >
       {children}
     </CartContext.Provider>
   );
-};
-
-export const useCart = () => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
-  }
-  return context;
 };

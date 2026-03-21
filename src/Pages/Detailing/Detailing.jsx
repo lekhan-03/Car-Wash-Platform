@@ -59,20 +59,22 @@ export default function Detailing() {
   }, []);
 
   const currentProducts = useMemo(() => {
-    if (!selectedCategory) return [];
+    if (!selectedCategory || !selectedCategory.companies) return [];
     let allProducts = [];
 
-    // 1. Gather Products
-    if (selectedCompany) {
+    // 1. Gather Products Safely
+    if (selectedCompany && selectedCompany.products) {
       allProducts = selectedCompany.products.map(p => ({...p, companyName: selectedCompany.name}));
     } else {
       selectedCategory.companies.forEach(comp => {
-        const productsWithCompany = comp.products.map(p => ({...p, companyName: comp.name}));
-        allProducts = [...allProducts, ...productsWithCompany];
+        if (comp.products) {
+          const productsWithCompany = comp.products.map(p => ({...p, companyName: comp.name}));
+          allProducts = [...allProducts, ...productsWithCompany];
+        }
       });
     }
 
-    // 2. Safe Search Filtering (Prevents crashes if fields are missing)
+    // 2. Safe Search Filtering
     let filteredProducts = allProducts;
     if (searchQuery.trim()) {
       const lowerQ = searchQuery.toLowerCase();
@@ -84,7 +86,7 @@ export default function Detailing() {
       });
     }
 
-    // 3. ENHANCEMENT: Sort by Price (Low to High)
+    // 3. Sort by Price (Low to High)
     return filteredProducts.sort((a, b) => getSafePrice(a.price) - getSafePrice(b.price));
   }, [selectedCategory, selectedCompany, searchQuery]);
 
@@ -126,7 +128,6 @@ export default function Detailing() {
               <h3>Services Categories</h3>
             </div>
             
-            {/* BUG FIX: Safe rendering for any number of categories so it never crashes */}
             {sortedCategories.length > 0 && (
               <div className="category-bento-grid">
                 
@@ -265,7 +266,7 @@ export default function Detailing() {
               </div>
             </div>
 
-            {/* ENHANCEMENT: Search Results Indicator */}
+            {/* Search Results Indicator */}
             {searchQuery && (
               <div style={{ padding: '0 18px', fontSize: '12px', color: '#666', marginBottom: '10px', fontWeight: '500' }}>
                 Showing {currentProducts.length} result{currentProducts.length !== 1 ? 's' : ''} for "{searchQuery}"
@@ -283,8 +284,8 @@ export default function Detailing() {
                  </button>
                  {selectedCategory.companies.map((comp) => (
                    <button 
-                     key={comp.id}
-                     className={`company-chip ${selectedCompany?.id === comp.id ? 'active' : ''}`}
+                     key={comp.id || comp.name}
+                     className={`company-chip ${selectedCompany?.name === comp.name ? 'active' : ''}`}
                      onClick={() => setSelectedCompany(comp)}
                    >
                      {comp.name}
@@ -296,8 +297,9 @@ export default function Detailing() {
             {/* PRODUCT LIST */}
             <div className="service-list-container">
               {currentProducts.length > 0 ? (
-                currentProducts.map((product) => (
-                  <div key={product.id} className="card-group">
+                currentProducts.map((product, index) => (
+                  /* 🚨 THE FIX: Universally unique key completely solves the React caching bug */
+                  <div key={`${product.companyName}-${product.name}-${index}`} className="card-group">
                     <div className="detailing-card" onClick={() => navigate(`/detailing/${product.id}`)}>
                       <div className="card-content">
                         <div className="card-header">
@@ -327,7 +329,6 @@ export default function Detailing() {
                           onClick={(e) => {
                             e.stopPropagation();
                             if(product.stock) {
-                              // BUG FIX: Added quantity property
                               addToCart({...product, price: getSafePrice(product.price), quantity: 1});
                             }
                           }}
