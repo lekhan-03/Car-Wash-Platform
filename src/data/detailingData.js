@@ -328,11 +328,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/3M/100g.jpg"
 
             ],
             highlights: [
@@ -386,11 +382,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/3M/50g.jpg"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -443,12 +435,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
-
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/3M/150g.jpg"
             ],
             highlights: [
               "  10+ Years Lifespan",
@@ -494,61 +481,7 @@ const detailingData = [
             description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
             stock: true
           },
-          {
-            id: 3008,
-            name: "200 Gloss PPF",
-            price: 149000,
-            rating: 4.8,
-            reviewCount: 95,
-            images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3008.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3005.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3006.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3007.jpg",
 
-              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Stek/3009.jpg"
-            ],
-            highlights: [
-              "  4+ Years Lifespan",
-              "  4 Years Warranty",
-              "  3 Free Checkup",
-              "  180+- 10 Mincrons",
-              "  TPU tested in India",
-              "  Best in Our climate",
-              "  PPF Germany",
-              "  Selfhealing property",
-              "  Stain resistance",
-              "  Hydrophobic",
-              "  Chemical Resistant",
-              "  Optical clarity",
-              "  Gloss & Shine",
-              "  1 FREE Foam Wash",
-              "  Standard Process:-",
-              "  Foam Washing",
-              "  Clay Bar Treatment",
-              "  Decontamination",
-              "  3M Rubbing-Polish",
-              "  Paint Correction",
-              "  Swirl Mark Removal",
-              "  Glazing Enhancement",
-              "  Detach Parts (Need)",
-              "  Express Washing",
-              "  Exterior Detailing",
-              "  Final Rinse & Drying",
-              "  Isopropyl Wipe Down",
-              "  Film Installation",
-              "  Edge Tucking",
-              "  Edge Cutting",
-              "  Heat Sinking",
-              "  Final Inspection",
-              "  Pre-Delivery Check",
-              "  Photo Session",
-              "  Customer Review",
-              "  Vehicle Handover"
-            ],
-            description: `Premium ceramic protection designed to keep your car looking brand new for years.`,
-            stock: true
-          },
         ]
       },
       {
@@ -563,9 +496,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/UltraNanoShield/WhatsApp_Image_2026-03-23_at_6.34.09_PM.jpg"
             ],
             highlights: [
               "  4+ Years Lifespan",
@@ -615,8 +546,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774616028/detailing/PPF/UltraNanoShield/WhatsApp_Image_2026-03-23_at_6.34.09_PM_2.jpg"
             ],
             highlights: [
 
@@ -667,8 +597,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774616028/detailing/PPF/UltraNanoShield/WhatsApp_Image_2026-03-23_at_6.34.10_PM_1.jpg"
             ],
             highlights: [
 
@@ -719,8 +648,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774616027/detailing/PPF/UltraNanoShield/WhatsApp_Image_2026-03-23_at_6.34.10_PM.jpg"
             ],
             highlights: [
 
@@ -770,8 +698,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774616025/detailing/PPF/UltraNanoShield/WhatsApp_Image_2026-03-23_at_6.34.09_PM_1.jpg"
             ],
             highlights: [
 
@@ -829,9 +756,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Garware/Protect.jpg"
             ],
             highlights: [
               "  3+ Years Lifespan",
@@ -882,8 +807,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Garware/Plus.jpg"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -935,8 +859,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Garware/Premium.jpg"
             ],
             highlights: [
               "  8+ Years Lifespan",
@@ -989,8 +912,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Garware/Titanium.jpg"
             ],
             highlights: [
               "  Lifetime Lifespan",
@@ -1050,9 +972,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/SaintGloblin/NorShield.png"
             ],
             highlights: [
               "  6+ Years Lifespan",
@@ -1104,8 +1024,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774616025/detailing/PPF/SaintGloblin/Sapphire.png"
             ],
             highlights: [
               "8+ Years Lifespan",
@@ -1153,13 +1072,12 @@ const detailingData = [
           },
           {
             id: 3020,
-            name: "Hydro PPF",
+            name: "Hydro Plus PPF",
             price: 89000,
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774616024/detailing/PPF/SaintGloblin/Hydro_plus.png"
             ],
             highlights: [
               "10+ Years Lifespan",
@@ -1207,13 +1125,12 @@ const detailingData = [
           },
           {
             id: 3021,
-            name: "Matte PPF",
+            name: "Matte Hydro Plus PPF",
             price: 98000,
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/SaintGloblin/Matte_Hydro.png"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -1271,9 +1188,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Cosmo/Gold.jpg"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -1327,8 +1242,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774616037/detailing/PPF/Cosmo/Platinum.png"
             ],
             highlights: [
               "  Lifetime Lifespan",
@@ -1424,9 +1338,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431316/detailing/PPF/Rodium/WhatsApp_Image_2026-03-23_at_5.31.37_PM_2.jpg"
             ],
             highlights: [
               "  7+ Years Lifespan",
@@ -1476,8 +1388,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+             "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431310/detailing/PPF/Rodium/WhatsApp_Image_2026-03-23_at_5.31.36_PM.jpg"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -1527,8 +1438,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431311/detailing/PPF/Rodium/WhatsApp_Image_2026-03-23_at_5.31.37_PM.jpg"
             ],
             highlights: [
               "  10+ Years Lifespan",
@@ -1585,9 +1495,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431305/detailing/PPF/Xpel/exoArmor.jpg"
             ],
             highlights: [
               "  7+ Years Lifespan",
@@ -1642,8 +1550,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431309/detailing/PPF/Xpel/ultimateplus10.jpg"
             ],
             highlights: [
 
@@ -1699,8 +1606,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Xpel/ultimatefusion.jpg"
             ],
             highlights: [
               "  10+ Years Lifespan",
@@ -1762,9 +1668,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Eclipse/luna.jpg"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -1818,8 +1722,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431310/detailing/PPF/Eclipse/sola.jpg"
             ],
             highlights: [
               "  7+ Years Lifespan",
@@ -1871,8 +1774,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431313/detailing/PPF/Eclipse/WhatsApp_Image_2026-03-23_at_5.59.35_PM_3.jpg"
             ],
             highlights: [
               "  8+ Years Lifespan",
@@ -1926,8 +1828,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431310/detailing/PPF/Eclipse/matte.jpg"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -1986,9 +1887,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/PaintGaurd/PrimeTPU.jpg"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -2040,8 +1939,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/PaintGaurd/ProfessionalTPU.jpg"
             ],
             highlights: [
               "  7+ Years Lifespan",
@@ -2093,8 +1991,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-premium-2.jpg"
+             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/PaintGaurd/MansoryTPU.jpg"
             ],
             highlights: [
               "  10+ Years Lifespan",
@@ -2154,9 +2051,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431304/detailing/PPF/ScotchGard/200Gloss.jpg"
             ],
             highlights: [
               "  12+ Years Lifespan",
@@ -2199,9 +2094,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774432422/detailing/PPF/Llumar/Gloss.jpg"
             ],
             highlights: [
               "  10+ Years Lifespan",
@@ -2235,9 +2128,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774432422/detailing/PPF/Llumar/PaltinumGloss.jpg"
             ],
             highlights: [
               "  10+ Years Lifespan",
@@ -2271,10 +2162,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-1.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-2.jpg",
-              "https://res.cloudinary.com/ddgxphtda/image/upload/products/3m-ceramic-3.jpg"
-            ],
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774432422/detailing/PPF/Llumar/HydroGaurd.jpg"            ],
             highlights: [
               "  12+ Years Lifespan",
               "  12 Years Warranty",
