@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Gift, PartyPopper, Copy, Check, Tag, Droplets, Wind } from "lucide-react";
+import {  PartyPopper, Copy, Check, Tag, Droplets, Wind } from "lucide-react";
 import "./RewardsPie.css";
 
 // ── constants ─────────────────────────────────────────────
