@@ -2,18 +2,18 @@
 
 .bottom-navbar {
   position: fixed; bottom: 0; left: 0; right: 0; height: 70px;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-secondary);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid var(--border-color);
   display: flex; justify-content: space-around; align-items: center;
-  z-index: 1000; box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+  z-index: 1000; box-shadow: var(--shadow-md);
   padding-bottom: env(safe-area-inset-bottom);
 }
 
 .nav-item {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-decoration: none; flex: 1; height: 100%; position: relative;
-  color: #94a3b8; /* Default Slate Color */
+  color: var(--text-secondary); /* Dynamic Theme Slate Color */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -23,12 +23,12 @@
 }
 
 .nav-item span {
-  font-size: 10px; font-weight: 600; letter-spacing: 0.2px; transition: color 0.3s;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2px; transition: color 0.3s;
 }
 
 /* --- THE ACTIVE STATE MAGIC --- */
 .nav-item.active { 
-  color: #0066ff; /* SVG icons automatically inherit this color! */
+  color: var(--accent-primary); /* SVG icons automatically inherit this color! */
 }
 
 .nav-item.active .icon-wrapper {
@@ -36,14 +36,9 @@
   filter: drop-shadow(0 4px 6px rgba(0, 102, 255, 0.4));
 }
 
-/* Floating dot indicator */
-/* .nav-item::after {
-  content: ''; position: absolute; bottom: 8px; left: 50%;
-  transform: translateX(-50%) scale(0);
-  width: 5px; height: 5px; background: #0066ff; border-radius: 50%;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+[data-theme='dark'] .nav-item.active .icon-wrapper {
+  filter: drop-shadow(0 4px 6px rgba(167, 139, 250, 0.4));
 }
-.nav-item.active::after { transform: translateX(-50%) scale(1); } */
 
 /* Click Effect */
 .nav-item:active .icon-wrapper { transform: scale(0.9); }

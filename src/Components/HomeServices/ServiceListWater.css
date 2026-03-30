@@ -18,7 +18,7 @@
 /* --- THE MAIN CARD (Solid to hide banner underneath) --- */
 .glass-card {
   /* 1. Solid Background */
-  background: #ffffff; 
+  background: var(--bg-secondary); 
   
   /* 2. Border & Shape */
   border-radius: 20px;
@@ -56,7 +56,7 @@
 .card-header h3 {
   font-size: 17px;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--text-primary);
   margin: 0 0 6px 0;
   line-height: 1.3;
   letter-spacing: -0.02em;
@@ -71,7 +71,7 @@
 }
 
 .star-badge {
-  background: #fff8e1;
+  background: var(--bg-secondary)8e1;
   color: #f59e0b;
   font-size: 11px;
   font-weight: 700;
@@ -84,7 +84,7 @@
 
 .review-count {
   font-size: 11px;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
@@ -132,7 +132,7 @@
 
 .view-details-btn {
   font-size: 11px;
-  color: #64748b;
+  color: var(--text-secondary);
   font-weight: 600;
   margin-top: 4px;
   text-decoration: underline;
@@ -155,7 +155,7 @@
   height: 110px;
   border-radius: 18px;
   overflow: hidden;
-  background: #fff;
+  background: var(--bg-secondary);
   border: 1px solid rgba(255,255,255,0.8);
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }

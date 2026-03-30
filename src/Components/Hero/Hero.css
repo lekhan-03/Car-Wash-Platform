@@ -4,22 +4,21 @@
 
 .hero-premium-container {
   width: 100%;
-  height: 400px; /* Slightly taller for breathing room */
+  height: 450px;
   position: relative;
   overflow: hidden;
-  /* Deep Midnight Gradient */
-  background: linear-gradient(135deg, #020813 0%, #0a1929 50%, #000000 100%);
-  background-size: 200% 200%;
-  animation: bgShift 15s ease infinite;
+  background: var(--bg-primary);
   display: flex;
   align-items: center;
-  border-bottom: 2px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border-color);
 }
 
-@keyframes bgShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.hero-bg-mesh {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.5;
 }
 
 /* --- AMBIENT GLOW ORBS --- */
@@ -27,7 +26,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(60px);
-  opacity: 0.15;
+  opacity: 0.2;
   z-index: 0;
   pointer-events: none;
   transition: background 1s ease;
@@ -45,12 +44,7 @@
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 8%;
-  opacity: 0; z-index: 1; pointer-events: none;
-  transition: opacity 0.6s ease-in-out;
-}
-
-.hero-slide-modern.active {
-  opacity: 1; z-index: 2; pointer-events: all;
+  z-index: 1; 
 }
 
 /* --- STAGGERED TEXT REVEAL --- */
@@ -59,38 +53,18 @@
   justify-content: center; align-items: flex-start; max-width: 500px;
 }
 
-.hero-title, .hero-subtitle, .hero-desc, .hero-btn-premium {
-  opacity: 0; transform: translateY(20px);
-}
-
-/* When slide is active, trigger staggered fade-up */
-.hero-slide-modern.active .animate-1 { animation: fadeUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s forwards; }
-.hero-slide-modern.active .animate-2 { animation: fadeUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s forwards; }
-.hero-slide-modern.active .animate-3 { animation: fadeUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards; }
-.hero-slide-modern.active .animate-4 { animation: fadeUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s forwards; }
-
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-title { font-size: 38px; font-weight: 800; color: #fff; margin: 0; line-height: 1; letter-spacing: 1px; }
-.hero-subtitle { font-size: 42px; font-weight: 800; color: #0066ff; margin: 0 0 12px 0; line-height: 1.1; text-shadow: 0 0 20px rgba(0, 102, 255, 0.4); }
-.hero-desc { font-size: 15px; font-weight: 500; color: #cbd5e1; margin: 0 0 30px 0; line-height: 1.5; }
+.hero-title { font-size: 42px; font-weight: 800; color: var(--text-primary); margin: 0; line-height: 1.1; letter-spacing: 1px; }
+.hero-subtitle { font-size: 46px; font-weight: 800; margin: 0 0 16px 0; line-height: 1.1; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+.hero-desc { font-size: 16px; font-weight: 500; color: var(--text-secondary); margin: 0 0 30px 0; line-height: 1.6; }
 
 /* --- PREMIUM BUTTON --- */
 .hero-btn-premium {
-  background: #fff; color: #0a1929; border: none; padding: 14px 28px;
-  border-radius: 14px; font-size: 13px; font-weight: 800; cursor: pointer;
+  background: var(--btn-grad); color: white; border: none; padding: 14px 32px;
+  border-radius: 14px; font-size: 14px; font-weight: 800; cursor: pointer;
   display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px;
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-md);
+  transition: background 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-.hero-btn-premium:hover {
-  background: #0066ff; color: #fff; transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 102, 255, 0.4);
-}
-.hero-btn-premium:active { transform: translateY(1px) scale(0.98); }
 
 /* --- CAR ENTRANCE & FLOAT --- */
 .hero-image-stage {
@@ -100,23 +74,7 @@
 
 .slide-car-img {
   width: 100%; max-width: 550px; object-fit: contain;
-  filter: drop-shadow(-15px 20px 25px rgba(0, 0, 0, 0.6));
-  opacity: 0; transform: translateX(50px) scale(0.95);
-}
-
-/* Snappy slide-in followed by a smooth infinite hover */
-.hero-slide-modern.active .slide-car-img {
-  animation: 
-    carEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s forwards,
-    carFloat 5s ease-in-out 1s infinite alternate;
-}
-
-@keyframes carEntrance {
-  to { opacity: 1; transform: translateX(0) scale(1); }
-}
-@keyframes carFloat {
-  0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(-12px) rotate(-1deg); }
+  filter: drop-shadow(-15px 25px 35px rgba(0, 0, 0, 0.3));
 }
 
 /* --- INDICATORS (Modern Pills) --- */
@@ -125,26 +83,22 @@
 }
 
 .indicator-pill {
-  width: 10px; height: 6px; background: rgba(255,255,255,0.2);
+  width: 12px; height: 6px; background: var(--border-color);
   border-radius: 6px; cursor: pointer; transition: all 0.3s;
   position: relative; overflow: hidden;
 }
 
-.indicator-pill.active { width: 35px; background: rgba(255,255,255,0.3); }
+.indicator-pill.active { width: 40px; background: rgba(0,0,0,0.1); }
+[data-theme='dark'] .indicator-pill.active { background: rgba(255,255,255,0.1); }
 
-/* Fills up slowly like a progress bar */
 .pill-progress {
   position: absolute; top: 0; left: 0; height: 100%; width: 0%;
-  background: #0066ff; animation: fillProgress 5s linear forwards;
-}
-
-@keyframes fillProgress {
-  to { width: 100%; }
+  background: var(--accent-primary);
 }
 
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
-  .hero-premium-container { height: 480px; }
+  .hero-premium-container { height: 500px; }
   
   .hero-slide-modern {
     flex-direction: column-reverse; justify-content: center;
@@ -152,12 +106,12 @@
   }
 
   .hero-content-staggered { align-items: center; margin-top: 10px; }
-  .hero-title { font-size: 28px; }
-  .hero-subtitle { font-size: 32px; }
-  .hero-desc { font-size: 13px; margin-bottom: 20px; }
+  .hero-title { font-size: 32px; }
+  .hero-subtitle { font-size: 36px; }
+  .hero-desc { font-size: 14px; margin-bottom: 24px; }
 
   .hero-image-stage { align-items: flex-end; justify-content: center; }
-  .slide-car-img { max-width: 300px; filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.5)); }
+  .slide-car-img { max-width: 320px; filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.2)); }
 
   .hero-indicators { left: 50%; transform: translateX(-50%); bottom: 15px; }
 }

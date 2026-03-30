@@ -1,5 +1,5 @@
 .package-page { 
-    background: #f4f7fe; 
+    background: var(--bg-primary); 
     min-height: 100vh; 
     padding: 20px; 
     font-family: 'Poppins', sans-serif; 
@@ -22,13 +22,13 @@
 .package-nav h1 { 
     font-size: 18px; 
     font-weight: 800; 
-    color: #1e293b; 
+    color: var(--text-primary); 
     margin: 0;
 }
 
 .tier-selector { 
     display: flex; 
-    background: #e2e8f0; 
+    background: rgba(125,125,125,0.1); 
     padding: 5px; 
     border-radius: 16px; 
     margin-bottom: 30px; 
@@ -41,24 +41,24 @@
     background: transparent; 
     font-weight: 700; 
     border-radius: 12px; 
-    color: #64748b; 
+    color: var(--text-secondary); 
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .tier-selector button.active { 
-    background: #fff; 
-    color: #0066ff; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    background: var(--bg-secondary); 
+    color: var(--accent-primary); 
+    box-shadow: var(--shadow-sm); 
 }
 
 .plan-card { 
-    background: #fff; 
+    background: var(--bg-secondary); 
     border-radius: 24px; 
     padding: 24px; 
     margin-bottom: 20px; 
     position: relative; 
-    border: 1px solid #e2e8f0; 
+    border: 1px solid var(--border-color); 
     box-shadow: 0 10px 25px rgba(0,0,0,0.02);
 }
 
@@ -96,7 +96,7 @@
 
 .washes-count { 
     font-size: 11px; 
-    color: #94a3b8; 
+    color: var(--text-secondary); 
     font-weight: 600; 
 }
 
@@ -108,13 +108,13 @@
     display: block; 
     font-size: 24px; 
     font-weight: 800; 
-    color: #1e293b; 
+    color: var(--text-primary); 
 }
 
 .old-price { 
     font-size: 13px; 
     text-decoration: line-through; 
-    color: #94a3b8; 
+    color: var(--text-secondary); 
 }
 
 .plan-features-list { 
@@ -128,19 +128,19 @@
     align-items: center; 
     gap: 10px; 
     font-size: 13px; 
-    color: #475569; 
+    color: var(--text-secondary); 
     margin-bottom: 12px; 
 }
 
 .savings-banner { 
-    background: #fffbeb; 
+    background: rgba(255,200,0,0.1); 
     padding: 10px; 
     border-radius: 12px; 
     display: flex; 
     align-items: center; 
     gap: 8px; 
     font-size: 11px; 
-    color: #b45309; 
+    color: var(--text-primary); 
     font-weight: 700; 
     margin-bottom: 20px; 
 }
@@ -172,7 +172,7 @@
 
 .insurance-trust-footer p { 
     font-size: 11px; 
-    color: #94a3b8; 
+    color: var(--text-secondary); 
     max-width: 220px; 
     margin: 0;
 }

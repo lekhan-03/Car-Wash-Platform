@@ -5,7 +5,7 @@ import ServiceVideos from "../Components/ServiceVideos/ServiceVideo";
 
 const Home = () => {
   return (
-    <div style={{ width: "100%", overflowX: "hidden", background: "#f4f6f9" }}>
+    <div style={{ width: "100%", overflowX: "hidden", background: "var(--bg-primary)" }}>
       <Hero />
       <Services />
       <ServiceVideos /> {/* Added Section */}

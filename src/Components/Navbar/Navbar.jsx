@@ -9,6 +9,7 @@ import RewardsPie from "./RewardsPie";
 
 // Premium Lucide Icons
 import { MapPin, CarFront, ShoppingCart, User } from "lucide-react";
+import { motion } from "framer-motion";
 
 import "./Navbar.css";
 
@@ -32,6 +33,7 @@ const Navbar = () => {
     logout();
     navigate("/login");
   };
+
 
   const detectLocation = () => {
     if (!navigator.geolocation) {
@@ -78,8 +80,12 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar-container">
-        {/* --- MAIN NAVBAR (Top Row) --- */}
+      <motion.div 
+        className="navbar-container glass"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 80 }}
+      >
         <nav className="navbar">
           {/* Logo */}
           <Link to="/" className="logo">
@@ -90,51 +96,61 @@ const Navbar = () => {
           <ul className="nav-menu desktop-only">
             <li><Link to="/waterwash">Water wash</Link></li>
             <li><Link to="/steamwash">Steam Wash</Link></li>
-            <li><Link to="/Detailing">Detailing</Link></li>
+            <li><Link to="/detailing">Detailing</Link></li>
             <li><Link to="/insurance">Insurance</Link></li>
           </ul>
 
-          {/* Icons & Desktop Actions */}
           <div className="navbar-icons">
-            
             <RewardsPie /> 
 
             {/* Desktop Location Pill */}
-            <div className="nav-pill desktop-only" onClick={detectLocation}>
-              <MapPin className={`pill-icon ${isLocating ? "spin" : ""}`} color="#0066ff" />
+            <motion.div 
+              className="nav-pill desktop-only" 
+              onClick={detectLocation}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <MapPin className={`pill-icon ${isLocating ? "spin" : ""}`} />
               <div className="pill-text">
                 <span className="pill-label">Current Location</span>
                 <span className="pill-value" title={locationName}>
                   {locationName.length > 15 ? locationName.substring(0, 12) + "..." : locationName}
                 </span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Desktop Car Pill */}
-            <button className="nav-pill desktop-only" onClick={() => setIsModalOpen(true)}>
-              <CarFront className="pill-icon" color="#0066ff" />
+            <motion.button 
+              className="nav-pill desktop-only" 
+              onClick={() => setIsModalOpen(true)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <CarFront className="pill-icon" />
               <div className="pill-text">
                 <span className="pill-label">My Car</span>
                 <span className="pill-value">
                   {selectedCar ? selectedCar.name : "Select"}
                 </span>
               </div>
-            </button>
-
+            </motion.button>
+            
             {/* Cart Icon */}
-            <Link to="/cart" className="icon-btn cart-btn">
-              <ShoppingCart size={22} color="#0f172a" strokeWidth={2.5} className="svg-icon" />
-              {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
-            </Link>
+            <motion.div whileHover={{ scale: 1.15, rotate: -5 }} whileTap={{ scale: 0.9 }}>
+              <Link to="/cart" className="icon-btn cart-btn">
+                <ShoppingCart size={22} className="svg-icon" />
+                {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+              </Link>
+            </motion.div>
 
             {/* Desktop Profile */}
             <div className="profile-section desktop-only">
               {user ? (
                 <>
-                  <button className="icon-btn profile-btn">
-                    <User size={22} color="#0f172a" strokeWidth={2.5} className="svg-icon" />
-                  </button>
-                  <div className="profile-dropdown">
+                  <motion.button className="icon-btn profile-btn" whileHover={{ scale: 1.15 }}>
+                    <User size={22} className="svg-icon" />
+                  </motion.button>
+                  <div className="profile-dropdown glass">
                     <div className="dropdown-header">Hi, {user.name}</div>
                     <Link to="/account">My Account</Link>
                     <button onClick={handleLogout} className="logout-btn">Logout</button>
@@ -149,13 +165,11 @@ const Navbar = () => {
 
         {/* --- MOBILE SUB-HEADER (Second Row) --- */}
         <div className="mobile-action-bar mobile-only">
-          
-          {/* Mobile Location */}
           <div className="mobile-location" onClick={detectLocation}>
-            <MapPin className={`mob-loc-icon ${isLocating ? "spin" : ""}`} size={20} color="#0066ff" />
+            <MapPin className={`mob-loc-icon ${isLocating ? "spin" : ""}`} size={20} />
             <div className="mob-loc-text">
               <span className="mob-label">
-                {isLocating ? "Detecting..." : "Current Location"}
+                {isLocating ? "Detecting..." : "Location"}
               </span>
               <span className="mob-value">
                 {locationName.length > 20 ? locationName.substring(0, 18) + "..." : locationName}
@@ -163,15 +177,14 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Car Selector */}
           <button className="mobile-car-pill" onClick={() => setIsModalOpen(true)}>
             <span className="mob-car-text">
-              {selectedCar ? selectedCar.name : "Select Car"}
+              {selectedCar ? selectedCar.name : "Select"}
             </span>
-            <CarFront size={18} color="#0066ff" className="mob-car-icon" />
+            <CarFront size={18} className="mob-car-icon" />
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {isModalOpen && <SelectCarModal onClose={() => setIsModalOpen(false)} />}
     </>

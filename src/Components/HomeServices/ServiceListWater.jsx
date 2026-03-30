@@ -131,7 +131,7 @@ const ServiceList = ({ services, onServiceClick }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
                 onClick={() => currentAd.redirect ? navigate(currentAd.redirect) : null}
-                style={{ backgroundColor: currentAd.bgColor || '#f4f6f9' }}
+                style={{ backgroundColor: currentAd.bgColor || 'var(--bg-primary)' }}
               >
                 <img src={currentAd.image} alt={currentAd.title || "Promotional Offer"} />
               </motion.div>

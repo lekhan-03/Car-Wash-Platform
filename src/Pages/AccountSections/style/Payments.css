@@ -9,7 +9,7 @@
 .payments-title {
   font-size: 18px;
   font-weight: 700;
-  color: #0a1929; /* Midnight Blue */
+  color: var(--text-primary); /* Midnight Blue */
   margin-bottom: 20px;
 }
 
@@ -28,7 +28,7 @@
 
 .wallet-subtitle {
   font-size: 13px;
-  color: #a0b2c6; /* Light gray-blue for contrast */
+  color: var(--text-secondary); /* Light gray-blue for contrast */
   margin: 0;
   text-align: left;
 }
@@ -42,8 +42,8 @@
 }
 
 .add-money-btn {
-  background: #fff;
-  color: #0a1929;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   border: none;
   padding: 8px 18px;
   border-radius: 25px;
@@ -82,13 +82,13 @@
 .saved-cards-card h4 {
   font-size: 16px;
   font-weight: 700;
-  color: #0a1929;
+  color: var(--text-primary);
   margin: 0 0 12px 0;
 }
 
 .saved-cards-card p {
   font-size: 13px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
   max-width: 320px;

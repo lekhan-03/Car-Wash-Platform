@@ -25,6 +25,7 @@ import AccountCars from "./Pages/AccountSections/AccountCars";
 import AccountAddresses from "./Pages/AccountSections/AccountAddresses";
 import AccountPayments from "./Pages/AccountSections/AccountPayments";
 import AccountHelp from "./Pages/AccountSections/AccountHelp";
+import AccountSettings from "./Pages/AccountSections/AccountSettings";
 import Checkout from "./Pages/Checkout/Checkout";
 import MonthlyPackagePageWater from './Components/HomeServices/MonthlyPackages';
 import ChatbotWidget from './Components/ChatbotWidget/ChatbotWidget';
@@ -83,6 +84,7 @@ function App() {
                 <Route path="addresses" element={<AccountAddresses />} />
                 <Route path="payments" element={<AccountPayments />} />
                 <Route path="help" element={<AccountHelp />} />
+                <Route path="settings" element={<AccountSettings />} />
               </Route>
               <Route path="*" element={<Navigate to="/" replace />} />
               <Route path="/checkout" element={<Checkout />} />

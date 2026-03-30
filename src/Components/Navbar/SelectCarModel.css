@@ -13,7 +13,7 @@
 }
 
 .modal {
-  background: #fff;
+  background: var(--bg-secondary);
   border-radius: 20px;
   width: 450px;
   max-width: 100%;
@@ -38,7 +38,7 @@
   border-radius: 50%;
   width: 32px; height: 32px;
   font-size: 16px;
-  color: #333;
+  color: var(--text-primary);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
 }
@@ -48,7 +48,7 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 20px;
-  color: #333;
+  color: var(--text-primary);
   font-weight: 700;
 }
 
@@ -66,7 +66,7 @@ h2 {
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: #fff;
+  background: var(--bg-secondary);
 }
 
 .brand-card:hover {
@@ -108,7 +108,7 @@ h2 {
 }
 
 .vehicle-card {
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 10px;
   text-align: center;
@@ -118,7 +118,7 @@ h2 {
 }
 
 .vehicle-card:hover {
-  background: #fff;
+  background: var(--bg-secondary);
   border-color: #0066ff;
   box-shadow: 0 4px 12px rgba(123, 44, 191, 0.15);
 }
@@ -130,5 +130,5 @@ h2 {
   margin-bottom: 8px;
 }
 
-.v-name { font-size: 13px; font-weight: 700; color: #333; margin: 0; }
+.v-name { font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 0; }
 .v-type { font-size: 10px; color: #888; text-transform: uppercase; background: #eee; padding: 2px 6px; border-radius: 4px; }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { LogOut, CarFront, MapPin, CreditCard, Wrench, Package, User } from "lucide-react";
+import { LogOut, CarFront, MapPin, CreditCard, Wrench, Package, User, Settings } from "lucide-react";
 import "./Accounts.css";
 
 const Accounts = () => {
@@ -31,7 +31,7 @@ const Accounts = () => {
     { path: "orders", name: "Orders", icon: <Package size={26} strokeWidth={1.5} /> },
     { path: "payments", name: "Payments", icon: <CreditCard size={26} strokeWidth={1.5} /> },
     { path: "help", name: "Help", icon: <Wrench size={26} strokeWidth={1.5} /> },
-    
+    { path: "settings", name: "Settings", icon: <Settings size={26} strokeWidth={1.5} /> },
   ];
 
   return (

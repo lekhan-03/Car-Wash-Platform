@@ -58,7 +58,7 @@
 
 .subtitle {
   text-align: center;
-  color: #666;
+  color: var(--text-secondary);
   font-size: 14px;
 }
 
@@ -101,7 +101,7 @@
 
 .input-group input:focus, .password-wrapper input:focus {
   border-color: #0066ff;
-  background: #fff;
+  background: var(--bg-secondary);
   box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
 }
 
@@ -144,7 +144,7 @@
   text-align: center;
   margin-top: 20px;
   font-size: 13px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .auth-footer span {

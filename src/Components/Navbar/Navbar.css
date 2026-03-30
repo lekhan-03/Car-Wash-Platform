@@ -1,159 +1,111 @@
 /* src/Components/Navbar/Navbar.css - Premium UI/UX */
 
-/* --- Wrapper (Glassmorphism) --- */
 .navbar-container {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
   transition: all 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* --- Base Navbar --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
-  background: transparent;
 }
 
-/* --- Logo --- */
-/* --- Animated Premium Logo (Fast Color Shift) --- */
 .logo {
   font-size: 26px;
   font-weight: 900;
   text-decoration: none;
   letter-spacing: -0.5px;
-  
-  /* 1. Vibrant Multi-Color Gradient */
-  background: linear-gradient(
-    90deg, 
-    #0066ff, /* Electric Blue */
-    #a855f7, /* Purple */
-    #ec4899, /* Pink */
-    #06b6d4, /* Cyan */
-    #0066ff  /* Back to Blue to make the loop seamless */
-  );
-  background-size: 300% auto; /* Stretched so we can scroll through the colors */
-  
-  /* 2. Clip the background to the text */
-  color: transparent;
+  background: var(--btn-grad);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  
-  /* 3. The FAST Interval Animation (1.5 seconds) */
-  animation: fastColorShift 1.5s linear infinite;
-  
-  /* Smooth Hover Physics */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Hover: Pops up with a glowing shadow */
 .logo:hover {
-  transform: scale(1.05) translateY(-1px);
-  filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.4)); /* Purple glow */
+  transform: scale(1.05);
 }
 
-/* Click: Presses inward */
-.logo:active {
-  transform: scale(0.96) translateY(1px);
-}
-
-/* The Keyframe that rapidly scrolls the colors */
-@keyframes fastColorShift {
-  0% { background-position: 0% center; }
-  100% { background-position: 300% center; }
-}
-/* --- Desktop Menu --- */
 .nav-menu {
   list-style: none; display: flex; gap: 32px; margin: 0; padding: 0;
 }
 .nav-menu li a {
-  text-decoration: none; color: #64748b; font-weight: 600; font-size: 15px;
+  text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 15px;
   transition: all 0.3s ease; position: relative;
 }
-.nav-menu li a:hover { color: #0066ff; }
-/* Underline animation on hover */
+.nav-menu li a:hover { color: var(--accent-primary); }
+
 .nav-menu li a::after {
   content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%;
-  background-color: #0066ff; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: var(--accent-primary); transition: all 0.3s ease;
   transform: translateX(-50%); border-radius: 2px;
 }
 .nav-menu li a:hover::after { width: 100%; }
 
-/* --- Desktop Pills --- */
 .navbar-icons { display: flex; align-items: center; gap: 16px; }
 
 .nav-pill {
   display: flex; align-items: center; gap: 8px;
-  background: #f8fafc; padding: 6px 14px; border-radius: 30px;
-  border: 1px solid #e2e8f0; cursor: pointer;
+  background: var(--bg-secondary); padding: 6px 14px; border-radius: 30px;
+  border: 1px solid var(--border-color); cursor: pointer;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.nav-pill:hover { 
-  background: #fff; border-color: #0066ff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 102, 255, 0.1);
-}
-.nav-pill:active { transform: translateY(1px) scale(0.98); }
 
-.pill-icon { width: 20px; height: 20px; transition: transform 0.3s; }
-.nav-pill:hover .pill-icon { transform: scale(1.1); }
-.pill-text { display: flex; flex-direction: column; line-height: 1.1; }
-.pill-label { font-size: 9px; color: #0066ff; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
-.pill-value { font-size: 13px; color: #0f172a; font-weight: 700; white-space: nowrap; }
+.pill-icon { width: 20px; height: 20px; color: var(--accent-primary); }
+.pill-text { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
+.pill-label { font-size: 9px; color: var(--accent-primary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+.pill-value { font-size: 13px; color: var(--text-primary); font-weight: 700; white-space: nowrap; }
 
-/* --- Cart Icon & Profile Icon --- */
 .icon-btn {
-  background: none; border: none; cursor: pointer; padding: 6px; position: relative;
-  border-radius: 50%; transition: background 0.2s;
+  background: transparent; border: none; cursor: pointer; padding: 6px; position: relative;
+  display: flex; align-items: center; justify-content: center; border-radius: 50%;
+}
+.svg-icon { color: var(--text-primary); transition: color 0.3s; }
+.icon-btn:hover .svg-icon { color: var(--accent-primary); }
+
+.theme-btn {
+  color: var(--text-primary);
+}
+.theme-icon-wrapper {
   display: flex; align-items: center; justify-content: center;
 }
-.icon-btn:hover { background: #f1f5f9; }
-.svg-icon { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-.icon-btn:hover .svg-icon { transform: scale(1.15) rotate(-5deg); color: #0066ff; }
 
 .cart-badge {
   position: absolute; top: 0; right: 0;
-  background: #ff3b30; color: white; font-size: 10px; font-weight: 800;
+  background: var(--danger); color: white; font-size: 10px; font-weight: 800;
   height: 18px; width: 18px; display: flex; align-items: center; justify-content: center;
-  border-radius: 50%; border: 2px solid white;
-  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 50%;
 }
 
-/* --- Profile Dropdown (Bouncy Entrance) --- */
 .profile-section { position: relative; }
 .profile-dropdown {
   display: none; position: absolute; right: 0; top: 50px;
-  background: #fff; border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1); min-width: 200px; padding: 10px;
-  flex-direction: column; z-index: 1001; border: 1px solid #f0f0f0;
-  animation: slideUpFade 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform-origin: top right;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg); min-width: 200px; padding: 10px;
+  flex-direction: column; z-index: 1001; 
 }
 .profile-section:hover .profile-dropdown { display: flex; }
 
-.dropdown-header { padding: 10px 12px; font-size: 13px; color: #64748b; font-weight: 700; border-bottom: 1px solid #f1f5f9; margin-bottom: 5px; }
+.dropdown-header { padding: 10px 12px; font-size: 13px; color: var(--text-secondary); font-weight: 700; border-bottom: 1px solid var(--border-color); margin-bottom: 5px; }
 .profile-dropdown a, .logout-btn {
-  text-decoration: none; color: #0f172a; font-size: 14px; font-weight: 500; padding: 10px 12px; border-radius: 10px; text-align: left; background: none; border: none; cursor: pointer; transition: all 0.2s;
+  text-decoration: none; color: var(--text-primary); font-size: 14px; font-weight: 500; padding: 10px 12px; border-radius: 10px; text-align: left; background: none; border: none; cursor: pointer; transition: all 0.2s;
 }
-.profile-dropdown a:hover, .logout-btn:hover { background: #f0f7ff; color: #0066ff; padding-left: 16px; }
+.profile-dropdown a:hover, .logout-btn:hover { background: var(--border-color); color: var(--accent-primary); padding-left: 16px; }
 
-/* Login Button */
 .login-link { 
-  color: #0066ff; font-weight: 800; text-decoration: none; 
-  border: 2px solid #0066ff; padding: 8px 20px; border-radius: 20px; 
+  color: var(--accent-primary); font-weight: 800; text-decoration: none; 
+  border: 2px solid var(--accent-primary); padding: 8px 20px; border-radius: 20px; 
   transition: all 0.3s;
 }
-.login-link:hover { background: #0066ff; color: white; box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3); transform: translateY(-2px); }
+.login-link:hover { background: var(--btn-grad); color: white; border-color: transparent; }
 
-/* --- MOBILE ONLY STYLES --- */
 .mobile-only { display: none; }
 
 @media (max-width: 768px) {
@@ -164,32 +116,19 @@
 
   .mobile-action-bar {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 0 16px 12px 16px; background: transparent; border-bottom: none;
+    padding: 0 16px 12px 16px;
   }
 
-  .mobile-location { display: flex; align-items: center; gap: 8px; cursor: pointer; }
-  .mob-loc-icon { width: 22px; filter: drop-shadow(0 2px 4px rgba(0, 102, 255, 0.3)); }
+  .mobile-location { display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--text-primary); }
+  .mob-loc-icon { width: 22px; color: var(--accent-primary); }
   .mob-loc-text { display: flex; flex-direction: column; line-height: 1.2; }
-  .mob-label { font-size: 10px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-  .mob-value { font-size: 14px; font-weight: 800; color: #0f172a; }
+  .mob-label { font-size: 10px; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; }
+  .mob-value { font-size: 14px; font-weight: 800; color: var(--text-primary); }
 
   .mobile-car-pill {
     display: flex; align-items: center; gap: 8px;
-    background: #fff; padding: 6px 12px; border-radius: 20px; border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03); cursor: pointer; transition: transform 0.2s;
+    background: var(--bg-secondary); padding: 6px 12px; border-radius: 20px; border: 1px solid var(--border-color);
   }
-  .mobile-car-pill:active { transform: scale(0.95); }
-  .mob-car-text { font-size: 12px; font-weight: 800; color: #0066ff; }
-  .mob-car-icon { width: 20px; height: 20px; }
-}
-
-/* Reusable Animations */
-@keyframes slideUpFade {
-  0% { opacity: 0; transform: translateY(15px) scale(0.95); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes popIn {
-  0% { transform: scale(0); }
-  80% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  .mob-car-text { font-size: 12px; font-weight: 800; color: var(--accent-primary); }
+  .mob-car-icon { width: 20px; height: 20px; color: var(--accent-primary); }
 }

@@ -4,7 +4,7 @@
 .detailing-page-container {
   width: 100%;
   height: 100vh;
-  background: #f4f6f9;
+  background: var(--bg-primary);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -28,38 +28,38 @@
 /* --- PRODUCTS VIEW HEADER --- */
 .products-view-header {
   display: flex; align-items: center; gap: 15px; padding: 15px 18px;
-  background: #f4f6f9; position: sticky; top: 0; z-index: 50; margin-bottom: 10px;
+  background: var(--bg-primary); position: sticky; top: 0; z-index: 50; margin-bottom: 10px;
 }
-.products-view-header h2 { font-size: 22px; font-weight: 800; color: #1a1a1a; margin: 0; letter-spacing: -0.5px; }
+.products-view-header h2 { font-size: 22px; font-weight: 800; color: var(--text-primary); margin: 0; letter-spacing: -0.5px; }
 .back-btn-circle {
-  background: #fff; border: 1px solid #e0e0e0; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--bg-secondary); border: 1px solid #e0e0e0; width: 40px; height: 40px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: var(--text-primary);
 }
-.back-btn-circle:hover { background: #eef4ff; color: #0066ff; border-color: #0066ff; transform: translateX(-3px); }
+.back-btn-circle:hover { background: var(--bg-primary); color: var(--accent-primary); border-color: var(--accent-primary); transform: translateX(-3px); }
 
 /* --- SEARCH SECTION --- */
-.search-section { padding: 15px 18px 5px 18px; background: #f4f6f9; }
+.search-section { padding: 15px 18px 5px 18px; background: var(--bg-primary); }
 .search-box {
-  background: #fff; border-radius: 12px; padding: 10px 14px; display: flex; align-items: center; gap: 10px;
+  background: var(--bg-secondary); border-radius: 12px; padding: 10px 14px; display: flex; align-items: center; gap: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #e0e0e0;
 }
 .search-icon { font-size: 16px; opacity: 0.6; }
-.search-box input { border: none; outline: none; width: 100%; font-size: 14px; color: #333; background: transparent; }
-.clear-search { background: #eee; border: none; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #666; cursor: pointer; }
+.search-box input { border: none; outline: none; width: 100%; font-size: 14px; color: var(--text-primary); background: transparent; }
+.clear-search { background: var(--bg-primary); border: none; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--text-secondary); cursor: pointer; }
 
 /* --- BANNER --- */
 .top-banner-section { margin: 18px; position: relative; border-radius: 16px; overflow: hidden; height: 170px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); background: #e0e0e0; }
 .banner-img { width: 100%; height: 100%; object-fit: cover; }
 .dots-indicator { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; background: rgba(0,0,0,0.3); padding: 4px 8px; border-radius: 10px; backdrop-filter: blur(4px); }
 .dot { width: 6px; height: 6px; background: rgba(255,255,255,0.6); border-radius: 50%; }
-.dot.active { background: #fff; width: 16px; border-radius: 4px; }
+.dot.active { background: var(--bg-secondary); width: 16px; border-radius: 4px; }
 
 
 /* =========================================
    BENTO GRID (MATCHING SERVICES PAGE)
    ========================================= */
-.section-header h3 { padding: 0 18px 10px; font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 10px 0 0 0; }
+.section-header h3 { padding: 0 18px 10px; font-size: 17px; font-weight: 800; color: var(--text-primary); margin: 10px 0 0 0; }
 
 .category-bento-grid {
   display: flex; flex-direction: column; gap: 16px; padding: 5px 18px 25px 18px;
@@ -68,7 +68,7 @@
 
 /* Base Card Styles */
 .bento-card-detailing {
-  background: #fff; border-radius: 24px; padding: 24px; position: relative; overflow: hidden;
+  background: var(--bg-secondary); border-radius: 24px; padding: 24px; position: relative; overflow: hidden;
   box-shadow: 0 8px 25px rgba(10, 25, 41, 0.04); border: 1px solid #ffffff;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: flex; flex-direction: column; cursor: pointer;
@@ -84,15 +84,15 @@
   width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;
 }
 .icon-wrapper.glass { background: rgba(0, 102, 255, 0.1); backdrop-filter: blur(5px); }
-.icon-wrapper.soft-blue { background: #e3f2fd; }
+.icon-wrapper.soft-blue { background: var(--bg-primary); }
 .accent-icon { color: #0066ff; }
-.dark-icon { color: #0a1929; }
+.dark-icon { color: var(--text-primary); }
 .light-icon { color: #fff; }
 
 /* Typography */
-.bento-card-detailing h3 { font-size: 18px; font-weight: 800; color: #0a1929; margin: 0 0 6px 0; line-height: 1.2; }
-.bento-card-detailing p { font-size: 12px; color: #666; margin: 0; max-width: 65%; line-height: 1.4; }
-.bento-card-detailing h4 { font-size: 15px; font-weight: 800; color: #0a1929; margin: 0; line-height: 1.2; }
+.bento-card-detailing h3 { font-size: 18px; font-weight: 800; color: var(--text-primary); margin: 0 0 6px 0; line-height: 1.2; }
+.bento-card-detailing p { font-size: 12px; color: var(--text-secondary); margin: 0; max-width: 65%; line-height: 1.4; }
+.bento-card-detailing h4 { font-size: 15px; font-weight: 800; color: var(--text-primary); margin: 0; line-height: 1.2; }
 
 .bento-action {
   display: inline-flex; align-items: center; gap: 4px; margin-top: 15px;
@@ -222,7 +222,7 @@
 .company-filter-strip::-webkit-scrollbar { display: none; }
 
 .company-chip {
-  padding: 6px 14px; border-radius: 20px; background: #fff; border: 1px solid #e0e0e0;
+  padding: 6px 14px; border-radius: 20px; background: var(--bg-secondary); border: 1px solid #e0e0e0;
   font-size: 12px; font-weight: 600; color: #555; white-space: nowrap; cursor: pointer; transition: all 0.2s;
 }
 .company-chip.active { background: #0047ff; color: white; border-color: #0047ff; box-shadow: 0 2px 8px rgba(0, 71, 255, 0.25); }
@@ -232,23 +232,23 @@
 .card-group { display: flex; flex-direction: column; margin-bottom: 25px; }
 
 .detailing-card {
-  background: #fff; border-radius: 18px; padding: 18px; display: flex; justify-content: space-between;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); cursor: pointer; position: relative; z-index: 2; 
+  background: var(--bg-secondary); border-radius: 18px; padding: 18px; display: flex; justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border-color); cursor: pointer; position: relative; z-index: 2; 
 }
 .card-content { flex: 1; padding-right: 12px; display: flex; flex-direction: column; justify-content: space-between; }
-.card-header h3 { font-size: 16px; font-weight: 700; color: #222; margin-bottom: 2px; line-height: 1.35; }
+.card-header h3 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; line-height: 1.35; }
 .brand-tag { font-size: 11px; color: #777; font-style: italic; margin-bottom: 4px; }
 .rating-badge { font-size: 11px; font-weight: 600; color: #f5a623; display: flex; gap: 4px; margin-bottom: 8px; }
 
 .card-actions { display: flex; align-items: center; gap: 10px; margin-top: auto; justify-content: space-between; }
-.price-tag { font-size: 17px; font-weight: 800; color: #222; }
+.price-tag { font-size: 17px; font-weight: 800; color: var(--text-primary); }
 
 .stock-tag { font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600; margin-left: 5px; vertical-align: middle; }
 .stock-tag.in { background: #e6fffa; color: #00b894; }
 .stock-tag.out { background: #ffe6e6; color: #d63031; }
 
 .card-media { width: 105px; display: flex; flex-direction: column; align-items: center; }
-.card-media img { width: 100px; height: 100px; border-radius: 12px; object-fit: contain; background: #f0f0f0; }
+.card-media img { width: 100px; height: 100px; border-radius: 12px; object-fit: contain; background: var(--bg-primary); }
 .add-btn {
   margin-top: -15px; background: #000; color: #fff; border: none; padding: 7px 22px; border-radius: 10px;
   font-weight: 700; font-size: 11px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 3;
@@ -264,12 +264,12 @@
 .promo-left { display: flex; align-items: center; gap: 8px; }
 
 /* --- EMPTY STATE & TRUST STATS --- */
-.no-services { text-align: center; padding: 30px; color: #666; }
+.no-services { text-align: center; padding: 30px; color: var(--text-secondary); }
 .reset-btn { margin-top: 10px; background: #0047ff; color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; }
 
-.trust-section { margin: 10px 18px 40px; background: #fff; border-radius: 18px; padding: 25px 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); text-align: center; }
-.trust-section h3 { font-size: 13px; margin-bottom: 18px; color: #444; font-weight: 700; text-transform: uppercase; }
+.trust-section { margin: 10px 18px 40px; background: var(--bg-secondary); border-radius: 18px; padding: 25px 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); text-align: center; }
+.trust-section h3 { font-size: 13px; margin-bottom: 18px; color: var(--text-primary); font-weight: 700; text-transform: uppercase; }
 .stats-row { display: flex; justify-content: space-around; }
 .stat-card { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-.stat-val { font-weight: 800; font-size: 19px; color: #0047ff; }
+.stat-val { font-weight: 800; font-size: 19px; color: var(--accent-primary); }
 .stat-lbl { font-size: 10px; color: #999; font-weight: 600; }

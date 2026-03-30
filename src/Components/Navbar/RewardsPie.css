@@ -19,14 +19,14 @@
   transition: background 0.5s ease;
 }
 .pie-inner-hole {
-  width: 32px; height: 32px; background: #fff; border-radius: 50%;
+  width: 32px; height: 32px; background: var(--bg-secondary); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 800; color: #0066ff;
   box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .gift-icon-wrapper {
-  width: 42px; height: 42px; background: #fff; border-radius: 50%;
+  width: 42px; height: 42px; background: var(--bg-secondary); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 20px; border: 2px solid #0066ff; position: relative;
   box-shadow: 0 0 15px rgba(0, 102, 255, 0.4);
@@ -61,12 +61,12 @@
 
 .rewards-header {
   display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color);
 }
-.rewards-header h4 { margin: 0; font-size: 15px; font-weight: 800; color: #0f172a; }
+.rewards-header h4 { margin: 0; font-size: 15px; font-weight: 800; color: var(--text-primary); }
 .badge-blue { font-size: 9px; background: #eef4ff; color: #0066ff; padding: 4px 10px; border-radius: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
 
-.progress-text { font-size: 13px; color: #64748b; margin-bottom: 15px; line-height: 1.5; }
+.progress-text { font-size: 13px; color: var(--text-secondary); margin-bottom: 15px; line-height: 1.5; }
 .progress-text strong { color: #0066ff; font-weight: 800; font-size: 15px; }
 
 /* Linear Segments */
@@ -77,8 +77,8 @@
 /* Success State */
 .success-state { text-align: center; display: flex; flex-direction: column; align-items: center; }
 .confetti-icon { margin-bottom: 10px; animation: bounce 2s infinite; }
-.success-state h5 { margin: 0 0 8px 0; color: #0f172a; font-size: 18px; font-weight: 800; }
-.success-state p { font-size: 13px; color: #64748b; margin-bottom: 16px; }
+.success-state h5 { margin: 0 0 8px 0; color: var(--text-primary); font-size: 18px; font-weight: 800; }
+.success-state p { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
 .success-state strong { color: #00b894; font-weight: 800; }
 
 .redeem-btn {
@@ -93,3 +93,170 @@
 @media (max-width: 768px) {
   .rewards-dropdown { right: -60px; width: 260px; }
 }
+
+/* ── Reward detail box (shown in success state) ──────── */
+.reward-detail-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 102, 255, 0.07);
+  border: 1px solid rgba(0, 102, 255, 0.18);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0066ff;
+  margin: 8px 0;
+}
+.reward-detail-icon { display: flex; align-items: center; }
+
+.reward-cap-note {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin: 4px 0 14px;
+  text-align: center;
+}
+
+/* ── Reward hint box ─────────────────────────────────── */
+.reward-hint-box {
+  margin-top: 12px;
+  background: #f0f7ff;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.reward-hint-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0066ff;
+  margin-bottom: 4px;
+}
+.reward-hint {
+  font-size: 11px;
+  color: #555;
+  margin: 0;
+}
+
+/* ── Promo note (services only warning) ──────────────── */
+.promo-note-text {
+  font-size: 10.5px;
+  color: #f59e0b;
+  margin: 5px 0 0;
+  font-weight: 600;
+}
+
+/* ── Promo Code Cards ─────────────────────────────── */
+.promo-codes-section { margin-top: 4px; }
+
+.promo-section-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.promo-code-card {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f5e9 100%);
+  border: 1.5px dashed #0066ff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.promo-code-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.promo-code-text {
+  font-size: 16px;
+  font-weight: 900;
+  color: #0066ff;
+  letter-spacing: 2px;
+  font-family: monospace;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid #0066ff;
+  background: #fff;
+  color: #0066ff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover { background: #0066ff; color: #fff; }
+.copy-btn.copied { background: #00b894; border-color: #00b894; color: #fff; }
+
+.promo-code-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo-label {
+  font-size: 11px;
+  color: #555;
+  font-weight: 600;
+}
+
+.promo-discount {
+  font-size: 12px;
+  font-weight: 800;
+  color: #00b894;
+  background: rgba(0, 184, 148, 0.12);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.promo-expires {
+  font-size: 10px;
+  color: #999;
+  margin: 4px 0 0;
+}
+
+/* ── Mini progress (shown below codes) ──────────────── */
+.mini-progress { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-color); }
+.mini-progress-text {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.mini-progress-text strong { color: #0066ff; }
+
+/* ── Reward hint ─────────────────────────────────────── */
+.reward-hint {
+  font-size: 11px;
+  color: #888;
+  margin-top: 10px;
+  text-align: center;
+  background: #f8f9ff;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* ── Shake animation for eligible state ─────────────── */
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(8deg); }
+  60% { transform: rotate(-5deg); }
+  80% { transform: rotate(5deg); }
+}
+.shake-animation { animation: shake 0.6s ease 0s 1; }

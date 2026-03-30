@@ -8,12 +8,18 @@ export const AuthProvider = ({ children }) => {
 
   // ✅ Load user from localStorage
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) setUser(JSON.parse(storedUser));
+    try {
+      const storedUser = localStorage.getItem("user");
+      if (storedUser) setUser(JSON.parse(storedUser));
+    } catch (e) { console.error("Could not parse user", e); }
   }, []);
 
   const signup = (userData) => {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    let users = [];
+    try {
+      users = JSON.parse(localStorage.getItem("users")) || [];
+    } catch (e) { console.error(e); }
+
     const existing = users.find((u) => u.username === userData.username);
 
     if (existing) {
@@ -28,14 +34,18 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = (username, password) => {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    let users = [];
+    try {
+      users = JSON.parse(localStorage.getItem("users")) || [];
+    } catch (e) { console.error(e); }
+
     const found = users.find(
       (u) => u.username === username && u.password === password
     );
 
     if (found) {
       setUser(found);
-      localStorage.setItem("user", JSON.stringify(found)); // ✅ consistent key
+      localStorage.setItem("user", JSON.stringify(found));
       return true;
     } else {
       alert("Invalid credentials. Please sign up if you don't have an account.");
@@ -45,7 +55,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("user"); // ✅ same key
+    localStorage.removeItem("user");
   };
 
   return (

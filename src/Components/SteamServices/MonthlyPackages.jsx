@@ -59,7 +59,7 @@ const MonthlyPackagePageSteam = () => {
   return (
     <div className="package-page">
       <div className="package-nav">
-        <button onClick={() => navigate(-1)} className="back-icon"><ArrowLeft size={24} color="#1e293b" /></button>
+        <button onClick={() => navigate(-1)} className="back-icon"><ArrowLeft size={24} color="var(--text-primary)" /></button>
         <h1>Subscription Plans</h1>
         <div style={{ width: 24 }} /> {/* Placeholder for center alignment */}
       </div>

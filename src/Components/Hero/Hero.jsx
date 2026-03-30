@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { ChevronRight } from "lucide-react"; // Import a modern arrow icon
+import { ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import './Hero.css';
 
 const slides = [
@@ -11,7 +12,7 @@ const slides = [
     desc: "Premium Car Wash & Detailing Services",
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads/Hero/Hero1.png", 
     link: "/waterwash",
-    accent: "#0066ff"
+    accent: "var(--accent-primary)"
   },
   {
     id: 2,
@@ -20,7 +21,7 @@ const slides = [
     desc: "Deep Clean & Sanitize Your Cabin",
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads/Hero/Hero2.png",
     link: "/steamwash",
-    accent: "#00b894"
+    accent: "var(--success)"
   },
   {
     id: 3,
@@ -29,7 +30,7 @@ const slides = [
     desc: "Ceramic Coating & Paint Correction",
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/Ads/Hero/Hero3.png",
     link: "/Detailing",
-    accent: "#f5a623"
+    accent: "var(--accent-secondary)"
   }
 ];
 
@@ -37,7 +38,6 @@ const Hero = () => {
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
 
-  // Auto-scroll logic
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -45,45 +45,73 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const slideVariant = {
+    initial: { opacity: 0, x: 100, scale: 0.9 },
+    animate: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.8, type: "spring", stiffness: 70 } },
+    exit: { opacity: 0, x: -100, scale: 0.9, transition: { duration: 0.5 } }
+  };
+
+  const textVariant = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring", stiffness: 100 } }
+  };
+
+  const currentSlide = slides[current];
+
   return (
     <div className='hero-premium-container'>
-      
-      {/* Animated Background Mesh */}
       <div className="hero-bg-mesh"></div>
 
-      {slides.map((slide, index) => (
-        <div 
-          key={slide.id} 
-          className={`hero-slide-modern ${index === current ? "active" : ""}`}
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={currentSlide.id}
+          className="hero-slide-modern"
+          variants={slideVariant}
+          initial="initial"
+          animate="animate"
+          exit="exit"
         >
-          {/* Dynamic Glowing Orbs matching the slide's accent color */}
-          <div className="glow-orb orb-1" style={{ background: slide.accent }}></div>
-          <div className="glow-orb orb-2" style={{ background: slide.accent }}></div>
+          <div className="glow-orb orb-1" style={{ background: currentSlide.accent }}></div>
+          <div className="glow-orb orb-2" style={{ background: currentSlide.accent }}></div>
 
-          <div className="hero-content-staggered">
-            <h1 className="hero-title animate-1">{slide.headline}</h1>
-            <h1 className="hero-subtitle animate-2">{slide.subHeadline}</h1>
-            <p className="hero-desc animate-3">{slide.desc}</p>
+          <motion.div 
+            className="hero-content-staggered"
+            initial="initial"
+            animate="animate"
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <motion.h1 variants={textVariant} className="hero-title">{currentSlide.headline}</motion.h1>
+            <motion.h1 variants={textVariant} className="hero-subtitle" style={{ color: currentSlide.accent }}>{currentSlide.subHeadline}</motion.h1>
+            <motion.p variants={textVariant} className="hero-desc">{currentSlide.desc}</motion.p>
             
-            <button 
-              className="hero-btn-premium animate-4"
-              onClick={() => navigate(slide.link)}
+            <motion.button 
+              variants={textVariant}
+              className="hero-btn-premium"
+              onClick={() => navigate(currentSlide.link)}
+              whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.2)" }}
+              whileTap={{ scale: 0.95 }}
             >
               BOOK NOW <ChevronRight size={18} />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
 
-          <div className="hero-image-stage">
-            <img 
-              src={slide.image} 
-              alt={slide.headline} 
+          <motion.div 
+            className="hero-image-stage"
+            initial={{ opacity: 0, x: 150, rotate: 10 }}
+            animate={{ opacity: 1, x: 0, rotate: 0, transition: { type: "spring", stiffness: 50, duration: 1 } }}
+            exit={{ opacity: 0, x: -150, rotate: -10 }}
+          >
+            <motion.img 
+              src={currentSlide.image} 
+              alt={currentSlide.headline} 
               className="slide-car-img" 
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
-          </div>
-        </div>
-      ))}
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Modern Pill Indicators */}
       <div className="hero-indicators">
         {slides.map((_, idx) => (
           <div 
@@ -91,8 +119,7 @@ const Hero = () => {
             className={`indicator-pill ${idx === current ? "active" : ""}`}
             onClick={() => setCurrent(idx)}
           >
-            {/* The progress bar inside the active pill */}
-            {idx === current && <div className="pill-progress"></div>}
+            {idx === current && <motion.div className="pill-progress" initial={{ width: "0%" }} animate={{ width: "100%" }} transition={{ duration: 5, ease: "linear" }}></motion.div>}
           </div>
         ))}
       </div>

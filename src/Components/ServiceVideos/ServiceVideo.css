@@ -2,7 +2,7 @@
 
 .video-section-premium {
   padding: 40px 0 20px 0; /* Removed side padding so videos peek off the screen edge */
-  background: #fdfdfd; 
+  background: var(--bg-primary); 
   font-family: 'Poppins', sans-serif;
 }
 
@@ -26,14 +26,14 @@
 .header-title-row h2 {
   font-size: 20px;
   font-weight: 800;
-  color: #0a1929; /* Midnight Blue */
+  color: var(--text-primary); /* Midnight Blue */
   margin: 0;
   letter-spacing: -0.5px;
 }
 
 .video-header-modern p {
   font-size: 13px;
-  color: #666;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -57,7 +57,7 @@
   /* Sizes card perfectly for mobile so the next one slightly peeks out */
   flex: 0 0 85%; 
   max-width: 320px;
-  background: #fff;
+  background: var(--bg-secondary);
   border-radius: 20px;
   padding: 12px;
   box-shadow: 0 10px 25px rgba(10, 25, 41, 0.06);
@@ -103,7 +103,7 @@
 .video-info h3 {
   font-size: 14px;
   font-weight: 700;
-  color: #0a1929;
+  color: var(--text-primary);
   margin: 0;
 }
 
@@ -127,7 +127,7 @@
 .tag-title {
   font-size: 22px;
   font-weight: 800;
-  color: #a0b2c6; /* Slightly lighter shade for a sleek look */
+  color: var(--text-secondary); /* Slightly lighter shade for a sleek look */
   margin: 0 0 12px 0;
 }
 

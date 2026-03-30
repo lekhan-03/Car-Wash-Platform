@@ -1,9 +1,9 @@
-.section-head { font-size: 18px; margin-bottom: 20px; color: #0a1929; }
-.empty-state-box { text-align: center; padding: 40px; background: #fff; border-radius: 12px; color: #888; border: 1px dashed #e0e0e0; }
+.section-head { font-size: 18px; margin-bottom: 20px; color: var(--text-primary); }
+.empty-state-box { text-align: center; padding: 40px; background: var(--bg-secondary); border-radius: 12px; color: #888; border: 1px dashed #e0e0e0; }
 
 .addr-card-v2 {
-  background: #fff; padding: 16px; border-radius: 12px; margin-bottom: 12px;
-  display: flex; gap: 15px; align-items: center; border: 1px solid #f0f0f0;
+  background: var(--bg-secondary); padding: 16px; border-radius: 12px; margin-bottom: 12px;
+  display: flex; gap: 15px; align-items: center; border: 1px solid var(--border-color);
   box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;
 }
 .addr-card-v2:hover { border-color: #0066ff; transform: translateY(-2px); }
@@ -13,11 +13,11 @@
   display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0;
 }
 .addr-info { flex-grow: 1; }
-.addr-info h4 { margin: 0 0 4px 0; font-size: 15px; color: #0a1929; }
-.addr-info p { font-size: 12px; color: #666; margin: 2px 0; }
+.addr-info h4 { margin: 0 0 4px 0; font-size: 15px; color: var(--text-primary); }
+.addr-info p { font-size: 12px; color: var(--text-secondary); margin: 2px 0; }
 
 .del-icon-btn {
-  background: #fff0f0; color: #ff4d4f; border: none; width: 36px; height: 36px;
+  background: var(--bg-secondary)0f0; color: #ff4d4f; border: none; width: 36px; height: 36px;
   border-radius: 8px; display: flex; align-items: center; justify-content: center;
   cursor: pointer; transition: all 0.2s;
 }
