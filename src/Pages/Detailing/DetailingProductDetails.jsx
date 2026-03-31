@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import {  
   Star, 
   ShoppingCart, 
@@ -18,8 +18,17 @@ const fallbackImage = "https://cdn-icons-png.flaticon.com/512/296/296216.png";
 export default function DetailingDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const productId = parseInt(id, 10);
   const { addToCart } = useCart();
+
+  const handleBack = () => {
+    if (location.state?.returnView) {
+      navigate('/detailing', { state: location.state });
+    } else {
+      navigate(-1);
+    }
+  };
 
   let product = null;
   for (const category of detailingData) {
@@ -51,7 +60,7 @@ export default function DetailingDetails() {
       <div className="detailing-details-wrapper error-state">
         <div className="error-card" style={{ padding: '50px', textAlign: 'center' }}>
           <h2>Product Not Found</h2>
-          <button className="back-btn-modern" onClick={() => navigate(-1)} style={{ margin: '20px auto' }}>
+          <button className="back-btn-modern" onClick={handleBack} style={{ margin: '20px auto' }}>
             <ChevronLeft size={24} /> Go Back
           </button>
         </div>
@@ -90,7 +99,7 @@ export default function DetailingDetails() {
   return (
     <div className="detailing-details-wrapper">
       <div className="details-header">
-        <button className="back-btn-modern" onClick={() => navigate(-1)}>
+        <button className="back-btn-modern" onClick={handleBack}>
           <ChevronLeft size={24} />
         </button>
       </div>

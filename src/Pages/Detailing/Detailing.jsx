@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { 
   Search, 
   X, 
@@ -49,7 +49,24 @@ export default function Detailing() {
   const [searchQuery, setSearchQuery] = useState("");
   
   const navigate = useNavigate();
+  const location = useLocation();
   const { addToCart } = useCart();
+
+  // Restore products view when returning from a product detail page
+  useEffect(() => {
+    const returnState = location.state;
+    if (returnState?.returnView === 'products' && returnState?.categoryName) {
+      const cat = sortedCategories.find(
+        (c) => c.categoryName === returnState.categoryName
+      );
+      if (cat) {
+        setSelectedCategory(cat);
+        setCurrentView('products');
+        // Clear the state so a fresh visit resets normally
+        window.history.replaceState({}, '');
+      }
+    }
+  }, [location.state]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -273,23 +290,34 @@ export default function Detailing() {
               </div>
             )}
 
-            {/* COMPANY FILTER */}
+            {/* MODERN COMPANY FILTER (Blinkit Style) */}
             {selectedCategory && (
-              <div className="company-filter-strip">
-                 <button 
-                    className={`company-chip ${selectedCompany === null ? 'active' : ''}`}
+              <div className="company-filter-strip-modern">
+                 <div 
+                    className={`company-item-modern ${selectedCompany === null ? 'active' : ''}`}
                     onClick={() => setSelectedCompany(null)}
                  >
-                   All Brands
-                 </button>
+                   <div className="company-logo-circle all-brands-circle">
+                     <Layers size={24} />
+                   </div>
+                   <span className="company-name-modern">All Brands</span>
+                 </div>
+                 
                  {selectedCategory.companies.map((comp) => (
-                   <button 
+                   <div 
                      key={comp.id || comp.name}
-                     className={`company-chip ${selectedCompany?.name === comp.name ? 'active' : ''}`}
+                     className={`company-item-modern ${selectedCompany?.name === comp.name ? 'active' : ''}`}
                      onClick={() => setSelectedCompany(comp)}
                    >
-                     {comp.name}
-                   </button>
+                     <div className="company-logo-circle">
+                       {comp.logo ? (
+                         <img src={comp.logo} alt={comp.name} />
+                       ) : (
+                         <span style={{ fontSize: '10px', fontWeight: 'bold' }}>{comp.name.substring(0, 2).toUpperCase()}</span>
+                       )}
+                     </div>
+                     <span className="company-name-modern">{comp.name}</span>
+                   </div>
                  ))}
               </div>
             )}
@@ -300,7 +328,14 @@ export default function Detailing() {
                 currentProducts.map((product, index) => (
                   /* 🚨 THE FIX: Universally unique key completely solves the React caching bug */
                   <div key={`${product.companyName}-${product.name}-${index}`} className="card-group">
-                    <div className="detailing-card" onClick={() => navigate(`/detailing/${product.id}`)}>
+                    <div className="detailing-card" onClick={() =>
+                      navigate(`/detailing/${product.id}`, {
+                        state: {
+                          returnView: 'products',
+                          categoryName: selectedCategory.categoryName,
+                        }
+                      })
+                    }>
                       <div className="card-content">
                         <div className="card-header">
                           <h3>{product.name}</h3>

@@ -173,7 +173,10 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  height: 170px;
+  /* Removed fixed height to let the image dictate full visibility */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 10px 25px rgba(0, 102, 255, 0.15);
   background: var(--bg-secondary);
   margin-bottom: 25px;
@@ -181,8 +184,9 @@
 
 .banner-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .dots-indicator {

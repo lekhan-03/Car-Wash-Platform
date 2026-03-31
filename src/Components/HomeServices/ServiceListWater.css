@@ -3,7 +3,8 @@
 .service-list-container {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Space between each Service Unit (Card + Banner) */
+  gap: 30px;
+  /* Space between each Service Unit (Card + Banner) */
   margin-bottom: 40px;
   padding: 10px 5px;
 }
@@ -12,29 +13,32 @@
 .service-unit-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0; /* CRITICAL: Remove gap so the negative margin overlaps seamlessly */
+  gap: 0;
+  /* CRITICAL: Remove gap so the negative margin overlaps seamlessly */
 }
 
 /* --- THE MAIN CARD (Solid to hide banner underneath) --- */
 .glass-card {
   /* 1. Solid Background */
-  background: var(--bg-secondary); 
-  
+  background: var(--bg-secondary);
+
   /* 2. Border & Shape */
   border-radius: 20px;
   border: 1px solid #f0f4f8;
-  
+
   /* 3. Layout */
   padding: 18px;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  
+
   /* 4. CRITICAL: Overlap Physics */
   position: relative;
-  z-index: 2; /* Forces card to sit ABOVE the promo banner */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* Casts a shadow directly onto the black banner */
-  
+  z-index: 2;
+  /* Forces card to sit ABOVE the promo banner */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  /* Casts a shadow directly onto the black banner */
+
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
 }
@@ -97,7 +101,7 @@
 
 .glass-features li {
   font-size: 12px;
-  color: #475569;
+  color: var(--text-secondary);
   margin-bottom: 5px;
   display: flex;
   align-items: center;
@@ -128,7 +132,12 @@
   align-items: baseline;
   gap: 2px;
 }
-.price-main small { font-size: 12px; font-weight: 600; color: #0066ff; }
+
+.price-main small {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0066ff;
+}
 
 .view-details-btn {
   font-size: 11px;
@@ -156,8 +165,8 @@
   border-radius: 18px;
   overflow: hidden;
   background: var(--bg-secondary);
-  border: 1px solid rgba(255,255,255,0.8);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .img-wrapper img {
@@ -199,27 +208,29 @@
 }
 
 .promo-banner-strip-water {
-  background: #000000; /* Deep black matching the photo */
-  color: white; 
-  
-  /* FIX 1: Removed the space in "24 px" and increased top padding slightly so the text perfectly clears the card */
-  padding: 26px 0 12px 0; 
-  
-  /* FIX 2: Correctly round ONLY the bottom corners to make it look attached to the card */
-  border-radius: 0 0 16px 16px;
-  
-  display: flex; 
+  background: #000000;
+  /* Deep black matching the photo */
+  color: white;
+
+  /* Reduced padding to create a slimmer strip */
+  padding: 14px 0 10px 0;
+
+  /* Correctly round ONLY the bottom corners to make it look attached to the card */
+  border-radius: 0 0 12px 12px;
+
+  display: flex;
   align-items: center;
-  font-weight: 600; 
-  font-size: 13px;
-  
+  font-weight: 600;
+  font-size: 11px;
+
   /* Pull the banner up UNDER the card */
-  margin-top: -16px; 
-  
+  margin-top: 8px;
+
   /* CRITICAL: Overlap Physics & Hide Overflow for animation */
   position: relative;
-  z-index: 1; /* Forces banner to sit BEHIND the main card */
-  overflow: hidden; 
+  z-index: 1;
+  /* Forces banner to sit BEHIND the main card */
+  overflow: hidden;
 }
 
 /* The moving track */
@@ -227,8 +238,9 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
-  width: max-content; /* Allows track to be as wide as the duplicated content */
-  animation: marqueeScroll 12s linear infinite; 
+  width: max-content;
+  /* Allows track to be as wide as the duplicated content */
+  animation: marqueeScroll 12s linear infinite;
 }
 
 /* FIX 3: Corrected class name so the scrolling properly pauses on hover */
@@ -236,25 +248,30 @@
   animation-play-state: paused;
 }
 
-.promo-content { 
-  display: flex; 
-  align-items: center; 
-  gap: 8px; 
-  /* Acts as the gap between each duplicated phrase */
-  padding-right: 40px; 
+.marquee-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row !important;
+  gap: 6px;
+  padding-right: 40px;
 }
 
-.arrow-icon { 
-  font-size: 14px; 
-  opacity: 0.8; 
+.arrow-icon {
+  font-size: 14px;
+  opacity: 0.8;
   margin-left: 8px;
 }
 
 /* The continuous scroll animation */
 @keyframes marqueeScroll {
-  0% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+
   /* Because the JSX is duplicated perfectly, shifting by -50% creates a flawless infinite loop */
-  100% { transform: translateX(-50%); } 
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* --- RESPONSIVE GRID (Desktop) --- */
@@ -265,28 +282,33 @@
     gap: 30px;
   }
 }
+
 /* --- INLINE AD BANNER --- */
 .inline-ad-banner {
   width: 100%;
-  height: 60px; /* Reduced to a slim, standard mobile banner height */
-  border-radius: 14px; /* Adjusted to fit the slimmer profile perfectly */
+  height: 60px;
+  /* Reduced to a slim, standard mobile banner height */
+  border-radius: 14px;
+  /* Adjusted to fit the slimmer profile perfectly */
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Softer, more premium shadow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  /* Softer, more premium shadow */
   cursor: pointer;
   position: relative;
-  
+
   /* Forces the ad to span all columns on desktop grids */
-  grid-column: 1 / -1; 
+  grid-column: 1 / -1;
 }
 
 .inline-ad-banner img {
   width: 100%;
   height: 100%;
-  
+
   /* --- CHANGE HERE: from 'cover' to 'contain' --- */
-  object-fit: contain; 
-  
-  object-position: center; /* Keeps the full image centered in the container */
+  object-fit: contain;
+
+  object-position: center;
+  /* Keeps the full image centered in the container */
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 

@@ -108,24 +108,24 @@ const ServiceList = ({ services, onServiceClick }) => {
               <div className="promo-banner-strip-steam">
                 <div className="marquee-track">
                   {/* --- SET 1 --- */}
-                  <div className="promo-content">
+                  <div className="marquee-item">
                     <ShieldCheck size={14} />
                     <span>Best Price Guarantee</span>
                     <span className="arrow-icon">➔</span>
                   </div>
-                  <div className="promo-content">
+                  <div className="marquee-item">
                     <ShieldCheck size={14} />
                     <span>Premium Quality Assured</span>
                     <span className="arrow-icon">➔</span>
                   </div>
 
                   {/* --- SET 2 (Exact Duplicate for seamless looping) --- */}
-                  <div className="promo-content">
+                  <div className="marquee-item">
                     <ShieldCheck size={14} />
                     <span>Best Price Guarantee</span>
                     <span className="arrow-icon">➔</span>
                   </div>
-                  <div className="promo-content">
+                  <div className="marquee-item">
                     <ShieldCheck size={14} />
                     <span>Premium Quality Assured</span>
                     <span className="arrow-icon">➔</span>

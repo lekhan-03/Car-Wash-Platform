@@ -29,7 +29,7 @@ const detailingData = [
 
             ],
             highlights: [
-             "  4+ Years Lifespan",
+              "  4+ Years Lifespan",
               "  4 Years Warranty",
               "  3 Free Checkup",
               "  180+- 10 Mincrons",
@@ -88,7 +88,7 @@ const detailingData = [
 
             ],
             highlights: [
-             "  7+ Years Lifespan",
+              "  7+ Years Lifespan",
               "  7 Years Warranty",
               "  6 Free Checkups",
               "  7.5+-1 mil",
@@ -150,7 +150,7 @@ const detailingData = [
 
             ],
             highlights: [
-               "  4+ Years Lifespan",
+              "  4+ Years Lifespan",
               "  4 Years Warranty",
               "  3 Free Checkup",
               "  180+- 10 Mincrons",
@@ -271,7 +271,7 @@ const detailingData = [
 
             ],
             highlights: [
-             "  10+ Years Lifespan",
+              "  10+ Years Lifespan",
               "  10 Years Warranty",
               "  9 Free Checkups",
               "  7.5+-1 mil",
@@ -319,7 +319,7 @@ const detailingData = [
       {
         id: 2,
         name: "3M",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Logos/stek.jpg",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/3m.jpg",
         products: [
           {
             id: 3005,
@@ -963,7 +963,7 @@ const detailingData = [
       {
         id: 5,
         name: "Saint Gobian",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Saintgobian.jpg",
         products: [
           {
             id: 3018,
@@ -1130,7 +1130,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/SaintGloblin/Matte_Hydro.png"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/SaintGloblin/Matte_Hydro.png"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -1179,7 +1179,7 @@ const detailingData = [
       {
         id: 6,
         name: "Cosmo",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/cosmo.png",
         products: [
           {
             id: 3018,
@@ -1328,17 +1328,17 @@ const detailingData = [
       },
       {
         id: 8,
-        name: "Rodium",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        name: "Rodim",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/rodium.jpg",
         products: [
           {
             id: 3023,
-            name: "Rodium R2 PPF",
+            name: "Rodim R2 PPF",
             price: 89000,
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431316/detailing/PPF/Rodium/WhatsApp_Image_2026-03-23_at_5.31.37_PM_2.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431316/detailing/PPF/Rodim/WhatsApp_Image_2026-03-23_at_5.31.37_PM_2.jpg"
             ],
             highlights: [
               "  7+ Years Lifespan",
@@ -1383,12 +1383,12 @@ const detailingData = [
           },
           {
             id: 3024,
-            name: "Rodium R1 PPF",
+            name: "Rodim R1 PPF",
             price: 74000,
             rating: 4.8,
             reviewCount: 95,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431310/detailing/PPF/Rodium/WhatsApp_Image_2026-03-23_at_5.31.36_PM.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431310/detailing/PPF/Rodim/WhatsApp_Image_2026-03-23_at_5.31.36_PM.jpg"
             ],
             highlights: [
               "  5+ Years Lifespan",
@@ -1433,12 +1433,12 @@ const detailingData = [
           },
           {
             id: 3025,
-            name: "Rodium R3 PPF",
+            name: "Rodim R3 PPF",
             price: 139000,
             rating: 4.8,
             reviewCount: 95,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431311/detailing/PPF/Rodium/WhatsApp_Image_2026-03-23_at_5.31.37_PM.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774431311/detailing/PPF/Rodim/WhatsApp_Image_2026-03-23_at_5.31.37_PM.jpg"
             ],
             highlights: [
               "  10+ Years Lifespan",
@@ -1486,7 +1486,7 @@ const detailingData = [
       {
         id: 9,
         name: "Xpel",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Xpel.jpg",
         products: [
           {
             id: 3026,
@@ -1606,7 +1606,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Xpel/ultimatefusion.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/Xpel/ultimatefusion.jpg"
             ],
             highlights: [
               "  10+ Years Lifespan",
@@ -1659,7 +1659,7 @@ const detailingData = [
       {
         id: 10,
         name: "Eclipse",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Eclipse_.png",
         products: [
           {
             id: 3029,
@@ -1878,7 +1878,7 @@ const detailingData = [
       {
         id: 12,
         name: "Paint Guard",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/Paint-Gaurd.png",
         products: [
           {
             id: 3034,
@@ -1991,7 +1991,7 @@ const detailingData = [
             rating: 4.8,
             reviewCount: 95,
             images: [
-             "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/PaintGaurd/MansoryTPU.jpg"
+              "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/PaintGaurd/MansoryTPU.jpg"
             ],
             highlights: [
               "  10+ Years Lifespan",
@@ -2042,7 +2042,7 @@ const detailingData = [
       {
         id: 11,
         name: "Scotchgard",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/ScotchGard.png",
         products: [
           {
             id: 3033,
@@ -2085,7 +2085,7 @@ const detailingData = [
       {
         id: 13,
         name: "Llumar",
-        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/PPF/logos/Garware.jpeg",
+        logo: "https://res.cloudinary.com/ddgxphtda/image/upload/detailing/Logos/LLumar.png",
         products: [
           {
             id: 3037,
@@ -2162,7 +2162,7 @@ const detailingData = [
             rating: 4.5,
             reviewCount: 128,
             images: [
-              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774432422/detailing/PPF/Llumar/HydroGaurd.jpg"            ],
+              "https://res.cloudinary.com/ddgxphtda/image/upload/v1774432422/detailing/PPF/Llumar/HydroGaurd.jpg"],
             highlights: [
               "  12+ Years Lifespan",
               "  12 Years Warranty",
